@@ -1,0 +1,22 @@
+[
+	{
+		"id" : 61,
+		"text" : "开题答辩分组查看",
+		"iconCls" :"icon-mini-edit",
+        "url":"./index.php?m=home&c=student&a=proposal_group"
+
+	},
+	{
+        "id" : 62,
+        "text" : "中期答辩分组查看",
+        "iconCls" :"icon-mini-edit",
+        "url":"./index.php?m=home&c=student&a=interim_group"
+	},
+    {
+        "id" : 63,
+        "text" : "最终答辩分组查看",
+        "iconCls" :"icon-mini-edit",
+        "url":"./index.php?m=home&c=student&a=paper_group"
+    }
+
+]
