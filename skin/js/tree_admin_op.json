@@ -1,0 +1,17 @@
+[
+	{
+		"id" : 1,
+		"iconCls" :"icon-mini-edit",
+         "url":"./index.php?m=home&c=admin&a=item",
+         "text" : "类目管理"
+
+	},
+	{
+		"id" : 1,
+        "iconCls" :"icon-mini-edit",
+         "url":"./index.php?m=home&c=admin&a=teacher",
+         "text" : "教师管理"
+	}
+
+
+]
