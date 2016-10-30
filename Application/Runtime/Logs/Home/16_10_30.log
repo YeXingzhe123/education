@@ -1451,3 +1451,293 @@ INFO: [ app_end ] --START--
 INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001325s ]
 INFO: [ app_end ] --END-- [ RunTime:0.001429s ]
 
+[ 2016-10-30T20:38:58+08:00 ] 127.0.0.1 /index.php/Home/Admin/readallstudent.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000037s ]
+INFO: [ app_init ] --END-- [ RunTime:0.013043s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001637s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001780s ]
+SQL: SHOW COLUMNS FROM `student` [ RunTime:0.0207s ]
+NOTIC: [8] Undefined variable: condition E:\vagrant\www\education\Application\Home\Controller\AdminController.class.php 第 142 行.
+SQL: SELECT * FROM `student` ORDER BY student_name DESC LIMIT 0,10   [ RunTime:0.0025s ]
+NOTIC: [8] Undefined variable: condition E:\vagrant\www\education\Application\Home\Controller\AdminController.class.php 第 145 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `student` LIMIT 1   [ RunTime:0.0017s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001667s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001771s ]
+
+[ 2016-10-30T20:39:01+08:00 ] 127.0.0.1 /index.php/Home/Admin/readallstudent.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000905s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001195s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001291s ]
+SQL: SHOW COLUMNS FROM `student` [ RunTime:0.0148s ]
+NOTIC: [8] Undefined variable: condition E:\vagrant\www\education\Application\Home\Controller\AdminController.class.php 第 142 行.
+SQL: SELECT * FROM `student` ORDER BY student_name DESC LIMIT 0,10   [ RunTime:0.0028s ]
+NOTIC: [8] Undefined variable: condition E:\vagrant\www\education\Application\Home\Controller\AdminController.class.php 第 145 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `student` LIMIT 1   [ RunTime:0.0025s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002055s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002173s ]
+
+[ 2016-10-30T20:39:02+08:00 ] 127.0.0.1 /index.php/Home/Admin/readallstudent.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000963s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001220s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001316s ]
+SQL: SHOW COLUMNS FROM `student` [ RunTime:0.0209s ]
+NOTIC: [8] Undefined variable: condition E:\vagrant\www\education\Application\Home\Controller\AdminController.class.php 第 142 行.
+SQL: SELECT * FROM `student` ORDER BY student_name DESC LIMIT 0,10   [ RunTime:0.0065s ]
+NOTIC: [8] Undefined variable: condition E:\vagrant\www\education\Application\Home\Controller\AdminController.class.php 第 145 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `student` LIMIT 1   [ RunTime:0.0034s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001636s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001734s ]
+
+[ 2016-10-30T20:42:21+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000046s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001328s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003290s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003423s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000148s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000265s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.017182s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.017326s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000697s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000769s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001177s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001253s ]
+
+[ 2016-10-30T20:42:31+08:00 ] 127.0.0.1 /index.php?m=home&c=admin&a=student&_=1477831343114
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000040s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001611s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001553s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001682s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000440s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.003782s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.028111s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.028264s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000988s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001117s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.003219s ]
+INFO: [ app_end ] --END-- [ RunTime:0.003732s ]
+
+[ 2016-10-30T20:42:31+08:00 ] 127.0.0.1 /index.php/Home/Admin/readallstudent.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000919s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002299s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002654s ]
+SQL: SHOW COLUMNS FROM `student` [ RunTime:0.0213s ]
+NOTIC: [8] Undefined variable: condition E:\vagrant\www\education\Application\Home\Controller\AdminController.class.php 第 142 行.
+SQL: SELECT * FROM `student` ORDER BY student_name DESC LIMIT 0,10   [ RunTime:0.0047s ]
+NOTIC: [8] Undefined variable: condition E:\vagrant\www\education\Application\Home\Controller\AdminController.class.php 第 145 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `student` LIMIT 1   [ RunTime:0.0052s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.003645s ]
+INFO: [ app_end ] --END-- [ RunTime:0.004753s ]
+
+[ 2016-10-30T20:42:52+08:00 ] 127.0.0.1 /index.php/Home/Admin/addstudent_info.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001070s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001756s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001894s ]
+SQL: SHOW COLUMNS FROM `student` [ RunTime:0.0142s ]
+SQL: INSERT INTO `student` (`student_birthday`,`student_tel`,`student_name`,`student_remark`,`student_sex`) VALUES ('12312321','12312321','1232','123123123','男') [ RunTime:0.0518s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001643s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001805s ]
+
+[ 2016-10-30T20:42:53+08:00 ] 127.0.0.1 /index.php/Home/Admin/readallstudent.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000749s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000981s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001059s ]
+SQL: SHOW COLUMNS FROM `student` [ RunTime:0.0148s ]
+NOTIC: [8] Undefined variable: condition E:\vagrant\www\education\Application\Home\Controller\AdminController.class.php 第 142 行.
+SQL: SELECT * FROM `student` ORDER BY student_name DESC LIMIT 0,10   [ RunTime:0.0025s ]
+NOTIC: [8] Undefined variable: condition E:\vagrant\www\education\Application\Home\Controller\AdminController.class.php 第 145 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `student` LIMIT 1   [ RunTime:0.0024s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001571s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001745s ]
+
+[ 2016-10-30T20:42:56+08:00 ] 127.0.0.1 /index.php/Home/Admin/readallstudent.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001222s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001516s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001644s ]
+SQL: SHOW COLUMNS FROM `student` [ RunTime:0.0177s ]
+SQL: SELECT * FROM `student` WHERE `student_name` = '1232' ORDER BY student_name DESC LIMIT 0,10   [ RunTime:0.0031s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `student` WHERE `student_name` = '1232' LIMIT 1   [ RunTime:0.0029s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002125s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002244s ]
+
+[ 2016-10-30T20:49:30+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001071s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001362s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001480s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000149s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000273s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.034866s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.035070s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001280s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001384s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001295s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001375s ]
+
+[ 2016-10-30T20:49:34+08:00 ] 127.0.0.1 /index.php?m=home&c=admin&a=student&_=1477831771714
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000037s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001374s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001636s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001838s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000308s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000435s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.029642s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.029780s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001184s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001316s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.003197s ]
+INFO: [ app_end ] --END-- [ RunTime:0.003392s ]
+
+[ 2016-10-30T20:49:34+08:00 ] 127.0.0.1 /index.php/Home/Admin/readallstudent.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000745s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002924s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003241s ]
+SQL: SHOW COLUMNS FROM `student` [ RunTime:0.0179s ]
+NOTIC: [8] Undefined variable: condition E:\vagrant\www\education\Application\Home\Controller\AdminController.class.php 第 142 行.
+SQL: SELECT * FROM `student` ORDER BY student_name DESC LIMIT 0,10   [ RunTime:0.0038s ]
+NOTIC: [8] Undefined variable: condition E:\vagrant\www\education\Application\Home\Controller\AdminController.class.php 第 145 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `student` LIMIT 1   [ RunTime:0.0022s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001384s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001464s ]
+
+[ 2016-10-30T20:49:40+08:00 ] 127.0.0.1 /index.php/Home/Admin/readallstudent.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000038s ]
+INFO: [ app_init ] --END-- [ RunTime:0.014330s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001400s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001510s ]
+SQL: SHOW COLUMNS FROM `student` [ RunTime:0.0172s ]
+SQL: SELECT * FROM `student` WHERE `student_name` LIKE '%412%' ORDER BY student_name DESC LIMIT 0,10   [ RunTime:0.0060s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `student` WHERE `student_name` LIKE '%412%' LIMIT 1   [ RunTime:0.0034s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001599s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001699s ]
+
+[ 2016-10-30T20:49:49+08:00 ] 127.0.0.1 /index.php/Home/Admin/readallstudent.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000036s ]
+INFO: [ app_init ] --END-- [ RunTime:0.006883s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001270s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001370s ]
+SQL: SHOW COLUMNS FROM `student` [ RunTime:0.0158s ]
+SQL: SELECT * FROM `student` WHERE `student_name` LIKE '%12%' ORDER BY student_name DESC LIMIT 0,10   [ RunTime:0.0036s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `student` WHERE `student_name` LIKE '%12%' LIMIT 1   [ RunTime:0.0027s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001593s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001718s ]
+
+[ 2016-10-30T20:49:53+08:00 ] 127.0.0.1 /index.php?m=home&c=admin&a=item&_=1477831771715
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000917s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001590s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001916s ]
+ERR: 非法操作:item
+
+[ 2016-10-30T20:49:53+08:00 ] 127.0.0.1 /index.php?m=home&c=admin&a=teacher&_=1477831771716
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000214s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001659s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001047s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001128s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000276s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000404s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.020988s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.021107s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000943s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001055s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002681s ]
+INFO: [ app_end ] --END-- [ RunTime:0.003018s ]
+
+[ 2016-10-30T20:49:54+08:00 ] 127.0.0.1 /index.php/Home/Admin/readallteacher.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000748s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000985s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001066s ]
+SQL: SHOW COLUMNS FROM `teacher` [ RunTime:0.0145s ]
+NOTIC: [8] Undefined variable: condition E:\vagrant\www\education\Application\Home\Controller\AdminController.class.php 第 38 行.
+SQL: SELECT * FROM `teacher` ORDER BY teacher_no DESC LIMIT 0,10   [ RunTime:0.0055s ]
+NOTIC: [8] Undefined variable: condition E:\vagrant\www\education\Application\Home\Controller\AdminController.class.php 第 41 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `teacher` LIMIT 1   [ RunTime:0.0035s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001352s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001435s ]
+
+[ 2016-10-30T20:49:57+08:00 ] 127.0.0.1 /index.php/Home/Admin/readallteacher.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000960s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004936s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005099s ]
+SQL: SHOW COLUMNS FROM `teacher` [ RunTime:0.0170s ]
+SQL: SELECT * FROM `teacher` WHERE ( `teacher_name` LIKE '%1%' OR `teacher_no` LIKE '%1%' ) ORDER BY teacher_no DESC LIMIT 0,10   [ RunTime:0.0046s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `teacher` WHERE ( `teacher_name` LIKE '%1%' OR `teacher_no` LIKE '%1%' ) LIMIT 1   [ RunTime:0.0039s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002050s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002196s ]
+

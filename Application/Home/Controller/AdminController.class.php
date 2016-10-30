@@ -32,7 +32,7 @@ class AdminController extends Controller  {
         $sort=I("post.sort");
         $order=I('post.order');
         if(isset($_POST['teacher_name']) && !empty($_POST['teacher_name'])){
-            $condition["teacher_name|teacher_no"]=I("post.teacher_name");//姓名或学号搜索
+            $condition["teacher_name|teacher_no"]=array("like","%".I("post.teacher_name")."%");//姓名或学号搜索
         }
         $teacher=M("teacher");
         $result=$teacher->where($condition)->order($sort.' '.$order)->page($page,$pagesize)->select();
@@ -136,7 +136,7 @@ class AdminController extends Controller  {
         $sort=I("post.sort");
         $order=I('post.order');
         if(isset($_POST['student_name']) && !empty($_POST['student_name'])){
-            $condition["student_name"]=I("post.student_name");//姓名或学号搜索
+            $condition["student_name"]=array("like","%".I("post.student_name")."%");//姓名或学号搜索
         }
         $student=M("student");
         $result=$student->where($condition)->order($sort.' '.$order)->page($page,$pagesize)->select();

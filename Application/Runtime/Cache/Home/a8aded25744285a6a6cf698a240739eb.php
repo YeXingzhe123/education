@@ -27,7 +27,7 @@ $(function () {
         editRow : undefined,
         search : function () {
             $('#admin_student_box').datagrid('load', {
-                name : $.trim($('input[name="student_name"]').val()),
+                student_name : $.trim($('input[name="student_name"]').val()),
             });
         },
         add : function () {
@@ -157,7 +157,7 @@ $(function () {
             },
         },
         {
-            field : 'sex',
+            field : 'student_sex',
             title : '性别',
 
             width : 50,

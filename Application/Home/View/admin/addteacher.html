@@ -27,7 +27,7 @@ $(function () {
         editRow : undefined,
         search : function () {
             $('#admin_teacher_box').datagrid('load', {
-                name : $.trim($('input[name="teacher_name"]').val()),
+                teacher_name : $.trim($('input[name="teacher_name"]').val()),
             });
         },
         add : function () {
