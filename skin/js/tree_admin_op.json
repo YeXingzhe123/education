@@ -1,17 +1,31 @@
 [
-	{
-		"id" : 1,
-		"iconCls" :"icon-mini-edit",
-         "url":"./index.php?m=home&c=admin&a=item",
-         "text" : "类目管理"
+{"id" : 1,
+"text" : "基本配置",
+"iconCls" :"icon-mini-add",
+"children" : [
+{
+	"id" : 11,
+	"iconCls" :"icon-mini-edit",
+	"url":"./index.php?m=home&c=admin&a=item",
+	"text" : "类目管理"
 
 	},
 	{
-		"id" : 1,
-        "iconCls" :"icon-mini-edit",
-         "url":"./index.php?m=home&c=admin&a=teacher",
-         "text" : "教师管理"
+		"id" : 12,
+		"iconCls" :"icon-mini-edit",
+		"url":"./index.php?m=home&c=admin&a=teacher",
+		"text" : "教师管理"
+		},
+		{
+			"id" : 13,
+			"iconCls" :"icon-mini-edit",
+			"url":"./index.php?m=home&c=admin&a=student",
+			"text" : "学生管理"
+
+		}
+		]
 	}
 
 
-]
+
+	]

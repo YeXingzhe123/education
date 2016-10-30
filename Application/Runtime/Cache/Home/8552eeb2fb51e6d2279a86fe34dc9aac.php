@@ -14,7 +14,7 @@
         <a href="#" class="easyui-linkbutton" iconCls="icon-redo" plain="true" style="display:none;" id="redo" onclick="obj_admin_teacher.redo();">取消编辑</a>
             </td>
                 <td style="width: 450px;text-align: right;">
-        查询姓名/工号：<input type="text" class="textbox" name="name" style="width:110px">
+        查询姓名/工号：<input type="text" class="textbox" name="teacher_name" style="width:110px">
 
         <a href="#" class="easyui-linkbutton" iconCls="icon-search" onclick="obj_admin_teacher.search();">查询</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 </td>  </tr> </table>
@@ -46,8 +46,8 @@ $(function () {
                 $('#admin_teacher_box').datagrid('insertRow', {
                     index : 0,
                     row : {
-                        sex:'男',
-                        password:'123456',
+                        teacher_sex:'男',
+                        teacher_password:'123456',
                         /*
                          user : 'bnbbs',
                          email : 'bnbbs@163.com',
@@ -99,7 +99,7 @@ $(function () {
                     if (flag) {
                         var ids = [];
                         for (var i = 0; i < rows.length; i ++) {
-                            ids.push(rows[i].id);
+                            ids.push(rows[i].teacher_id);
                         }
                         //console.log(ids.join(','));
                         $.ajax({
@@ -118,7 +118,7 @@ $(function () {
                                     $('#admin_teacher_box').datagrid('unselectAll');
                                     $.messager.show({
                                         title : '提示',
-                                        msg : data+'学生被删除成功！',
+                                        msg : data+'教师被删除成功！',
                                     });
                                 }
                             },
@@ -135,7 +135,7 @@ $(function () {
         width : 900,
         url : '<?php echo U("readallteacher");?>',
        // url : 'user.php',
-        title : '<center>学生列表</center>',
+        title : '<center>教师列表</center>',
         iconCls : 'icon-search',
         striped : true,
         nowrap : true,
@@ -144,7 +144,7 @@ $(function () {
         fitColumns : true,
         columns : [[
         {
-            field : 'name',
+            field : 'teacher_name',
             title : '教师姓名',
             sortable : true,
             width : 150,
@@ -157,7 +157,7 @@ $(function () {
             },
         },
         {
-            field : 'no',
+            field : 'teacher_no',
             title : '工号',
             sortable : true,
             width : 150,
@@ -170,7 +170,7 @@ $(function () {
             },
         },
         {
-            field : 'password',
+            field : 'teacher_password',
             title : '密码',
 
             width : 150,
@@ -185,7 +185,7 @@ $(function () {
             },
         },
         {
-            field : 'sex',
+            field : 'teacher_sex',
             title : '性别',
 
             width : 50,
@@ -215,20 +215,33 @@ $(function () {
             },
         },
         {
-            field : 'id_card',
+            field : 'teacher_birthday',
+            title : '出生日期',
+
+            width : 100,
+            editor : {
+                type : 'validatebox',
+                options : {
+                    validType : 'length[2,13]',
+
+                },
+            },
+        },
+        {
+            field : 'teacher_id_card',
             title : '身份证号',
 
             width : 100,
             editor : {
                 type : 'numberbox',
                 options : {
-                  //  validType : 'length[18,18]',
+                    validType : 'length[18,18]',
 
                 },
             },
         },
         {
-            field : 'education',
+            field : 'teacher_education',
             title : '学历',
 
             width : 100,
@@ -241,7 +254,7 @@ $(function () {
             },
         },
         {
-            field : 'major',
+            field : 'teacher_major',
             title : '专业',
 
             width : 100,
@@ -254,7 +267,7 @@ $(function () {
             },
         },
         {
-            field : 'salary',
+            field : 'teacher_salary',
             title : '薪资',
 
             width : 100,
@@ -267,7 +280,7 @@ $(function () {
             },
         },
         {
-            field : 'remark',
+            field : 'teacher_remark',
             title : '备注',
 
             width : 100,
@@ -280,7 +293,7 @@ $(function () {
             },
         },
             {
-                field : 'id',
+                field : 'teacher_id',
                 title : 'aa',
                 hidden:'true',
                 width : 0
@@ -292,7 +305,7 @@ $(function () {
         pageSize : 10,
         pageList : [10, 20, 30],
         pageNumber : 1,
-        sortName : 'no',
+        sortName : 'teacher_no',
         sortOrder : 'DESC',
         onDblClickRow : function (rowIndex, rowData) {
 

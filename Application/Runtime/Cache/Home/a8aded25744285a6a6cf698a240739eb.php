@@ -1,5 +1,5 @@
 <?php if (!defined('THINK_PATH')) exit();?><div style="position: relative;left: 0px;top: 0px;">
-    <div style="position: absolute;left:10px;top: 10px;">学生/教师添加修改 >>
+    <div style="position: absolute;left:10px;top: 10px;">学生添加修改 >>
         <font style="font-weight: bold"> 添加/修改学生</font> </div>
     <div style="position: absolute;left: 50px;top: 30px;"><table id="admin_student_box" style="width: 900px;"></table>
 </div>
@@ -14,7 +14,7 @@
         <a href="#" class="easyui-linkbutton" iconCls="icon-redo" plain="true" style="display:none;" id="redo" onclick="obj_admin_student.redo();">取消编辑</a>
             </td>
                 <td style="width: 450px;text-align: right;">
-        查询姓名/学号：<input type="text" class="textbox" name="student_name" style="width:110px">
+        查询姓名：<input type="text" class="textbox" name="student_name" style="width:110px">
 
         <a href="#" class="easyui-linkbutton" iconCls="icon-search" onclick="obj_admin_student.search();">查询</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 </td>  </tr> </table>
@@ -27,7 +27,7 @@ $(function () {
         editRow : undefined,
         search : function () {
             $('#admin_student_box').datagrid('load', {
-                student_name : $.trim($('input[name="student_name"]').val()),
+                name : $.trim($('input[name="student_name"]').val()),
             });
         },
         add : function () {
@@ -47,7 +47,7 @@ $(function () {
                     index : 0,
                     row : {
                         student_sex:'男',
-                        student_password:'123456',
+                        //password:'123456',
                         /*
                          user : 'bnbbs',
                          email : 'bnbbs@163.com',
@@ -143,137 +143,91 @@ $(function () {
         //singleSelect : true,
         fitColumns : true,
         columns : [[
-            {
-                field : 'student_name',
-                title : '学生姓名',
-                sortable : true,
-                width : 150,
-                editor : {
-                    type : 'validatebox',
-                    options : {
-                        required : true,
-                        validType : 'length[2,6]',
-                    },
+        {
+            field : 'student_name',
+            title : '学生姓名',
+            sortable : true,
+            width : 150,
+            editor : {
+                type : 'validatebox',
+                options : {
+                    required : true,
+                    validType : 'length[2,6]',
                 },
             },
-            {
-                field : 'student_no',
-                title : '学号',
-                sortable : true,
-                width : 150,
-                editor : {
-                    type : 'numberbox',
-                    options : {
-                        required : true,
-                        validType : 'length[3,20]',
-                    },
-                },
-            },
-            {
-                field : 'student_password',
-                title : '密码',
+        },
+        {
+            field : 'sex',
+            title : '性别',
 
-                width : 150,
-                editor : {
-                    type : 'validatebox',
-                    options : {
-                        required : true,
-                        validType : 'length[3,20]',
+            width : 50,
+            editor : {
 
+                type : 'student_combobox',
+                options : {
 
-                    },
-                },
-            },
-            {
-                field : 'student_email',
-                title : '邮件',
+                    valueField:'value',
+                    textField:'text',
+                    editable:false,
+                    data:[{
+                        value: '男',
+                        text: '男'
+                    },{
+                        value: '女',
+                        text: '女'
+                    }],
 
-                width : 200,
-                editor : {
-                    type : 'validatebox',
-                    options : {
-                         validType : 'email',
-                    },
-                },
-            },
-            {
-                field : 'student_tel',
-                title : '联系电话',
+                    panelHeight:40
 
-                width : 100,
-                editor : {
-                    type : 'numberbox',
-                    options : {
-                        validType : 'length[11,11]',
-
-                    },
-                },
-            },
-            {
-                field : 'student_sex',
-                title : '性别',
-
-                width : 50,
-                editor : {
-
-                    type : 'combobox',
-                    options : {
-
-                        valueField:'value',
-                        textField:'text',
-                        editable:false,
-                        data:[{
-                            value: '男',
-                            text: '男'
-                        },{
-                            value: '女',
-                            text: '女'
-                        }],
-
-                        panelHeight:40
-
-
-
-                    },
 
 
                 },
+
+
             },
-            {
-                field : 'grade_name',
-                title : '班级',
+        },
+        {
+            field : 'student_birthday',
+            title : '出生日期',
 
-                width : 100,
-                editor : {
-                    type : 'combobox',
-                    options : {
-                    url:'<?php echo U("read_all_grade");?>',
-                    valueField:'grade_id',
-                    textField:'grade_name',
-                     editable:'false',
-                     panelHeight:150,
-                     onLoadSuccess: function () {
-                            if(obj_admin_student.editRow>0){
-                                var row = $('#admin_student_box').datagrid('getData').rows[obj_admin_student.editRow];
-                                $(this).combobox('setValue', row["grade_id"]);
-                                $(this).combobox('setText', row["grade_name"]);
-                            }
-                      }
+            width : 100,
+            editor : {
+                type : 'validatebox',
+                options : {
+                    validType : 'length[2,13]',
 
-                    }
-
-},
+                },
             },
+        },
+        {
+            field : 'student_tel',
+            title : '电话号码',
+
+            width : 100,
+            editor : {
+                type : 'numberbox',
+                options : {
+                    validType : 'length[6,13]',
+
+                },
+            },
+        },
+        {
+            field : 'student_remark',
+            title : '备注',
+
+            width : 100,
+            editor : {
+                type : 'validatebox',
+                options : {
+                    validType : 'length[0,50]',
+
+                },
+            },
+        },
             {
                 field : 'student_id',
                 title : 'aa',
-                hidden:'true',
-                width : 0
-
-            },
-            {
-                field : 'grade_id',
-                title : 'bb',
                 hidden:'true',
                 width : 0
 
@@ -284,7 +238,7 @@ $(function () {
         pageSize : 10,
         pageList : [10, 20, 30],
         pageNumber : 1,
-        sortName : 'student_no',
+        sortName : 'name',
         sortOrder : 'DESC',
         onDblClickRow : function (rowIndex, rowData) {
 
