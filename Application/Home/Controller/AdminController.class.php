@@ -135,8 +135,8 @@ class AdminController extends Controller  {
         $pagesize=I("post.rows");
         $sort=I("post.sort");
         $order=I('post.order');
-        if(isset($_POST['name']) && !empty($_POST['name'])){
-            $condition["name"]=I("post.name");//姓名或学号搜索
+        if(isset($_POST['student_name']) && !empty($_POST['student_name'])){
+            $condition["student_name"]=I("post.student_name");//姓名或学号搜索
         }
         $student=M("student");
         $result=$student->where($condition)->order($sort.' '.$order)->page($page,$pagesize)->select();
@@ -148,11 +148,11 @@ class AdminController extends Controller  {
     public function addstudent_info(){
 
         $row = I("post.row");
-        $data["birthday"]=$row["birthday"];
-        $data["tel"]=$row["tel"];
-        $data["name"]=$row["name"];
-        $data["remark"]=$row["remark"];//
-        $data["sex"]=$row["sex"];//
+        $data["student_birthday"]=$row["student_birthday"];
+        $data["student_tel"]=$row["student_tel"];
+        $data["student_name"]=$row["student_name"];
+        $data["student_remark"]=$row["student_remark"];//
+        $data["student_sex"]=$row["student_sex"];//
 
         if(session("user_name")==null){
 
@@ -177,13 +177,13 @@ class AdminController extends Controller  {
         }
 
         $row = I("post.row");
-        $data["birthday"]=$row["birthday"];
-        $data["tel"]=$row["tel"];
-        $data["name"]=$row["name"];
-        $data["remark"]=$row["remark"];//
-        $data["sex"]=$row["sex"];//
+       $data["student_birthday"]=$row["student_birthday"];
+       $data["student_tel"]=$row["student_tel"];
+       $data["student_name"]=$row["student_name"];
+       $data["student_remark"]=$row["student_remark"];//
+       $data["student_sex"]=$row["student_sex"];//
         $student=M("student");
-        $condition["id"]=$row['id'];
+        $condition["student_id"]=$row['student_id'];
         $result=$student->where($condition)->save($data);
         if(!$result){
             echo "失败";
@@ -202,7 +202,7 @@ class AdminController extends Controller  {
 
         $ids =I("post.ids");
         $student=M("student");
-        $condition["id"]=Array("IN","$ids");
+        $condition["student_id"]=Array("IN","$ids");
         $result=$student->where($condition)->delete();
         echo $result;
     }

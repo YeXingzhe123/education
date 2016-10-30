@@ -238,7 +238,7 @@ $(function () {
         pageSize : 10,
         pageList : [10, 20, 30],
         pageNumber : 1,
-        sortName : 'name',
+        sortName : 'student_name',
         sortOrder : 'DESC',
         onDblClickRow : function (rowIndex, rowData) {
 
