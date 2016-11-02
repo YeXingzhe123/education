@@ -1,4 +1,0 @@
-swfupload
-=========
-
-swfupload multi
