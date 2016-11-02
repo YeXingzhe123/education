@@ -24,7 +24,7 @@
     <div id="w" class="easyui-window" title="Modal Window" data-options="modal:true,closed:true,iconCls:'icon-save'" style="width:500px;height:200px;padding:10px;">
         <div class="easyui-layout" data-options="fit:true">
             <div data-options="region:'center'" style="padding:10px;">
-                jQuery EasyUI framework help you build your web page easily.
+                    <table id="tt"></table>
             </div>
 
             <div data-options="region:'south',border:false" style="text-align:right;padding:5px 0 0;">
@@ -221,7 +221,7 @@ $(function () {
                 title : '功能',
                 width : 0,
                 formatter : function (value,row,index) {
-                       return '<a href="javascript:void(0)" class="easyui-linkbutton" onclick="$(\'#w\').window(\'open\')">添加课程</a> '
+                       return '<a href="javascript:void(0)" class="easyui-linkbutton" onclick="show_select_item_window('+row.id+');">添加课程</a> '
                        ;
                    }
 
@@ -305,5 +305,164 @@ $(function () {
     });
 
 });
+
+//显示选择课程弹窗
+function show_select_item_window(student_id){
+    $('#w').window('open');
+    $('#tt').datagrid({
+        url:'<?php echo U("readallitems");?>',
+        title : '<center>学生列表</center>',
+        iconCls : 'icon-search',
+        striped : true,
+        nowrap : true,
+        rownumbers : true,
+        //singleSelect : true,
+        fitColumns : true,
+        columns : [[
+        {
+            field : 'student_name',
+            title : '学生姓名',
+            sortable : true,
+            width : 150,
+            editor : {
+                type : 'validatebox',
+                options : {
+                    required : true,
+                    validType : 'length[2,6]',
+                },
+            },
+        },
+        {
+            field : 'student_sex',
+            title : '性别',
+
+            width : 50,
+            editor : {
+
+                type : 'student_combobox',
+                options : {
+
+                    valueField:'value',
+                    textField:'text',
+                    editable:false,
+                    data:[{
+                        value: '男',
+                        text: '男'
+                    },{
+                        value: '女',
+                        text: '女'
+                    }],
+
+                    panelHeight:40
+
+
+
+                },
+
+
+            },
+        },
+        {
+            field : 'student_tel',
+            title : '电话号码',
+
+            width : 100,
+            editor : {
+                type : 'numberbox',
+                options : {
+                    validType : 'length[6,13]',
+
+                },
+            },
+        },
+        {
+                field : 'student_id',
+                title : '功能',
+                width : 0,
+                formatter : function (value,row,index) {
+                       return '<a href="javascript:void(0)" class="easyui-linkbutton" onclick="show_select_item_window('+row.id+');">添加课程</a> '
+                       ;
+                   }
+        },
+        ]],
+        toolbar : '#admin_course_tb',
+        pagination : true,
+        pageSize : 10,
+        pageList : [10, 20, 30],
+        pageNumber : 1,
+        sortName : 'student_name',
+        sortOrder : 'DESC',
+        onDblClickRow : function (rowIndex, rowData) {
+
+            if (obj_admin_course.editRow != undefined) {
+                $('#admin_course_box').datagrid('endEdit', obj_admin_course.editRow);
+            }
+            else{
+                if (obj_admin_course.editRow == undefined) {
+                $('#save,#redo').show();
+                 obj_admin_course.editRow = rowIndex;
+                $('#admin_course_box').datagrid('beginEdit', rowIndex);
+                    obj_admin_advisor.editRow = rowIndex;
+
+                 }
+            }
+
+        },
+        onAfterEdit : function (rowIndex, rowData, changes) {
+            $('#save,#redo').hide();
+
+            var inserted_course = $('#admin_course_box').datagrid('getChanges', 'inserted');
+            var updated_course = $('#admin_course_box').datagrid('getChanges', 'updated');
+
+
+            obj_admin_course.editRow = undefined;
+
+
+            var url = info =  '';
+
+            //新增用户
+            if (inserted_course.length > 0) {
+                url = '<?php echo U("addcourse_info");?>';
+                info = '新增';
+            }
+
+            //修改用户
+            if (updated_course.length > 0) {
+                url = '<?php echo U("updatecourse_info");?>';
+                info = '修改';
+            }
+
+            $.ajax({
+                type : 'POST',
+                url : url,
+                data : {
+                    row : rowData,
+                },
+                beforeSend : function () {
+                    $('#box').datagrid('loading');
+                },
+                success : function (data) {
+                    if (data=="成功") {
+                        $('#admin_course_box').datagrid('loaded');
+                        $('#admin_course_box').datagrid('load');
+                        $('#admin_course_box').datagrid('unselectAll');
+                        $.messager.show({
+                            title : '提示',
+                            msg :  '用户被' + info + '成功！',
+                        });
+                        obj_admin_course.editRow = undefined;
+                    }
+                    else{
+                        $('#admin_course_box').datagrid('loaded');
+                        $('#admin_course_box').datagrid('load');
+                    }
+                },
+            });
+            //console.log(rowData);
+        },
+
+ }
+
+}
 
 </script>

@@ -1,870 +1,757 @@
-[ 2016-11-02T14:50:08+08:00 ] 127.0.0.1 /
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000055s ]
-INFO: [ app_init ] --END-- [ RunTime:0.035583s ]
-INFO: [ app_begin ] --START--
-INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.087713s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.087884s ]
-INFO: [ view_parse ] --START--
-INFO: [ template_filter ] --START--
-INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.029383s ]
-INFO: [ template_filter ] --END-- [ RunTime:0.029573s ]
-INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.196901s ]
-INFO: [ view_parse ] --END-- [ RunTime:0.197072s ]
-INFO: [ view_filter ] --START--
-INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.014408s ]
-INFO: [ view_filter ] --END-- [ RunTime:0.014553s ]
-
-[ 2016-11-02T14:50:09+08:00 ] 127.0.0.1 /index.php/Home/Index/verify.html
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
-INFO: [ app_init ] --END-- [ RunTime:0.000923s ]
-INFO: [ app_begin ] --START--
-INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001279s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.001399s ]
-INFO: [ app_end ] --START--
-INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.008804s ]
-INFO: [ app_end ] --END-- [ RunTime:0.008994s ]
-
-[ 2016-11-02T15:52:27+08:00 ] 127.0.0.1 /
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
-INFO: [ app_init ] --END-- [ RunTime:0.001277s ]
-INFO: [ app_begin ] --START--
-INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.009713s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.009905s ]
-
-[ 2016-11-02T15:52:28+08:00 ] 127.0.0.1 /
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000034s ]
-INFO: [ app_init ] --END-- [ RunTime:0.001568s ]
-INFO: [ app_begin ] --START--
-INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001422s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.001539s ]
-INFO: [ view_parse ] --START--
-INFO: [ template_filter ] --START--
-INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000254s ]
-INFO: [ template_filter ] --END-- [ RunTime:0.000592s ]
-INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.025026s ]
-INFO: [ view_parse ] --END-- [ RunTime:0.025171s ]
-INFO: [ view_filter ] --START--
-INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000862s ]
-INFO: [ view_filter ] --END-- [ RunTime:0.000953s ]
-
-[ 2016-11-02T15:52:28+08:00 ] 127.0.0.1 /index.php/Home/Index/verify.html
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
-INFO: [ app_init ] --END-- [ RunTime:0.000936s ]
-INFO: [ app_begin ] --START--
-INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001459s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.001601s ]
-INFO: [ app_end ] --START--
-INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002151s ]
-INFO: [ app_end ] --END-- [ RunTime:0.002313s ]
-
-[ 2016-11-02T15:52:40+08:00 ] 127.0.0.1 /
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
-INFO: [ app_init ] --END-- [ RunTime:0.000965s ]
-INFO: [ app_begin ] --START--
-INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001221s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.001331s ]
-SQL: SHOW COLUMNS FROM `admin` [ RunTime:0.2297s ]
-SQL: SELECT * FROM `admin` WHERE `name` = 'admin' AND `password` = 'admin' LIMIT 1   [ RunTime:0.0566s ]
-INFO: [ view_parse ] --START--
-INFO: [ template_filter ] --START--
-INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000186s ]
-INFO: [ template_filter ] --END-- [ RunTime:0.000350s ]
-INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.040104s ]
-INFO: [ view_parse ] --END-- [ RunTime:0.040253s ]
-INFO: [ view_filter ] --START--
-INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000650s ]
-INFO: [ view_filter ] --END-- [ RunTime:0.000738s ]
-INFO: [ app_end ] --START--
-INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001341s ]
-INFO: [ app_end ] --END-- [ RunTime:0.001432s ]
-
-[ 2016-11-02T16:13:35+08:00 ] 127.0.0.1 /index.php?m=home&c=admin&a=pay_course&_=1478073160630
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
-INFO: [ app_init ] --END-- [ RunTime:0.001120s ]
-INFO: [ app_begin ] --START--
-INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001395s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.001497s ]
-
-[ 2016-11-02T16:14:13+08:00 ] 127.0.0.1 /index.php?m=home&c=admin&a=pay_course&_=1478073160631
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
-INFO: [ app_init ] --END-- [ RunTime:0.000901s ]
-INFO: [ app_begin ] --START--
-INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001207s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.001303s ]
-
-[ 2016-11-02T16:14:39+08:00 ] 127.0.0.1 /
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
-INFO: [ app_init ] --END-- [ RunTime:0.000901s ]
-INFO: [ app_begin ] --START--
-INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001732s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.001907s ]
-INFO: [ view_parse ] --START--
-INFO: [ template_filter ] --START--
-INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000153s ]
-INFO: [ template_filter ] --END-- [ RunTime:0.000295s ]
-INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.018303s ]
-INFO: [ view_parse ] --END-- [ RunTime:0.018447s ]
-INFO: [ view_filter ] --START--
-INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000864s ]
-INFO: [ view_filter ] --END-- [ RunTime:0.000963s ]
-
-[ 2016-11-02T16:14:41+08:00 ] 127.0.0.1 /index.php/Home/Index/verify.html
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
-INFO: [ app_init ] --END-- [ RunTime:0.000744s ]
-INFO: [ app_begin ] --START--
-INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000985s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.001074s ]
-INFO: [ app_end ] --START--
-INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001760s ]
-INFO: [ app_end ] --END-- [ RunTime:0.001928s ]
-
-[ 2016-11-02T16:14:55+08:00 ] 127.0.0.1 /
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000140s ]
-INFO: [ app_init ] --END-- [ RunTime:0.001935s ]
-INFO: [ app_begin ] --START--
-INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001249s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.001365s ]
-SQL: SHOW COLUMNS FROM `admin` [ RunTime:0.0225s ]
-SQL: SELECT * FROM `admin` WHERE `name` = 'admin' AND `password` = 'admin' LIMIT 1   [ RunTime:0.0056s ]
-INFO: [ view_parse ] --START--
-INFO: [ template_filter ] --START--
-INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000190s ]
-INFO: [ template_filter ] --END-- [ RunTime:0.000335s ]
-INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016910s ]
-INFO: [ view_parse ] --END-- [ RunTime:0.017064s ]
-INFO: [ view_filter ] --START--
-INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000642s ]
-INFO: [ view_filter ] --END-- [ RunTime:0.000728s ]
-INFO: [ app_end ] --START--
-INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001529s ]
-INFO: [ app_end ] --END-- [ RunTime:0.001629s ]
-
-[ 2016-11-02T16:15:01+08:00 ] 127.0.0.1 /index.php?m=home&c=admin&a=pay_course&_=1478074496981
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
-INFO: [ app_init ] --END-- [ RunTime:0.000964s ]
-INFO: [ app_begin ] --START--
-INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001227s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.001321s ]
-
-[ 2016-11-02T16:15:09+08:00 ] 127.0.0.1 /index.php?m=home&c=admin&a=pay_course&_=1478074496982
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
-INFO: [ app_init ] --END-- [ RunTime:0.000924s ]
-INFO: [ app_begin ] --START--
-INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001212s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.001312s ]
-
-[ 2016-11-02T16:16:35+08:00 ] 127.0.0.1 /index.php?m=home&c=admin&a=pay_course&_=1478074496983
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000039s ]
-INFO: [ app_init ] --END-- [ RunTime:0.005766s ]
-INFO: [ app_begin ] --START--
-INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002138s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.002303s ]
-
-[ 2016-11-02T16:16:46+08:00 ] 127.0.0.1 /
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000037s ]
-INFO: [ app_init ] --END-- [ RunTime:0.001381s ]
-INFO: [ app_begin ] --START--
-INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001795s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.001952s ]
-INFO: [ view_parse ] --START--
-INFO: [ template_filter ] --START--
-INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000313s ]
-INFO: [ template_filter ] --END-- [ RunTime:0.001011s ]
-INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.030152s ]
-INFO: [ view_parse ] --END-- [ RunTime:0.030323s ]
-INFO: [ view_filter ] --START--
-INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.002840s ]
-INFO: [ view_filter ] --END-- [ RunTime:0.005533s ]
-INFO: [ app_end ] --START--
-INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.004444s ]
-INFO: [ app_end ] --END-- [ RunTime:0.004635s ]
-
-[ 2016-11-02T16:16:51+08:00 ] 127.0.0.1 /index.php?m=home&c=admin&a=pay_course&_=1478074609165
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
-INFO: [ app_init ] --END-- [ RunTime:0.000928s ]
-INFO: [ app_begin ] --START--
-INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003892s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.004051s ]
-
-[ 2016-11-02T16:18:02+08:00 ] 127.0.0.1 /
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000041s ]
-INFO: [ app_init ] --END-- [ RunTime:0.001258s ]
-INFO: [ app_begin ] --START--
-INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003669s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.003855s ]
-INFO: [ view_parse ] --START--
-INFO: [ template_filter ] --START--
-INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000179s ]
-INFO: [ template_filter ] --END-- [ RunTime:0.000334s ]
-INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.020453s ]
-INFO: [ view_parse ] --END-- [ RunTime:0.020621s ]
-INFO: [ view_filter ] --START--
-INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000665s ]
-INFO: [ view_filter ] --END-- [ RunTime:0.000754s ]
-INFO: [ app_end ] --START--
-INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001293s ]
-INFO: [ app_end ] --END-- [ RunTime:0.001388s ]
-
-[ 2016-11-02T16:18:08+08:00 ] 127.0.0.1 /index.php?m=home&c=admin&a=pay_course&_=1478074685064
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000040s ]
-INFO: [ app_init ] --END-- [ RunTime:0.002146s ]
-INFO: [ app_begin ] --START--
-INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.006792s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.007439s ]
-INFO: [ view_parse ] --START--
-INFO: [ template_filter ] --START--
-INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.045092s ]
-INFO: [ template_filter ] --END-- [ RunTime:0.045294s ]
-INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.074765s ]
-INFO: [ view_parse ] --END-- [ RunTime:0.074940s ]
-INFO: [ view_filter ] --START--
-INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001170s ]
-INFO: [ view_filter ] --END-- [ RunTime:0.001254s ]
-INFO: [ app_end ] --START--
-INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001448s ]
-INFO: [ app_end ] --END-- [ RunTime:0.001554s ]
-
-[ 2016-11-02T16:18:10+08:00 ] 127.0.0.1 /index.php/Home/Admin/readallcourse.html
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
-INFO: [ app_init ] --END-- [ RunTime:0.000735s ]
-INFO: [ app_begin ] --START--
-INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001309s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.001432s ]
-ERR: 非法操作:readallcourse
-
-[ 2016-11-02T16:19:24+08:00 ] 127.0.0.1 /
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
-INFO: [ app_init ] --END-- [ RunTime:0.001109s ]
-INFO: [ app_begin ] --START--
-INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001456s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.001576s ]
-INFO: [ view_parse ] --START--
-INFO: [ template_filter ] --START--
-INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000175s ]
-INFO: [ template_filter ] --END-- [ RunTime:0.000315s ]
-INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.021198s ]
-INFO: [ view_parse ] --END-- [ RunTime:0.021371s ]
-INFO: [ view_filter ] --START--
-INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000997s ]
-INFO: [ view_filter ] --END-- [ RunTime:0.001093s ]
-INFO: [ app_end ] --START--
-INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001472s ]
-INFO: [ app_end ] --END-- [ RunTime:0.001570s ]
-
-[ 2016-11-02T16:19:30+08:00 ] 127.0.0.1 /index.php?m=home&c=admin&a=pay_course&_=1478074766586
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
-INFO: [ app_init ] --END-- [ RunTime:0.001105s ]
-INFO: [ app_begin ] --START--
-INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002960s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.003164s ]
-INFO: [ view_parse ] --START--
-INFO: [ template_filter ] --START--
-INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.002902s ]
-INFO: [ template_filter ] --END-- [ RunTime:0.003187s ]
-INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.021723s ]
-INFO: [ view_parse ] --END-- [ RunTime:0.022001s ]
-INFO: [ view_filter ] --START--
-INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.002230s ]
-INFO: [ view_filter ] --END-- [ RunTime:0.002357s ]
-INFO: [ app_end ] --START--
-INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001879s ]
-INFO: [ app_end ] --END-- [ RunTime:0.002167s ]
-
-[ 2016-11-02T16:19:31+08:00 ] 127.0.0.1 /index.php/Home/Admin/readallcourse.html
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
-INFO: [ app_init ] --END-- [ RunTime:0.001337s ]
-INFO: [ app_begin ] --START--
-INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001636s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.001779s ]
-ERR: 非法操作:readallcourse
-
-[ 2016-11-02T16:19:32+08:00 ] 127.0.0.1 /index.php/Home/Admin/readallcourse.html
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
-INFO: [ app_init ] --END-- [ RunTime:0.000909s ]
-INFO: [ app_begin ] --START--
-INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002369s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.003924s ]
-ERR: 非法操作:readallcourse
-
-[ 2016-11-02T16:20:09+08:00 ] 127.0.0.1 /
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000041s ]
-INFO: [ app_init ] --END-- [ RunTime:0.004059s ]
-INFO: [ app_begin ] --START--
-INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.007603s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.007973s ]
-INFO: [ view_parse ] --START--
-INFO: [ template_filter ] --START--
-INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000228s ]
-INFO: [ template_filter ] --END-- [ RunTime:0.000576s ]
-INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.026844s ]
-INFO: [ view_parse ] --END-- [ RunTime:0.027014s ]
-INFO: [ view_filter ] --START--
-INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000842s ]
-INFO: [ view_filter ] --END-- [ RunTime:0.000996s ]
-INFO: [ app_end ] --START--
-INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001591s ]
-INFO: [ app_end ] --END-- [ RunTime:0.001697s ]
-
-[ 2016-11-02T16:26:01+08:00 ] 127.0.0.1 /
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
-INFO: [ app_init ] --END-- [ RunTime:0.000831s ]
-INFO: [ app_begin ] --START--
-INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000945s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.001036s ]
-INFO: [ view_parse ] --START--
-INFO: [ template_filter ] --START--
-INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000114s ]
-INFO: [ template_filter ] --END-- [ RunTime:0.000205s ]
-INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010193s ]
-INFO: [ view_parse ] --END-- [ RunTime:0.010303s ]
-INFO: [ view_filter ] --START--
-INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001356s ]
-INFO: [ view_filter ] --END-- [ RunTime:0.001457s ]
-INFO: [ app_end ] --START--
-INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001907s ]
-INFO: [ app_end ] --END-- [ RunTime:0.002148s ]
-
-[ 2016-11-02T16:26:07+08:00 ] 127.0.0.1 /index.php?m=home&c=admin&a=pay_course&_=1478075164281
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000035s ]
-INFO: [ app_init ] --END-- [ RunTime:0.001096s ]
-INFO: [ app_begin ] --START--
-INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001518s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.001646s ]
-INFO: [ view_parse ] --START--
-INFO: [ template_filter ] --START--
-INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000406s ]
-INFO: [ template_filter ] --END-- [ RunTime:0.000624s ]
-INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.049294s ]
-INFO: [ view_parse ] --END-- [ RunTime:0.049437s ]
-INFO: [ view_filter ] --START--
-INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000685s ]
-INFO: [ view_filter ] --END-- [ RunTime:0.000765s ]
-INFO: [ app_end ] --START--
-INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.007239s ]
-INFO: [ app_end ] --END-- [ RunTime:0.007445s ]
-
-[ 2016-11-02T16:26:48+08:00 ] 127.0.0.1 /index.php?m=home&c=admin&a=pay_course&_=1478075164282
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
-INFO: [ app_init ] --END-- [ RunTime:0.000947s ]
-INFO: [ app_begin ] --START--
-INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003039s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.003207s ]
-INFO: [ view_parse ] --START--
-INFO: [ template_filter ] --START--
-INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000298s ]
-INFO: [ template_filter ] --END-- [ RunTime:0.000437s ]
-INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.038976s ]
-INFO: [ view_parse ] --END-- [ RunTime:0.039105s ]
-INFO: [ view_filter ] --START--
-INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000653s ]
-INFO: [ view_filter ] --END-- [ RunTime:0.000727s ]
-INFO: [ app_end ] --START--
-INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001534s ]
-INFO: [ app_end ] --END-- [ RunTime:0.001665s ]
-
-[ 2016-11-02T16:26:50+08:00 ] 127.0.0.1 /index.php/Home/Admin/readallcourse.html
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
-INFO: [ app_init ] --END-- [ RunTime:0.000911s ]
-INFO: [ app_begin ] --START--
-INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003862s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.004017s ]
-SQL: SHOW COLUMNS FROM `student` [ RunTime:0.0510s ]
-SQL: SHOW COLUMNS FROM `items` [ RunTime:0.0956s ]
-NOTIC: [8] Undefined variable: condition E:\vagrant\www\education\Application\Home\Controller\AdminController.class.php 第 176 行.
-ERR: 1054:Unknown column 'student_name' in 'order clause'
- [ SQL语句 ] : SELECT * FROM `items` ORDER BY student_name DESC LIMIT 0,10  
-ERR: 1054:Unknown column 'student_name' in 'order clause'
- [ SQL语句 ] : SELECT * FROM `items` ORDER BY student_name DESC LIMIT 0,10  
-
-[ 2016-11-02T16:27:34+08:00 ] 127.0.0.1 /index.php?m=home&c=admin&a=pay_course&_=1478075164283
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000048s ]
-INFO: [ app_init ] --END-- [ RunTime:0.001423s ]
-INFO: [ app_begin ] --START--
-INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004458s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.004831s ]
-INFO: [ view_parse ] --START--
-INFO: [ template_filter ] --START--
-INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000910s ]
-INFO: [ template_filter ] --END-- [ RunTime:0.001117s ]
-INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.030807s ]
-INFO: [ view_parse ] --END-- [ RunTime:0.030969s ]
-INFO: [ view_filter ] --START--
-INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.003744s ]
-INFO: [ view_filter ] --END-- [ RunTime:0.004495s ]
-INFO: [ app_end ] --START--
-INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.005319s ]
-INFO: [ app_end ] --END-- [ RunTime:0.006254s ]
-
-[ 2016-11-02T16:27:35+08:00 ] 127.0.0.1 /index.php/Home/Admin/readallcourse.html
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
-INFO: [ app_init ] --END-- [ RunTime:0.000676s ]
-INFO: [ app_begin ] --START--
-INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000846s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.000920s ]
-SQL: SHOW COLUMNS FROM `student` [ RunTime:0.0107s ]
-NOTIC: [8] Undefined variable: condition E:\vagrant\www\education\Application\Home\Controller\AdminController.class.php 第 176 行.
-SQL: SELECT * FROM `student` ORDER BY student_name DESC LIMIT 0,10   [ RunTime:0.0171s ]
-NOTIC: [8] Undefined variable: condition E:\vagrant\www\education\Application\Home\Controller\AdminController.class.php 第 179 行.
-SQL: SELECT COUNT(*) AS tp_count FROM `student` LIMIT 1   [ RunTime:0.0470s ]
-INFO: [ app_end ] --START--
-INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001159s ]
-INFO: [ app_end ] --END-- [ RunTime:0.001228s ]
-
-[ 2016-11-02T16:28:07+08:00 ] 127.0.0.1 /
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
-INFO: [ app_init ] --END-- [ RunTime:0.001411s ]
-INFO: [ app_begin ] --START--
-INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002408s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.002750s ]
-INFO: [ view_parse ] --START--
-INFO: [ template_filter ] --START--
-INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000192s ]
-INFO: [ template_filter ] --END-- [ RunTime:0.000371s ]
-INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.033423s ]
-INFO: [ view_parse ] --END-- [ RunTime:0.033600s ]
-INFO: [ view_filter ] --START--
-INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001181s ]
-INFO: [ view_filter ] --END-- [ RunTime:0.001330s ]
-INFO: [ app_end ] --START--
-INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001722s ]
-INFO: [ app_end ] --END-- [ RunTime:0.001835s ]
-
-[ 2016-11-02T16:29:14+08:00 ] 127.0.0.1 /index.php?m=home&c=admin&a=pay_course&_=1478075289983
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
-INFO: [ app_init ] --END-- [ RunTime:0.000441s ]
-INFO: [ app_begin ] --START--
-INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000709s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.000826s ]
-INFO: [ view_parse ] --START--
-INFO: [ template_filter ] --START--
-INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000153s ]
-INFO: [ template_filter ] --END-- [ RunTime:0.000298s ]
-INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009153s ]
-INFO: [ view_parse ] --END-- [ RunTime:0.009226s ]
-INFO: [ view_filter ] --START--
-INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000321s ]
-INFO: [ view_filter ] --END-- [ RunTime:0.000357s ]
-INFO: [ app_end ] --START--
-INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000963s ]
-INFO: [ app_end ] --END-- [ RunTime:0.001097s ]
-
-[ 2016-11-02T16:29:15+08:00 ] 127.0.0.1 /index.php/Home/Admin/readallcourse.html
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
-INFO: [ app_init ] --END-- [ RunTime:0.000459s ]
-INFO: [ app_begin ] --START--
-INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000599s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.000644s ]
-SQL: SHOW COLUMNS FROM `student` [ RunTime:0.0098s ]
-NOTIC: [8] Undefined variable: condition E:\vagrant\www\education\Application\Home\Controller\AdminController.class.php 第 176 行.
-SQL: SELECT * FROM `student` ORDER BY student_name DESC LIMIT 0,10   [ RunTime:0.0028s ]
-NOTIC: [8] Undefined variable: condition E:\vagrant\www\education\Application\Home\Controller\AdminController.class.php 第 179 行.
-SQL: SELECT COUNT(*) AS tp_count FROM `student` LIMIT 1   [ RunTime:0.0027s ]
-INFO: [ app_end ] --START--
-INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001120s ]
-INFO: [ app_end ] --END-- [ RunTime:0.001204s ]
-
-[ 2016-11-02T16:33:03+08:00 ] 127.0.0.1 /
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
-INFO: [ app_init ] --END-- [ RunTime:0.001122s ]
-INFO: [ app_begin ] --START--
-INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001364s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.001482s ]
-INFO: [ view_parse ] --START--
-INFO: [ template_filter ] --START--
-INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001175s ]
-INFO: [ template_filter ] --END-- [ RunTime:0.002380s ]
-INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.026718s ]
-INFO: [ view_parse ] --END-- [ RunTime:0.026883s ]
-INFO: [ view_filter ] --START--
-INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000840s ]
-INFO: [ view_filter ] --END-- [ RunTime:0.000930s ]
-INFO: [ app_end ] --START--
-INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001450s ]
-INFO: [ app_end ] --END-- [ RunTime:0.001543s ]
-
-[ 2016-11-02T16:33:08+08:00 ] 127.0.0.1 /index.php?m=home&c=admin&a=pay_course&_=1478075585475
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
-INFO: [ app_init ] --END-- [ RunTime:0.000996s ]
-INFO: [ app_begin ] --START--
-INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001222s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.001317s ]
-INFO: [ view_parse ] --START--
-INFO: [ template_filter ] --START--
-INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000320s ]
-INFO: [ template_filter ] --END-- [ RunTime:0.000455s ]
-INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.027160s ]
-INFO: [ view_parse ] --END-- [ RunTime:0.027304s ]
-INFO: [ view_filter ] --START--
-INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000984s ]
-INFO: [ view_filter ] --END-- [ RunTime:0.001064s ]
-INFO: [ app_end ] --START--
-INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001683s ]
-INFO: [ app_end ] --END-- [ RunTime:0.001841s ]
-
-[ 2016-11-02T16:33:09+08:00 ] 127.0.0.1 /index.php/Home/Admin/readallcourse.html
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000038s ]
-INFO: [ app_init ] --END-- [ RunTime:0.001341s ]
-INFO: [ app_begin ] --START--
-INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001277s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.001381s ]
-SQL: SHOW COLUMNS FROM `student` [ RunTime:0.0220s ]
-NOTIC: [8] Undefined variable: condition E:\vagrant\www\education\Application\Home\Controller\AdminController.class.php 第 176 行.
-SQL: SELECT * FROM `student` ORDER BY student_name DESC LIMIT 0,10   [ RunTime:0.0046s ]
-NOTIC: [8] Undefined variable: condition E:\vagrant\www\education\Application\Home\Controller\AdminController.class.php 第 179 行.
-SQL: SELECT COUNT(*) AS tp_count FROM `student` LIMIT 1   [ RunTime:0.0043s ]
-INFO: [ app_end ] --START--
-INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001640s ]
-INFO: [ app_end ] --END-- [ RunTime:0.001741s ]
-
-[ 2016-11-02T16:35:24+08:00 ] 127.0.0.1 /
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
-INFO: [ app_init ] --END-- [ RunTime:0.001073s ]
-INFO: [ app_begin ] --START--
-INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002169s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.002367s ]
-INFO: [ view_parse ] --START--
-INFO: [ template_filter ] --START--
-INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000182s ]
-INFO: [ template_filter ] --END-- [ RunTime:0.000325s ]
-INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.019319s ]
-INFO: [ view_parse ] --END-- [ RunTime:0.019470s ]
-INFO: [ view_filter ] --START--
-INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000819s ]
-INFO: [ view_filter ] --END-- [ RunTime:0.000906s ]
-INFO: [ app_end ] --START--
-INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001436s ]
-INFO: [ app_end ] --END-- [ RunTime:0.001537s ]
-
-[ 2016-11-02T16:35:30+08:00 ] 127.0.0.1 /index.php?m=home&c=admin&a=pay_course&_=1478075727190
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
-INFO: [ app_init ] --END-- [ RunTime:0.000750s ]
-INFO: [ app_begin ] --START--
-INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001011s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.001092s ]
-INFO: [ view_parse ] --START--
-INFO: [ template_filter ] --START--
-INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000257s ]
-INFO: [ template_filter ] --END-- [ RunTime:0.000379s ]
-INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.023409s ]
-INFO: [ view_parse ] --END-- [ RunTime:0.023542s ]
-INFO: [ view_filter ] --START--
-INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000582s ]
-INFO: [ view_filter ] --END-- [ RunTime:0.000644s ]
-INFO: [ app_end ] --START--
-INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001410s ]
-INFO: [ app_end ] --END-- [ RunTime:0.001538s ]
-
-[ 2016-11-02T16:35:31+08:00 ] 127.0.0.1 /index.php/Home/Admin/readallcourse.html
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
-INFO: [ app_init ] --END-- [ RunTime:0.000901s ]
-INFO: [ app_begin ] --START--
-INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001211s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.001315s ]
-SQL: SHOW COLUMNS FROM `student` [ RunTime:0.0149s ]
-NOTIC: [8] Undefined variable: condition E:\vagrant\www\education\Application\Home\Controller\AdminController.class.php 第 176 行.
-SQL: SELECT * FROM `student` ORDER BY student_name DESC LIMIT 0,10   [ RunTime:0.0017s ]
-NOTIC: [8] Undefined variable: condition E:\vagrant\www\education\Application\Home\Controller\AdminController.class.php 第 179 行.
-SQL: SELECT COUNT(*) AS tp_count FROM `student` LIMIT 1   [ RunTime:0.0014s ]
-INFO: [ app_end ] --START--
-INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001623s ]
-INFO: [ app_end ] --END-- [ RunTime:0.001750s ]
-
-[ 2016-11-02T16:39:38+08:00 ] 127.0.0.1 /index.php?m=home&c=admin&a=pay_course&_=1478075727191
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
-INFO: [ app_init ] --END-- [ RunTime:0.001122s ]
-INFO: [ app_begin ] --START--
-INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001425s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.001531s ]
-INFO: [ view_parse ] --START--
-INFO: [ template_filter ] --START--
-INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000346s ]
-INFO: [ template_filter ] --END-- [ RunTime:0.000486s ]
-INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.022946s ]
-INFO: [ view_parse ] --END-- [ RunTime:0.023080s ]
-INFO: [ view_filter ] --START--
-INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000844s ]
-INFO: [ view_filter ] --END-- [ RunTime:0.000923s ]
-INFO: [ app_end ] --START--
-INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001889s ]
-INFO: [ app_end ] --END-- [ RunTime:0.002034s ]
-
-[ 2016-11-02T16:39:39+08:00 ] 127.0.0.1 /index.php/Home/Admin/readallcourse.html
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
-INFO: [ app_init ] --END-- [ RunTime:0.000905s ]
-INFO: [ app_begin ] --START--
-INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001222s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.001324s ]
-SQL: SHOW COLUMNS FROM `student` [ RunTime:0.0191s ]
-NOTIC: [8] Undefined variable: condition E:\vagrant\www\education\Application\Home\Controller\AdminController.class.php 第 176 行.
-SQL: SELECT * FROM `student` ORDER BY student_name DESC LIMIT 0,10   [ RunTime:0.0031s ]
-NOTIC: [8] Undefined variable: condition E:\vagrant\www\education\Application\Home\Controller\AdminController.class.php 第 179 行.
-SQL: SELECT COUNT(*) AS tp_count FROM `student` LIMIT 1   [ RunTime:0.0015s ]
-INFO: [ app_end ] --START--
-INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001613s ]
-INFO: [ app_end ] --END-- [ RunTime:0.001717s ]
-
-[ 2016-11-02T16:39:51+08:00 ] 127.0.0.1 /
+[ 2016-11-02T19:47:46+08:00 ] 127.0.0.1 /
 INFO: [ app_init ] --START--
 INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000036s ]
-INFO: [ app_init ] --END-- [ RunTime:0.001330s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015780s ]
 INFO: [ app_begin ] --START--
-INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001284s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.001409s ]
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.023106s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.023270s ]
 INFO: [ view_parse ] --START--
 INFO: [ template_filter ] --START--
-INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000199s ]
-INFO: [ template_filter ] --END-- [ RunTime:0.000381s ]
-INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016679s ]
-INFO: [ view_parse ] --END-- [ RunTime:0.016862s ]
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000158s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000319s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.055342s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.055940s ]
 INFO: [ view_filter ] --START--
-INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000640s ]
-INFO: [ view_filter ] --END-- [ RunTime:0.000730s ]
-INFO: [ app_end ] --START--
-INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001385s ]
-INFO: [ app_end ] --END-- [ RunTime:0.001484s ]
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.019334s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.019522s ]
 
-[ 2016-11-02T16:40:40+08:00 ] 127.0.0.1 /index.php?m=home&c=admin&a=pay_course&_=1478075993580
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000038s ]
-INFO: [ app_init ] --END-- [ RunTime:0.005432s ]
-INFO: [ app_begin ] --START--
-INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004334s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.004472s ]
-INFO: [ view_parse ] --START--
-INFO: [ template_filter ] --START--
-INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000315s ]
-INFO: [ template_filter ] --END-- [ RunTime:0.000574s ]
-INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.022025s ]
-INFO: [ view_parse ] --END-- [ RunTime:0.022167s ]
-INFO: [ view_filter ] --START--
-INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000839s ]
-INFO: [ view_filter ] --END-- [ RunTime:0.000918s ]
-INFO: [ app_end ] --START--
-INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.006376s ]
-INFO: [ app_end ] --END-- [ RunTime:0.006638s ]
-
-[ 2016-11-02T16:40:41+08:00 ] 127.0.0.1 /index.php/Home/Admin/readallcourse.html
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
-INFO: [ app_init ] --END-- [ RunTime:0.000904s ]
-INFO: [ app_begin ] --START--
-INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001210s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.001314s ]
-SQL: SHOW COLUMNS FROM `student` [ RunTime:0.0166s ]
-NOTIC: [8] Undefined variable: condition E:\vagrant\www\education\Application\Home\Controller\AdminController.class.php 第 176 行.
-SQL: SELECT * FROM `student` ORDER BY student_name DESC LIMIT 0,10   [ RunTime:0.0026s ]
-NOTIC: [8] Undefined variable: condition E:\vagrant\www\education\Application\Home\Controller\AdminController.class.php 第 179 行.
-SQL: SELECT COUNT(*) AS tp_count FROM `student` LIMIT 1   [ RunTime:0.0019s ]
-INFO: [ app_end ] --START--
-INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002199s ]
-INFO: [ app_end ] --END-- [ RunTime:0.002341s ]
-
-[ 2016-11-02T16:41:45+08:00 ] 127.0.0.1 /
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000037s ]
-INFO: [ app_init ] --END-- [ RunTime:0.001666s ]
-INFO: [ app_begin ] --START--
-INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001420s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.001563s ]
-INFO: [ view_parse ] --START--
-INFO: [ template_filter ] --START--
-INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000276s ]
-INFO: [ template_filter ] --END-- [ RunTime:0.000480s ]
-INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.017966s ]
-INFO: [ view_parse ] --END-- [ RunTime:0.018140s ]
-INFO: [ view_filter ] --START--
-INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001870s ]
-INFO: [ view_filter ] --END-- [ RunTime:0.002025s ]
-INFO: [ app_end ] --START--
-INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002630s ]
-INFO: [ app_end ] --END-- [ RunTime:0.002830s ]
-
-[ 2016-11-02T16:41:51+08:00 ] 127.0.0.1 /index.php?m=home&c=admin&a=pay_course&_=1478076108156
+[ 2016-11-02T19:47:46+08:00 ] 127.0.0.1 /index.php/Home/Index/verify.html
 INFO: [ app_init ] --START--
 INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
-INFO: [ app_init ] --END-- [ RunTime:0.000961s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000958s ]
 INFO: [ app_begin ] --START--
-INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001234s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.001327s ]
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001272s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001384s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.045308s ]
+INFO: [ app_end ] --END-- [ RunTime:0.045840s ]
+
+[ 2016-11-02T19:47:56+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000039s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001222s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001274s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001420s ]
+SQL: SHOW COLUMNS FROM `admin` [ RunTime:0.0373s ]
+SQL: SELECT * FROM `admin` WHERE `name` = 'admin' AND `password` = 'admin' LIMIT 1   [ RunTime:0.0023s ]
 INFO: [ view_parse ] --START--
 INFO: [ template_filter ] --START--
-INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000311s ]
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000165s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000304s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.021752s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.021919s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000734s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000825s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001541s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001645s ]
+
+[ 2016-11-02T19:47:59+08:00 ] 127.0.0.1 /index.php?m=home&c=admin&a=item&_=1478087276949
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000977s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001231s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001326s ]
+ERR: syntax error, unexpected '>>' (T_SR), expecting end of file
+
+[ 2016-11-02T19:48:07+08:00 ] 127.0.0.1 /index.php?m=home&c=admin&a=teacher&_=1478087276950
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001170s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001314s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001574s ]
+ERR: syntax error, unexpected '>>' (T_SR), expecting end of file
+
+[ 2016-11-02T19:48:09+08:00 ] 127.0.0.1 /index.php?m=home&c=admin&a=pay_course&_=1478087276951
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000918s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001520s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001792s ]
+ERR: syntax error, unexpected '>>' (T_SR), expecting end of file
+
+[ 2016-11-02T19:48:10+08:00 ] 127.0.0.1 /index.php?m=home&c=admin&a=pay_course_select&_=1478087276952
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000937s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001613s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001746s ]
+ERR: syntax error, unexpected '>>' (T_SR), expecting end of file
+
+[ 2016-11-02T19:49:05+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000781s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000967s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001054s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000127s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000242s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012951s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013083s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000760s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000834s ]
+
+[ 2016-11-02T19:49:06+08:00 ] 127.0.0.1 /index.php/Home/Index/verify.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000592s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000786s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000859s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000935s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001031s ]
+
+[ 2016-11-02T19:49:24+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000920s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001192s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001307s ]
+SQL: SHOW COLUMNS FROM `admin` [ RunTime:0.0177s ]
+SQL: SELECT * FROM `admin` WHERE `name` = 'admin' AND `password` = 'admin' LIMIT 1   [ RunTime:0.0045s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000166s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000301s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015498s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015651s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000634s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000722s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001583s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001689s ]
+
+[ 2016-11-02T19:49:27+08:00 ] 127.0.0.1 /index.php?m=home&c=admin&a=item&_=1478087365580
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000038s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001260s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001493s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001598s ]
+ERR: syntax error, unexpected '>>' (T_SR), expecting end of file
+
+[ 2016-11-02T19:49:40+08:00 ] 127.0.0.1 /index.php?m=home&c=admin&a=item&_=1478087365581
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000975s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001194s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001290s ]
+ERR: syntax error, unexpected '>>' (T_SR), expecting end of file
+
+[ 2016-11-02T19:50:08+08:00 ] 127.0.0.1 /index.php?m=home&c=admin&a=teacher&_=1478087365582
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001125s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001364s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001468s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000504s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000695s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.021631s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.021763s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000845s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000922s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001777s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001914s ]
+
+[ 2016-11-02T19:50:09+08:00 ] 127.0.0.1 /index.php/Home/Admin/readallteacher.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000037s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002295s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002099s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002244s ]
+SQL: SHOW COLUMNS FROM `teacher` [ RunTime:0.0466s ]
+SQL: SELECT * FROM `teacher` WHERE `extend` = 0 ORDER BY teacher_no DESC LIMIT 0,10   [ RunTime:0.0055s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `teacher` WHERE `extend` = 0 LIMIT 1   [ RunTime:0.0036s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002174s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002320s ]
+
+[ 2016-11-02T19:50:14+08:00 ] 127.0.0.1 /index.php?m=home&c=admin&a=item&_=1478087365583
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001003s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001247s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001339s ]
+NOTIC: [8] Use of undefined constant session - assumed 'session' E:\vagrant\www\education\Application\Home\Controller\AdminController.class.php 第 229 行.
+NOTIC: [2] Illegal string offset 'user_name' E:\vagrant\www\education\Application\Home\Controller\AdminController.class.php 第 229 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000300s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000423s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.021892s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.022052s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000669s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000745s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001845s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002051s ]
+
+[ 2016-11-02T19:50:14+08:00 ] 127.0.0.1 /index.php/Home/Admin/readallitem.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000988s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001225s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001330s ]
+SQL: SHOW COLUMNS FROM `items` [ RunTime:0.0160s ]
+ERR: 1054:Unknown column 'items.items_teacher_id' in 'on clause'
+ [ SQL语句 ] : SELECT * FROM `items` INNER JOIN teacher on items.items_teacher_id=teacher.teacher_id  WHERE `extend` = 0 ORDER BY items_name DESC LIMIT 0,10  
+ERR: 1054:Unknown column 'items.items_teacher_id' in 'on clause'
+ [ SQL语句 ] : SELECT * FROM `items` INNER JOIN teacher on items.items_teacher_id=teacher.teacher_id  WHERE `extend` = 0 ORDER BY items_name DESC LIMIT 0,10  
+
+[ 2016-11-02T20:12:08+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001348s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001813s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002073s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000164s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000304s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.017453s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.017628s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000909s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001447s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001545s ]
+
+[ 2016-11-02T20:12:16+08:00 ] 127.0.0.1 /index.php?m=home&c=admin&a=item&_=1478088730921
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000997s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003434s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003805s ]
+NOTIC: [8] Use of undefined constant session - assumed 'session' E:\vagrant\www\education\Application\Home\Controller\AdminController.class.php 第 229 行.
+NOTIC: [2] Illegal string offset 'user_name' E:\vagrant\www\education\Application\Home\Controller\AdminController.class.php 第 229 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000301s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000422s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.020314s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.020428s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001286s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001415s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002248s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002449s ]
+
+[ 2016-11-02T20:12:17+08:00 ] 127.0.0.1 /index.php/Home/Admin/readallitem.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000743s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000971s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001052s ]
+SQL: SHOW COLUMNS FROM `items` [ RunTime:0.0303s ]
+SQL: SELECT * FROM `items` INNER JOIN teacher on items.items_teacher_id=teacher.teacher_id  WHERE `extend` = 0 ORDER BY items_name DESC LIMIT 0,10   [ RunTime:0.0285s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `items` LIMIT 1   [ RunTime:0.0026s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002912s ]
+INFO: [ app_end ] --END-- [ RunTime:0.003036s ]
+
+[ 2016-11-02T20:12:22+08:00 ] 127.0.0.1 /index.php?m=home&c=admin&a=teacher&_=1478088730922
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000037s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004038s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001602s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001778s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000349s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000519s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.030573s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.030716s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001224s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001341s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.012251s ]
+INFO: [ app_end ] --END-- [ RunTime:0.012515s ]
+
+[ 2016-11-02T20:12:23+08:00 ] 127.0.0.1 /index.php/Home/Admin/readallteacher.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000901s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001495s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001663s ]
+SQL: SHOW COLUMNS FROM `teacher` [ RunTime:0.0214s ]
+SQL: SELECT * FROM `teacher` WHERE `extend` = 0 ORDER BY teacher_no DESC LIMIT 0,10   [ RunTime:0.0046s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `teacher` WHERE `extend` = 0 LIMIT 1   [ RunTime:0.0040s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001605s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001709s ]
+
+[ 2016-11-02T20:12:23+08:00 ] 127.0.0.1 /index.php?m=home&c=admin&a=student&_=1478088730923
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000038s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001674s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001261s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001544s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000300s ]
 INFO: [ template_filter ] --END-- [ RunTime:0.000432s ]
-INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.019262s ]
-INFO: [ view_parse ] --END-- [ RunTime:0.019386s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.039592s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.039740s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000651s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000727s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001801s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002076s ]
+
+[ 2016-11-02T20:12:24+08:00 ] 127.0.0.1 /index.php/Home/Admin/readallstudent.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000908s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001191s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001288s ]
+SQL: SHOW COLUMNS FROM `student` [ RunTime:0.0211s ]
+NOTIC: [8] Undefined variable: condition E:\vagrant\www\education\Application\Home\Controller\AdminController.class.php 第 112 行.
+SQL: SELECT * FROM `student` ORDER BY student_name DESC LIMIT 0,10   [ RunTime:0.0024s ]
+NOTIC: [8] Undefined variable: condition E:\vagrant\www\education\Application\Home\Controller\AdminController.class.php 第 115 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `student` LIMIT 1   [ RunTime:0.0020s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001655s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001756s ]
+
+[ 2016-11-02T20:12:35+08:00 ] 127.0.0.1 /index.php/Home/Admin/updatestudent_info.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000037s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001807s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004878s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.007540s ]
+SQL: SHOW COLUMNS FROM `student` [ RunTime:0.0175s ]
+SQL: UPDATE `student` SET `student_birthday`='1899-11-16',`student_tel`='1231232',`student_name`='412331',`student_remark`='12312312312',`student_sex`='男' WHERE `student_id` = 1 [ RunTime:0.0681s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001355s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001447s ]
+
+[ 2016-11-02T20:12:35+08:00 ] 127.0.0.1 /index.php/Home/Admin/readallstudent.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000748s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000965s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001043s ]
+SQL: SHOW COLUMNS FROM `student` [ RunTime:0.0150s ]
+NOTIC: [8] Undefined variable: condition E:\vagrant\www\education\Application\Home\Controller\AdminController.class.php 第 112 行.
+SQL: SELECT * FROM `student` ORDER BY student_name DESC LIMIT 0,10   [ RunTime:0.0028s ]
+NOTIC: [8] Undefined variable: condition E:\vagrant\www\education\Application\Home\Controller\AdminController.class.php 第 115 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `student` LIMIT 1   [ RunTime:0.0020s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001386s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001582s ]
+
+[ 2016-11-02T20:12:41+08:00 ] 127.0.0.1 /index.php/Home/Admin/deletestudent_info.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000938s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001877s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002027s ]
+SQL: SHOW COLUMNS FROM `student` [ RunTime:0.0166s ]
+SQL: DELETE FROM `student` WHERE `student_id` IN ('1') [ RunTime:0.0725s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001625s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001727s ]
+
+[ 2016-11-02T20:12:41+08:00 ] 127.0.0.1 /index.php/Home/Admin/readallstudent.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000911s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004977s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005433s ]
+SQL: SHOW COLUMNS FROM `student` [ RunTime:0.0179s ]
+NOTIC: [8] Undefined variable: condition E:\vagrant\www\education\Application\Home\Controller\AdminController.class.php 第 112 行.
+SQL: SELECT * FROM `student` ORDER BY student_name DESC LIMIT 0,10   [ RunTime:0.0043s ]
+NOTIC: [8] Undefined variable: condition E:\vagrant\www\education\Application\Home\Controller\AdminController.class.php 第 115 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `student` LIMIT 1   [ RunTime:0.0041s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001627s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001729s ]
+
+[ 2016-11-02T20:12:51+08:00 ] 127.0.0.1 /index.php/Home/Admin/read_all_teacher.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000906s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001208s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001305s ]
+SQL: SHOW COLUMNS FROM `teacher` [ RunTime:0.0176s ]
+SQL: SELECT `teacher_id`,`teacher_name`,`selected` FROM `teacher`  [ RunTime:0.0018s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001869s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001983s ]
+
+[ 2016-11-02T20:12:58+08:00 ] 127.0.0.1 /index.php/Home/Admin/updateitem_info.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000036s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001623s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001223s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001327s ]
+SQL: SHOW COLUMNS FROM `items` [ RunTime:0.0189s ]
+SQL: UPDATE `items` SET `items_name`='突然突然',`items_times`='11',`items_price`='11',`items_teacher_id`='1' WHERE `items_id` = 32 [ RunTime:0.0639s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001549s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001649s ]
+
+[ 2016-11-02T20:12:58+08:00 ] 127.0.0.1 /index.php/Home/Admin/readallitem.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000929s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001203s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001309s ]
+SQL: SHOW COLUMNS FROM `items` [ RunTime:0.0182s ]
+SQL: SELECT * FROM `items` INNER JOIN teacher on items.items_teacher_id=teacher.teacher_id  WHERE `extend` = 0 ORDER BY items_name DESC LIMIT 0,10   [ RunTime:0.0046s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `items` LIMIT 1   [ RunTime:0.0013s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001563s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001664s ]
+
+[ 2016-11-02T20:13:03+08:00 ] 127.0.0.1 /index.php/Home/Admin/deleteitem_info.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000900s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001211s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001308s ]
+SQL: SHOW COLUMNS FROM `items` [ RunTime:0.0165s ]
+SQL: DELETE FROM `items` WHERE `items_id` IN ('32') [ RunTime:0.0446s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001610s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001706s ]
+
+[ 2016-11-02T20:13:03+08:00 ] 127.0.0.1 /index.php/Home/Admin/readallitem.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000049s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001420s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001327s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001448s ]
+SQL: SHOW COLUMNS FROM `items` [ RunTime:0.0203s ]
+SQL: SELECT * FROM `items` INNER JOIN teacher on items.items_teacher_id=teacher.teacher_id  WHERE `extend` = 0 ORDER BY items_name DESC LIMIT 0,10   [ RunTime:0.0040s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `items` LIMIT 1   [ RunTime:0.0020s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001919s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002064s ]
+
+[ 2016-11-02T20:13:13+08:00 ] 127.0.0.1 /index.php/Home/Admin/deleteitem_info.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000953s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001212s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001310s ]
+SQL: SHOW COLUMNS FROM `items` [ RunTime:0.0166s ]
+SQL: DELETE FROM `items` WHERE `items_id` IN ('63','64','62','35') [ RunTime:0.1156s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001626s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001729s ]
+
+[ 2016-11-02T20:13:13+08:00 ] 127.0.0.1 /index.php/Home/Admin/readallitem.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000224s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002148s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001284s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001389s ]
+SQL: SHOW COLUMNS FROM `items` [ RunTime:0.0170s ]
+SQL: SELECT * FROM `items` INNER JOIN teacher on items.items_teacher_id=teacher.teacher_id  WHERE `extend` = 0 ORDER BY items_name DESC LIMIT 0,10   [ RunTime:0.0117s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `items` LIMIT 1   [ RunTime:0.0045s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002234s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002378s ]
+
+[ 2016-11-02T20:13:18+08:00 ] 127.0.0.1 /index.php/Home/Admin/deleteitem_info.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000038s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004178s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002010s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002187s ]
+SQL: SHOW COLUMNS FROM `items` [ RunTime:0.0194s ]
+SQL: DELETE FROM `items` WHERE `items_id` IN ('40','58','56','55') [ RunTime:0.0502s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002106s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002261s ]
+
+[ 2016-11-02T20:13:18+08:00 ] 127.0.0.1 /index.php/Home/Admin/readallitem.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000982s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001211s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001314s ]
+SQL: SHOW COLUMNS FROM `items` [ RunTime:0.0317s ]
+SQL: SELECT * FROM `items` INNER JOIN teacher on items.items_teacher_id=teacher.teacher_id  WHERE `extend` = 0 ORDER BY items_name DESC LIMIT 0,10   [ RunTime:0.0066s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `items` LIMIT 1   [ RunTime:0.0018s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001329s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001411s ]
+
+[ 2016-11-02T20:13:23+08:00 ] 127.0.0.1 /index.php/Home/Admin/deleteitem_info.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001179s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002105s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002281s ]
+SQL: SHOW COLUMNS FROM `items` [ RunTime:0.0154s ]
+SQL: DELETE FROM `items` WHERE `items_id` IN ('61','57','48','67') [ RunTime:0.1151s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001509s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001610s ]
+
+[ 2016-11-02T20:13:23+08:00 ] 127.0.0.1 /index.php/Home/Admin/readallitem.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001442s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001669s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001798s ]
+SQL: SHOW COLUMNS FROM `items` [ RunTime:0.0140s ]
+SQL: SELECT * FROM `items` INNER JOIN teacher on items.items_teacher_id=teacher.teacher_id  WHERE `extend` = 0 ORDER BY items_name DESC LIMIT 0,10   [ RunTime:0.0034s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `items` LIMIT 1   [ RunTime:0.0025s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001352s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001441s ]
+
+[ 2016-11-02T20:13:29+08:00 ] 127.0.0.1 /index.php/Home/Admin/deleteitem_info.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000037s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004087s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001289s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001390s ]
+SQL: SHOW COLUMNS FROM `items` [ RunTime:0.0198s ]
+SQL: DELETE FROM `items` WHERE `items_id` IN ('69','36') [ RunTime:0.0607s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002194s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002355s ]
+
+[ 2016-11-02T20:13:29+08:00 ] 127.0.0.1 /index.php/Home/Admin/readallitem.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000742s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000971s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001049s ]
+SQL: SHOW COLUMNS FROM `items` [ RunTime:0.0164s ]
+SQL: SELECT * FROM `items` INNER JOIN teacher on items.items_teacher_id=teacher.teacher_id  WHERE `extend` = 0 ORDER BY items_name DESC LIMIT 0,10   [ RunTime:0.0115s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `items` LIMIT 1   [ RunTime:0.0029s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001628s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001761s ]
+
+[ 2016-11-02T20:15:03+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001087s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001534s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001681s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000215s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000731s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.018313s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.018466s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000818s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000909s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001820s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002049s ]
+
+[ 2016-11-02T20:15:08+08:00 ] 127.0.0.1 /index.php?m=home&c=admin&a=item&_=1478088905743
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001156s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001220s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001311s ]
+NOTIC: [8] Use of undefined constant session - assumed 'session' E:\vagrant\www\education\Application\Home\Controller\AdminController.class.php 第 229 行.
+NOTIC: [2] Illegal string offset 'user_name' E:\vagrant\www\education\Application\Home\Controller\AdminController.class.php 第 229 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000306s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000447s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.019559s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.019675s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000656s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000731s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.003690s ]
+INFO: [ app_end ] --END-- [ RunTime:0.003931s ]
+
+[ 2016-11-02T20:15:08+08:00 ] 127.0.0.1 /index.php/Home/Admin/readallitem.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000035s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001622s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001561s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001716s ]
+SQL: SHOW COLUMNS FROM `items` [ RunTime:0.0168s ]
+SQL: SELECT * FROM `items` INNER JOIN teacher on items.items_teacher_id=teacher.teacher_id  WHERE `extend` = 0 ORDER BY items_name DESC LIMIT 0,10   [ RunTime:0.0051s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `items` LIMIT 1   [ RunTime:0.0015s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001633s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001739s ]
+
+[ 2016-11-02T20:15:09+08:00 ] 127.0.0.1 /index.php?m=home&c=admin&a=teacher&_=1478088905744
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001106s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001335s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001436s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000329s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000456s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.025070s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.025221s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000669s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000745s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001524s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001651s ]
+
+[ 2016-11-02T20:15:10+08:00 ] 127.0.0.1 /index.php/Home/Admin/readallteacher.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000902s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001594s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001777s ]
+SQL: SHOW COLUMNS FROM `teacher` [ RunTime:0.0184s ]
+SQL: SELECT * FROM `teacher` WHERE `extend` = 0 ORDER BY teacher_no DESC LIMIT 0,10   [ RunTime:0.0039s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `teacher` WHERE `extend` = 0 LIMIT 1   [ RunTime:0.0027s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001637s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001738s ]
+
+[ 2016-11-02T20:15:11+08:00 ] 127.0.0.1 /index.php?m=home&c=admin&a=student&_=1478088905745
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000040s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002893s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001261s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001356s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000301s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000428s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.025851s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.025993s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000896s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000975s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001427s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001529s ]
+
+[ 2016-11-02T20:15:11+08:00 ] 127.0.0.1 /index.php/Home/Admin/readallstudent.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000910s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001192s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001290s ]
+SQL: SHOW COLUMNS FROM `student` [ RunTime:0.0189s ]
+NOTIC: [8] Undefined variable: condition E:\vagrant\www\education\Application\Home\Controller\AdminController.class.php 第 112 行.
+SQL: SELECT * FROM `student` ORDER BY student_name DESC LIMIT 0,10   [ RunTime:0.0026s ]
+NOTIC: [8] Undefined variable: condition E:\vagrant\www\education\Application\Home\Controller\AdminController.class.php 第 115 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `student` LIMIT 1   [ RunTime:0.0024s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001862s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002182s ]
+
+[ 2016-11-02T20:15:12+08:00 ] 127.0.0.1 /index.php?m=home&c=admin&a=pay_course&_=1478088905746
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001145s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001285s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001387s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001722s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.002464s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.045631s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.045763s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000654s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000730s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.008928s ]
+INFO: [ app_end ] --END-- [ RunTime:0.009817s ]
+
+[ 2016-11-02T20:15:14+08:00 ] 127.0.0.1 /index.php?m=home&c=admin&a=pay_course_select&_=1478088905747
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000040s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002275s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001841s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001981s ]
+ERR: 非法操作:pay_course_select
+
+[ 2016-11-02T20:15:15+08:00 ] 127.0.0.1 /index.php?m=home&c=admin&a=pay_course&_=1478088905748
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000941s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001199s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001289s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000414s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000560s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.020663s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.020856s ]
 INFO: [ view_filter ] --START--
 INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000644s ]
 INFO: [ view_filter ] --END-- [ RunTime:0.000719s ]
 INFO: [ app_end ] --START--
-INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001502s ]
-INFO: [ app_end ] --END-- [ RunTime:0.001624s ]
-
-[ 2016-11-02T16:41:53+08:00 ] 127.0.0.1 /index.php/Home/Admin/readallcourse.html
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000048s ]
-INFO: [ app_init ] --END-- [ RunTime:0.001615s ]
-INFO: [ app_begin ] --START--
-INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001361s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.001485s ]
-SQL: SHOW COLUMNS FROM `student` [ RunTime:0.0176s ]
-NOTIC: [8] Undefined variable: condition E:\vagrant\www\education\Application\Home\Controller\AdminController.class.php 第 176 行.
-SQL: SELECT * FROM `student` ORDER BY student_name DESC LIMIT 0,10   [ RunTime:0.0027s ]
-NOTIC: [8] Undefined variable: condition E:\vagrant\www\education\Application\Home\Controller\AdminController.class.php 第 179 行.
-SQL: SELECT COUNT(*) AS tp_count FROM `student` LIMIT 1   [ RunTime:0.0020s ]
-INFO: [ app_end ] --START--
-INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001906s ]
-INFO: [ app_end ] --END-- [ RunTime:0.002014s ]
-
-[ 2016-11-02T16:43:07+08:00 ] 127.0.0.1 /
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
-INFO: [ app_init ] --END-- [ RunTime:0.000907s ]
-INFO: [ app_begin ] --START--
-INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001202s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.001424s ]
-INFO: [ view_parse ] --START--
-INFO: [ template_filter ] --START--
-INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000178s ]
-INFO: [ template_filter ] --END-- [ RunTime:0.000314s ]
-INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.018203s ]
-INFO: [ view_parse ] --END-- [ RunTime:0.018672s ]
-INFO: [ view_filter ] --START--
-INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001085s ]
-INFO: [ view_filter ] --END-- [ RunTime:0.001194s ]
-INFO: [ app_end ] --START--
-INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001346s ]
-INFO: [ app_end ] --END-- [ RunTime:0.001442s ]
-
-[ 2016-11-02T16:43:14+08:00 ] 127.0.0.1 /index.php?m=home&c=admin&a=pay_course&_=1478076190290
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
-INFO: [ app_init ] --END-- [ RunTime:0.000907s ]
-INFO: [ app_begin ] --START--
-INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001207s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.001300s ]
-INFO: [ view_parse ] --START--
-INFO: [ template_filter ] --START--
-INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000403s ]
-INFO: [ template_filter ] --END-- [ RunTime:0.000538s ]
-INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.027883s ]
-INFO: [ view_parse ] --END-- [ RunTime:0.027999s ]
-INFO: [ view_filter ] --START--
-INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001054s ]
-INFO: [ view_filter ] --END-- [ RunTime:0.001159s ]
-INFO: [ app_end ] --START--
-INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001377s ]
-INFO: [ app_end ] --END-- [ RunTime:0.001512s ]
-
-[ 2016-11-02T16:43:15+08:00 ] 127.0.0.1 /index.php/Home/Admin/readallcourse.html
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
-INFO: [ app_init ] --END-- [ RunTime:0.000752s ]
-INFO: [ app_begin ] --START--
-INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000981s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.001065s ]
-SQL: SHOW COLUMNS FROM `student` [ RunTime:0.0127s ]
-NOTIC: [8] Undefined variable: condition E:\vagrant\www\education\Application\Home\Controller\AdminController.class.php 第 176 行.
-SQL: SELECT * FROM `student` ORDER BY student_name DESC LIMIT 0,10   [ RunTime:0.0014s ]
-NOTIC: [8] Undefined variable: condition E:\vagrant\www\education\Application\Home\Controller\AdminController.class.php 第 179 行.
-SQL: SELECT COUNT(*) AS tp_count FROM `student` LIMIT 1   [ RunTime:0.0008s ]
-INFO: [ app_end ] --START--
-INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001534s ]
-INFO: [ app_end ] --END-- [ RunTime:0.001633s ]
-
-[ 2016-11-02T16:47:40+08:00 ] 127.0.0.1 /
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
-INFO: [ app_init ] --END-- [ RunTime:0.001252s ]
-INFO: [ app_begin ] --START--
-INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001367s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.001485s ]
-INFO: [ view_parse ] --START--
-INFO: [ template_filter ] --START--
-INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000185s ]
-INFO: [ template_filter ] --END-- [ RunTime:0.000340s ]
-INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.023331s ]
-INFO: [ view_parse ] --END-- [ RunTime:0.023495s ]
-INFO: [ view_filter ] --START--
-INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000835s ]
-INFO: [ view_filter ] --END-- [ RunTime:0.000926s ]
-INFO: [ app_end ] --START--
-INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001440s ]
-INFO: [ app_end ] --END-- [ RunTime:0.001533s ]
-
-[ 2016-11-02T16:48:47+08:00 ] 127.0.0.1 /index.php?m=home&c=admin&a=pay_course&_=1478076463280
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000039s ]
-INFO: [ app_init ] --END-- [ RunTime:0.001683s ]
-INFO: [ app_begin ] --START--
-INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002036s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.002192s ]
-INFO: [ view_parse ] --START--
-INFO: [ template_filter ] --START--
-INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000318s ]
-INFO: [ template_filter ] --END-- [ RunTime:0.000444s ]
-INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.027262s ]
-INFO: [ view_parse ] --END-- [ RunTime:0.027405s ]
-INFO: [ view_filter ] --START--
-INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000656s ]
-INFO: [ view_filter ] --END-- [ RunTime:0.000734s ]
-INFO: [ app_end ] --START--
-INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002962s ]
-INFO: [ app_end ] --END-- [ RunTime:0.003142s ]
-
-[ 2016-11-02T16:48:48+08:00 ] 127.0.0.1 /index.php/Home/Admin/readallcourse.html
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
-INFO: [ app_init ] --END-- [ RunTime:0.001131s ]
-INFO: [ app_begin ] --START--
-INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001237s ]
-INFO: [ app_begin ] --END-- [ RunTime:0.001340s ]
-SQL: SHOW COLUMNS FROM `student` [ RunTime:0.0172s ]
-NOTIC: [8] Undefined variable: condition E:\vagrant\www\education\Application\Home\Controller\AdminController.class.php 第 176 行.
-SQL: SELECT * FROM `student` ORDER BY student_name DESC LIMIT 0,10   [ RunTime:0.0026s ]
-NOTIC: [8] Undefined variable: condition E:\vagrant\www\education\Application\Home\Controller\AdminController.class.php 第 179 行.
-SQL: SELECT COUNT(*) AS tp_count FROM `student` LIMIT 1   [ RunTime:0.0026s ]
-INFO: [ app_end ] --START--
-INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001918s ]
-INFO: [ app_end ] --END-- [ RunTime:0.002103s ]
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002825s ]
+INFO: [ app_end ] --END-- [ RunTime:0.003008s ]
 

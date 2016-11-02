@@ -3,7 +3,6 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>智能培训考勤管理系统</title>
-    <link rel="stylesheet" type="text/css" href="http://localhost:8080/skin/demo/upload/uploadify.css">
     <link rel="stylesheet" type="text/css" href="./skin/easyui/themes/default/easyui.css" />
     <link rel="stylesheet" type="text/css" href="./skin/easyui/themes/icon.css" />
     <link rel="stylesheet" type="text/css" href="./skin/css/main.css" />
@@ -11,7 +10,6 @@
     <script type="text/javascript" src="./skin/easyui/jquery.easyui.min.js"></script>
     <script type="text/javascript" src="./skin/easyui/locale/easyui-lang-zh_CN.js" ></script>
 
-    <!--<script type="text/javascript" src="./skin/js/main_student.js" ></script>-->
     <script type="text/javascript">
         $(function () {
             $('#box').layout({
