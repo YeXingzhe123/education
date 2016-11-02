@@ -226,22 +226,10 @@ class AdminController extends Controller  {
 
     public function item()
     {
-        if (!session['user_name']) {
-             session('[destroy]');
-            echo("<script type='text/javascript'  > alert('违法操作'); window.location.reload();</script>");
-            exit();
-
-        }
         $this->display();
     }
 
     public function readallitem(){
-        if(session("user_name")==null){
-
-            session('[destroy]');
-            echo('<script type="text/javascript">alert("发生错误，请重新登录");window.location.href="'.SRC_PATH.'";</script>"');
-            exit();
-        }
         $page=I("post.page");
         $pagesize=I("post.rows");
         $sort=I("post.sort");
@@ -260,14 +248,6 @@ class AdminController extends Controller  {
     }
 
     public function additem_info(){
-
-        if(session("user_name")==null){
-
-            session('[destroy]');
-            echo('<script type="text/javascript">alert("违法操作，请重新登录");window.location.href="'.SRC_PATH.'";</script>"');
-            exit();
-        }
-
         $row = I("post.row");
         $data["items_name"]=$row["items_name"];
         $data["items_times"]=$row["items_times"];
@@ -285,12 +265,6 @@ class AdminController extends Controller  {
     }
 
     public function updateitem_info(){
-        if(session("user_name")==null){
-            session('[destroy]');
-            echo('<script type="text/javascript">alert("违法操作，请重新登录");window.location.href="'.SRC_PATH.'";</script>"');
-            exit();
-        }
-
         $row = I("post.row");
         $data["items_name"]=$row["items_name"];
         $data["items_times"]=$row["items_times"];
@@ -309,12 +283,6 @@ class AdminController extends Controller  {
     }
 
     public function deleteitem_info(){
-        if(session("user_name")==null){
-
-            session('[destroy]');
-            echo('<script type="text/javascript">alert("违法操作，请重新登录");window.location.href="'.SRC_PATH.'";</script>"');
-            exit();
-        }
         $ids =I("post.ids");
         $items=M("Items");
         $condition["items_id"]=Array("IN","$ids");
@@ -325,13 +293,6 @@ class AdminController extends Controller  {
 
     public function read_all_teacher()
     {
-        if(session("user_name")==null){
-
-            session('[destroy]');
-            echo('<script type="text/javascript">alert("违法操作，请重新登录");window.location.href="'.SRC_PATH.'";</script>"');
-            exit();
-        }
-
         $teacher=M("Teacher");
         $result=$teacher->field('teacher_id,teacher_name,selected')->select();
         $json = json_encode($result);
