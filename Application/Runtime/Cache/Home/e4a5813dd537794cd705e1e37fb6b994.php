@@ -1,32 +1,49 @@
-<div style="position: relative;left: 0px;top: 0px;">
+<?php if (!defined('THINK_PATH')) exit();?><div style="position: relative;left: 0px;top: 0px;">
     <div style="position: absolute;left:10px;top: 10px;">学生添加修改 >>
         <font style="font-weight: bold"> 添加/修改学生</font> </div>
-    <div style="position: absolute;left: 50px;top: 30px;"><table id="admin_student_box" style="width: 900px;"></table>
+    <div style="position: absolute;left: 50px;top: 30px;"><table id="admin_course_box" style="width: 900px;"></table>
 </div>
-<div id="admin_student_tb" style="">
+<div id="admin_course_tb" style="">
     <div style="">
         <table style="width: 890px">
             <tr><td style="width: 450px;text-align: left;">
-        <a href="#" class="easyui-linkbutton" iconCls="icon-add" plain="true" onclick="obj_admin_student.add();">添加</a>
-        <a href="#" class="easyui-linkbutton" iconCls="icon-edit" plain="true" onclick="obj_admin_student.edit();">修改</a>
-        <a href="#" class="easyui-linkbutton" iconCls="icon-remove" plain="true" onclick="obj_admin_student.remove();">删除</a>
-        <a href="#" class="easyui-linkbutton" iconCls="icon-save" plain="true" style="display:none;" id="save" onclick="obj_admin_student.save();">保存</a>
-        <a href="#" class="easyui-linkbutton" iconCls="icon-redo" plain="true" style="display:none;" id="redo" onclick="obj_admin_student.redo();">取消编辑</a>
+        <a href="#" class="easyui-linkbutton" iconCls="icon-add" plain="true" onclick="obj_admin_course.add();">添加</a>
+        <a href="#" class="easyui-linkbutton" iconCls="icon-edit" plain="true" onclick="obj_admin_course.edit();">修改</a>
+        <a href="#" class="easyui-linkbutton" iconCls="icon-remove" plain="true" onclick="obj_admin_course.remove();">删除</a>
+        <a href="#" class="easyui-linkbutton" iconCls="icon-save" plain="true" style="display:none;" id="save" onclick="obj_admin_course.save();">保存</a>
+        <a href="#" class="easyui-linkbutton" iconCls="icon-redo" plain="true" style="display:none;" id="redo" onclick="obj_admin_course.redo();">取消编辑</a>
             </td>
                 <td style="width: 450px;text-align: right;">
         查询姓名：<input type="text" class="textbox" name="student_name" style="width:110px">
 
-        <a href="#" class="easyui-linkbutton" iconCls="icon-search" onclick="obj_admin_student.search();">查询</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="#" class="easyui-linkbutton" iconCls="icon-search" onclick="obj_admin_course.search();">查询</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 </td>  </tr> </table>
     </div>
 </div></div>
+
+    <div id="w" class="easyui-window" title="Modal Window" data-options="modal:true,closed:true,iconCls:'icon-save'" style="width:500px;height:200px;padding:10px;">
+        <div class="easyui-layout" data-options="fit:true">
+            <div data-options="region:'center'" style="padding:10px;">
+                jQuery EasyUI framework help you build your web page easily.
+            </div>
+
+            <div data-options="region:'south',border:false" style="text-align:right;padding:5px 0 0;">
+                <a class="easyui-linkbutton" data-options="iconCls:'icon-ok'" href="javascript:void(0)" onclick="javascript:alert('ok')" style="width:80px">Ok</a>
+                <a class="easyui-linkbutton" data-options="iconCls:'icon-cancel'" href="javascript:void(0)" onclick="$('#w').window('close')" style="width:80px">Cancel</a>
+            </div>
+        </div>
+    </div>
+
+
+
+
 <script type="text/javascript">
 $(function () {
 
-    obj_admin_student = {
+    obj_admin_course = {
         editRow : undefined,
         search : function () {
-            $('#admin_student_box').datagrid('load', {
+            $('#admin_course_box').datagrid('load', {
                 student_name : $.trim($('input[name="student_name"]').val()),
             });
         },
@@ -43,10 +60,10 @@ $(function () {
 
             if (this.editRow == undefined) {
                 //添加一行
-                $('#admin_student_box').datagrid('insertRow', {
+                $('#admin_course_box').datagrid('insertRow', {
                     index : 0,
                     row : {
-                        student_sex:'男',
+                        course_sex:'男',
                         //password:'123456',
                         /*
                          user : 'bnbbs',
@@ -57,7 +74,7 @@ $(function () {
                 });
 
                 //将第一行设置为可编辑状态
-                $('#admin_student_box').datagrid('beginEdit', 0);
+                $('#admin_course_box').datagrid('beginEdit', 0);
 
                 this.editRow = 0;
             }
@@ -67,55 +84,55 @@ $(function () {
             //$('#save,#redo').hide();
             //this.editRow = false;
             //将第一行设置为结束编辑状态
-            $('#admin_student_box').datagrid('endEdit', this.editRow);
+            $('#admin_course_box').datagrid('endEdit', this.editRow);
         },
         redo : function () {
             $('#save,#redo').hide();
             this.editRow = undefined;
-            $('#admin_student_box').datagrid('rejectChanges');
+            $('#admin_course_box').datagrid('rejectChanges');
         },
         edit : function () {
-            var rows = $('#admin_student_box').datagrid('getSelections');
+            var rows = $('#admin_course_box').datagrid('getSelections');
             if (rows.length == 1) {
                 if (this.editRow != undefined) {
-                    $('#admin_student_box').datagrid('endEdit', this.editRow);
+                    $('#admin_course_box').datagrid('endEdit', this.editRow);
                 }
 
                 if (this.editRow == undefined) {
-                    var index = $('#admin_student_box').datagrid('getRowIndex', rows[0]);
+                    var index = $('#admin_course_box').datagrid('getRowIndex', rows[0]);
                     $('#save,#redo').show();
-                    $('#admin_student_box').datagrid('beginEdit', index);
+                    $('#admin_course_box').datagrid('beginEdit', index);
                     this.editRow = index;
-                    $('#admin_student_box').datagrid('unselectRow', index);
+                    $('#admin_course_box').datagrid('unselectRow', index);
                 }
             } else {
                 $.messager.alert('警告', '修改必须或只能选择一行！', 'warning');
             }
         },
         remove : function () {
-            var rows = $('#admin_student_box').datagrid('getSelections');
+            var rows = $('#admin_course_box').datagrid('getSelections');
             if (rows.length > 0) {
                 $.messager.confirm('确定操作', '您正在要删除所选的记录吗？', function (flag) {
                     if (flag) {
                         var ids = [];
                         for (var i = 0; i < rows.length; i ++) {
-                            ids.push(rows[i].student_id);
+                            ids.push(rows[i].course_id);
                         }
                         //console.log(ids.join(','));
                         $.ajax({
                             type : 'POST',
-                            url : '{:U("deletestudent_info")}',
+                            url : '<?php echo U("deletecourse_info");?>',
                             data : {
                                 ids : ids.join(','),
                             },
                             beforeSend : function () {
-                                $('#admin_student_box').datagrid('loading');
+                                $('#admin_course_box').datagrid('loading');
                             },
                             success : function (data) {
                                 if (data) {
-                                    $('#admin_student_box').datagrid('loaded');
-                                    $('#admin_student_box').datagrid('load');
-                                    $('#admin_student_box').datagrid('unselectAll');
+                                    $('#admin_course_box').datagrid('loaded');
+                                    $('#admin_course_box').datagrid('load');
+                                    $('#admin_course_box').datagrid('unselectAll');
                                     $.messager.show({
                                         title : '提示',
                                         msg : data+'学生被删除成功！',
@@ -131,9 +148,9 @@ $(function () {
         },
     };
 
-    $('#admin_student_box').datagrid({
+    $('#admin_course_box').datagrid({
         width : 900,
-        url : '{:U("readallstudent")}',
+        url : '<?php echo U("readallcourse");?>',
        // url : 'user.php',
         title : '<center>学生列表</center>',
         iconCls : 'icon-search',
@@ -187,19 +204,6 @@ $(function () {
             },
         },
         {
-            field : 'student_birthday',
-            title : '出生日期',
-
-            width : 100,
-            editor : {
-                type : 'datebox',
-                options : {
-
-
-                },
-            },
-        },
-        {
             field : 'student_tel',
             title : '电话号码',
 
@@ -212,28 +216,18 @@ $(function () {
                 },
             },
         },
-        {
-            field : 'student_remark',
-            title : '备注',
-
-            width : 100,
-            editor : {
-                type : 'validatebox',
-                options : {
-                    validType : 'length[0,50]',
-
-                },
-            },
-        },
             {
                 field : 'student_id',
-                title : 'aa',
-                hidden:'true',
-                width : 0
+                title : '功能',
+                width : 0,
+                formatter : function (value,row,index) {
+                       return '<a href="javascript:void(0)" class="easyui-linkbutton" onclick="$(\'#w\').window(\'open\')">添加课程</a> '
+                       ;
+                   }
 
             },
         ]],
-        toolbar : '#admin_student_tb',
+        toolbar : '#admin_course_tb',
         pagination : true,
         pageSize : 10,
         pageList : [10, 20, 30],
@@ -242,14 +236,14 @@ $(function () {
         sortOrder : 'DESC',
         onDblClickRow : function (rowIndex, rowData) {
 
-            if (obj_admin_student.editRow != undefined) {
-                $('#admin_student_box').datagrid('endEdit', obj_admin_student.editRow);
+            if (obj_admin_course.editRow != undefined) {
+                $('#admin_course_box').datagrid('endEdit', obj_admin_course.editRow);
             }
             else{
-                if (obj_admin_student.editRow == undefined) {
+                if (obj_admin_course.editRow == undefined) {
                 $('#save,#redo').show();
-                 obj_admin_student.editRow = rowIndex;
-                $('#admin_student_box').datagrid('beginEdit', rowIndex);
+                 obj_admin_course.editRow = rowIndex;
+                $('#admin_course_box').datagrid('beginEdit', rowIndex);
                     obj_admin_advisor.editRow = rowIndex;
 
                  }
@@ -259,24 +253,24 @@ $(function () {
         onAfterEdit : function (rowIndex, rowData, changes) {
             $('#save,#redo').hide();
 
-            var inserted_student = $('#admin_student_box').datagrid('getChanges', 'inserted');
-            var updated_student = $('#admin_student_box').datagrid('getChanges', 'updated');
+            var inserted_course = $('#admin_course_box').datagrid('getChanges', 'inserted');
+            var updated_course = $('#admin_course_box').datagrid('getChanges', 'updated');
 
 
-            obj_admin_student.editRow = undefined;
+            obj_admin_course.editRow = undefined;
 
 
             var url = info =  '';
 
             //新增用户
-            if (inserted_student.length > 0) {
-                url = '{:U("addstudent_info")}';
+            if (inserted_course.length > 0) {
+                url = '<?php echo U("addcourse_info");?>';
                 info = '新增';
             }
 
             //修改用户
-            if (updated_student.length > 0) {
-                url = '{:U("updatestudent_info")}';
+            if (updated_course.length > 0) {
+                url = '<?php echo U("updatecourse_info");?>';
                 info = '修改';
             }
 
@@ -291,18 +285,18 @@ $(function () {
                 },
                 success : function (data) {
                     if (data=="成功") {
-                        $('#admin_student_box').datagrid('loaded');
-                        $('#admin_student_box').datagrid('load');
-                        $('#admin_student_box').datagrid('unselectAll');
+                        $('#admin_course_box').datagrid('loaded');
+                        $('#admin_course_box').datagrid('load');
+                        $('#admin_course_box').datagrid('unselectAll');
                         $.messager.show({
                             title : '提示',
                             msg :  '用户被' + info + '成功！',
                         });
-                        obj_admin_student.editRow = undefined;
+                        obj_admin_course.editRow = undefined;
                     }
                     else{
-                        $('#admin_student_box').datagrid('loaded');
-                        $('#admin_student_box').datagrid('load');
+                        $('#admin_course_box').datagrid('loaded');
+                        $('#admin_course_box').datagrid('load');
                     }
                 },
             });

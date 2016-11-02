@@ -220,9 +220,8 @@ $(function () {
 
             width : 100,
             editor : {
-                type : 'validatebox',
+                type : 'datebox',
                 options : {
-                    validType : 'length[2,13]',
 
                 },
             },

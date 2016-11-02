@@ -1,0 +1,24 @@
+student-items //学生——课程
+
+	student_id //学生id
+
+	items_id  //课程id
+
+
+
+Settlement  //结算  每位学生每门课程计算
+
+	student_items_id // 学生——课程 id
+
+	Settlement_items_times //课程总次数
+	settlement_total_money //结算总计
+
+	Settlement_absence_times //缺课次数
+	Settlement_absence_money //缺课费用
+
+student   // 每位学生费用总计
+    .....
+	student_total_money //结算总计
+	student_total_offers  //结算优惠
+	student_paid_money  //结算支付
+	student_absence_money //缺课费用总计
