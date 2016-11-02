@@ -1,0 +1,16 @@
+[
+    {
+        "id" : 31,
+        "text" : "相关模板文档",
+        "iconCls" :"icon-mini-edit",
+        "url":"./index.php?m=home&c=admin&a=public_templete"
+
+    },
+    {
+        "id" : 32,
+        "text" : "通知信息",
+        "iconCls" :"icon-mini-edit",
+        "url":"./index.php?m=home&c=admin&a=public_notice"
+
+    }
+]

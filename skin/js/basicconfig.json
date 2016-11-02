@@ -1,0 +1,81 @@
+[
+    {
+        "id" : 11,
+        "text" : "基本配置",
+        "iconCls" :"icon-mini-add",
+
+        "children" : [
+            {
+                "id":121,
+                "iconCls" :"icon-mini-edit",
+                "url":"./index.php?m=home&c=admin&a=basicconfig",
+                "text" : "开放时间/导师选择方式配置"
+            },
+            {
+                "id":122,
+                "iconCls" :"icon-mini-edit",
+                "url":"./index.php?m=home&c=admin&a=grade_management",
+                "text" : "班级管理"
+
+            },
+            {
+                "id":123,
+                "iconCls" :"icon-mini-edit",
+                "url":"./index.php?m=home&c=admin&a=faculty_management",
+                "text" : "科室/系部管理"
+            },
+            {
+                "id":124,
+                "iconCls" :"icon-mini-edit",
+                "url":"./index.php?m=home&c=admin&a=passwordchange",
+                "text" : "管理员账号密码修改"
+            }
+
+        ]
+
+    },
+    {
+        "id" : 12,
+        "text" : "学生/导师添加修改",
+        "iconCls" :"icon-mini-add",
+
+        "children" : [
+            {
+                "id":121,
+                "iconCls" :"icon-mini-edit",
+                "url":"./index.php?m=home&c=admin&a=addstudent",
+                "text" : "添加/修改学生"
+            },
+            {
+                "id":122,
+                "iconCls" :"icon-mini-edit",
+                "url":"./index.php?m=home&c=admin&a=addadvisor",
+                "text" : "添加/修改老师"
+
+            }
+
+        ]
+    },
+    {
+        "id" : 13,
+        "text" : "导师分配/更改",
+        "iconCls" :"icon-mini-add",
+
+        "children" : [
+            {
+                "id":131,
+                "iconCls" :"icon-mini-edit",
+                "url":"./index.php?m=home&c=admin&a=student_advisor",
+                "text" : "导师分配"
+            },
+            {
+                "id":132,
+                "iconCls" :"icon-mini-edit",
+                "url":"./index.php?m=home&c=admin&a=student_advisor_alert",
+                "text" : "导师更改"
+
+            }
+
+        ]
+    }
+]

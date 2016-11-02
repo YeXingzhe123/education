@@ -1,0 +1,52 @@
+[
+{"id" : 1,
+"text" : "基本配置",
+"iconCls" :"icon-mini-add",
+"children" : [
+{
+	"id" : 11,
+	"iconCls" :"icon-mini-edit",
+	"url":"./index.php?m=home&c=admin&a=item",
+	"text" : "类目管理"
+
+	},
+	{
+		"id" : 12,
+		"iconCls" :"icon-mini-edit",
+		"url":"./index.php?m=home&c=admin&a=teacher",
+		"text" : "教师管理"
+		},
+		{
+			"id" : 13,
+			"iconCls" :"icon-mini-edit",
+			"url":"./index.php?m=home&c=admin&a=student",
+			"text" : "学生管理"
+
+		}
+		]
+	},
+
+	{"id" : 2,
+	"text" : "课程缴费管理",
+	"iconCls" :"icon-mini-add",
+	"children" :
+	[
+
+		{
+			"id" : 22,
+			"iconCls" :"icon-mini-edit",
+			"url":"./index.php?m=home&c=admin&a=pay_course",
+			"text" : "课程缴费"
+			},
+			{
+				"id" : 23,
+				"iconCls" :"icon-mini-edit",
+				"url":"./index.php?m=home&c=admin&a=pay_course_select",
+				"text" : "课程缴费查询"
+			}
+			]
+		}
+
+
+
+	]
