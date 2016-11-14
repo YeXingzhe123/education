@@ -42,7 +42,13 @@
 				"id" : 23,
 				"iconCls" :"icon-mini-edit",
 				"url":"./index.php?m=home&c=admin&a=pay_course_select",
-				"text" : "课程缴费查询"
+				"text" : "选课记录查询"
+			},
+			{
+				"id" : 24,
+				"iconCls" :"icon-mini-edit",
+				"url":"./index.php?m=home&c=admin&a=pay_managment",
+				"text" : "历史课程缴费查询"
 			}
 			]
 		}
