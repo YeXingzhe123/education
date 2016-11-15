@@ -1,0 +1,177 @@
+<div  style="width:500px;padding: 10px;position: absolute;left:10px;top:30px">
+	<table id="tt"></table>
+
+</div>
+
+<div style="width:500px;padding: 10px;position: absolute;right:10px;top:30px">
+	<div id="p" class="easyui-panel" title="统计">
+		<div style="padding: 10px;">
+			<div><span>选择课程：</span><span id="select_item_node"></span></div>
+			<br>
+			<div><span>总计：</span><span id="total_money_node"></span>元</div>
+			<br>
+			<div><span>优惠费用：</span><input type="text" name="favour_money" value="0" placeholder="">元</div>
+			<br>
+			<div><span>实收费用：</span><span id="fact_total_money"></span>元</div>
+			<div data-options="region:'south',border:false" style="text-align:right;padding:5px 0 0;">
+							<a class="easyui-linkbutton" data-options="iconCls:'icon-ok'" href="javascript:void(0)" onclick="select_item_submit()" style="width:80px">确认提交</a>
+							<a class="easyui-linkbutton" data-options="iconCls:'icon-cancel'" href="javascript:void(0)" onclick="$('#window_select_item').window('close');" style="width:80px">取消</a>
+			</div>
+        </div>
+		</div>
+	</div>
+
+
+</div>
+
+
+
+<script type="text/javascript">
+
+    Array.prototype.indexOf = function(val) {
+		for (var i = 0; i < this.length; i++) {
+			if (this[i] == val) return i;
+		}
+		return -1;
+	};
+	Array.prototype.remove = function(val) {
+		var index = this.indexOf(val);
+		if (index > -1) {
+			this.splice(index, 1);
+		}
+	};
+
+var select_item_names = new Array();
+var total_money = 0 ;
+var items_ids = new Array();
+var pay_favor = 0;
+var fact_total= 0;
+//显示选择课程弹窗
+    $('#tt').datagrid({
+        url:'{:U("readallitem")}',
+        title : '<center>类目（课程）列表</center>',
+        iconCls : 'icon-search',
+        striped : true,
+        nowrap : true,
+        rownumbers : true,
+        //singleSelect : true,
+        fitColumns : true,
+        columns : [[
+        {
+                field : 'items_name',
+                title : '类目(班级)名',
+                sortable : true,
+                width : 150,
+                editor : {
+                    type : 'validatebox',
+                    options : {
+                        required : true,
+                        validType : 'length[2,6]',
+                    },
+                },
+        },
+        {
+                field : 'items_times',
+                title : '总次数',
+                sortable : true,
+                width : 150,
+                editor : {
+                    type : 'numberbox',
+                    options : {
+                        required : true,
+                        validType : 'length[1,5]',
+                    },
+                },
+        },
+        {
+                field : 'items_price',
+                title : '单次价格',
+
+                width : 150,
+                editor : {
+                    type : 'numberbox',
+                    options : {
+                        required : true,
+                        validType : 'length[1,20]',
+
+
+                    },
+                },
+        },
+        {
+                field : 'items_id',
+                title : 'aa',
+                hidden:'true',
+                width : 0
+
+        },
+        ]],
+        sortName : 'items_name',
+        sortOrder : 'DESC',
+        onSelect:function(rowIndex, rowData){
+        	total_money = total_money +rowData['items_times']*rowData['items_price'];
+            items_ids.push(rowData['items_id']);
+        	select_item_names.push(rowData['items_name']);
+        	$('#select_item_node').text(select_item_names.join('；'));
+        	$('#total_money_node').text(total_money);
+        	var favour = $("input[name='favour_money']").val();
+            pay_favor =  parseInt(favour);
+            if (isNaN(pay_favor)) {
+                pay_favor = 0;
+            };
+        	fact_total = total_money - pay_favor;
+        	$('#fact_total_money').text(fact_total);
+
+        },
+        onUnselect:function(rowIndex, rowData){
+        	total_money = total_money - rowData['items_times']*rowData['items_price'];
+            items_ids.remove(rowData['items_id']);
+        	select_item_names.remove(rowData['items_name']);
+        	$('#select_item_node').text(select_item_names.join('；'));
+        	$('#total_money_node').text(total_money);
+
+        	var favour = $("input[name='favour_money']").val();
+            pay_favor =  parseInt(favour);
+            if (isNaN(pay_favor)) {
+                pay_favor = 0;
+            };
+        	fact_total = total_money - pay_favor;
+        	$('#fact_total_money').text(fact_total);
+
+        }
+ });
+$("input[name='favour_money']").change(function(){
+    var favour = $("input[name='favour_money']").val();
+    pay_favor =  parseInt(favour);
+    if (isNaN(pay_favor)) {
+        pay_favor = 0;
+    };
+    fact_total = total_money - pay_favor;
+    $('#fact_total_money').text(fact_total);
+});
+
+function select_item_submit(){
+
+if (select_item_names.length==0) {
+     $.messager.alert('警告','请选择课程');
+}else{
+$("<div class=\"datagrid-mask\" style=\"background:#666666;z-index:9999\"></div>").css({display:"block",width:$("body")[0].offsetWidth+10,height:$(window).height()}).appendTo("body");
+$("<div style=\"z-index:9999\" class=\"datagrid-mask-msg\"></div>").html("正在处理，请稍候……").appendTo("body").css({display:"block",left:($(document.body).outerWidth(true) - 190) / 2,top:($(window).height() - 45) / 2});
+
+$.ajax({
+    url:'{:U("select_item_submit")}',
+    type:'POST',
+    data:{student_id:'<?php echo($student_id);?>',items_ids:items_ids.join(','),select_item_names:select_item_names.join(','),pay_favor:pay_favor,pay_payable:total_money,pay_total:fact_total},
+    success:function(data){
+        $(".datagrid-mask,.datagrid-mask-msg").hide();
+        $.messager.alert('消息','提交成功');
+        $('#window_select_item').window("close");
+    }
+})
+}
+}
+
+
+
+
+</script>
