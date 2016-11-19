@@ -22,6 +22,13 @@
 			"url":"./index.php?m=home&c=admin&a=student",
 			"text" : "学生管理"
 
+		},
+		{
+			"id" : 13,
+			"iconCls" :"icon-mini-edit",
+			"url":"./index.php?m=home&c=admin&a=schedule",
+			"text" : "类目(课程)时间安排管理"
+
 		}
 		]
 	},

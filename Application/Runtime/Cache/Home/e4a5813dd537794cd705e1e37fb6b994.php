@@ -458,7 +458,7 @@ function show_select_item_window(student_id){
                     }
                 },
             });
-            //console.log(rowData);
+            
         },
 
  }

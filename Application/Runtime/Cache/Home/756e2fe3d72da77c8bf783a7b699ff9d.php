@@ -85,7 +85,7 @@ split:false,noheader:true" style="height:65px;background:#fff;;">
     <div class="think_title_logo">
     </div><div style="position: absolute;left:275px;top: 12px;background-image:url(./skin/Img/center_village_op.jpg); width:120px;height:40px"></div>
     <div class="think_title_left">
-        <a href="http://localhost:8080/index.php/home/index/logout" style=";color:#fe8007;text-decoration:none;font-weight: bold">【退出登录】
+        <a href="http://localhost/education/index.php/index.php/home/index/logout" style=";color:#fe8007;text-decoration:none;font-weight: bold">【退出登录】
         </a>
     </div>
 </div>

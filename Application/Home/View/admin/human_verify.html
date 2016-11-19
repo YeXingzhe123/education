@@ -1,0 +1,244 @@
+<div style="position: relative;left: 0px;top: 0px;">
+    <div style="position: absolute;left:10px;top: 10px;">维护人员管理 >>
+        <font style="font-weight: bold"> 维护人员审核</font> </div>
+
+    <div style="position: absolute;left: 50px;top: 30px;"><table id="town_village_human_box" style="width: 900px;"></table>
+        <div id="window_human_verify"></div>
+        <div id="tb_town_human_verify" style="">
+            <a href="#" class="easyui-linkbutton" iconCls="icon-ok" onclick="obj_human_verify.click_all_yes();">
+                <font color="#ff0000">全部审核通过</font></a>&nbsp;&nbsp;
+            <a href="#" class="easyui-linkbutton" iconCls="icon-no" onclick="obj_human_verify.click_all_no();">
+                全部不通过，返回修改</a>
+
+        </div>
+    </div>
+    <script type="text/javascript">
+        $(function () {
+            $('#window_human_verify').window({
+            width : 1060,
+            height:480,
+
+            modal : true,
+            closed:true,
+
+            minimizable : false,
+            maximizable : false,
+           title:'详细清单查看',
+            iconCls:'icon-man',
+            collapsible:false
+
+        });
+
+
+
+            $('#town_village_human_box').datagrid(
+                    {
+                        width : 600,
+                        url : '{:U("readallvillage_no")}',
+                        // url : 'user.php',
+                        title : '<center>各乡镇列表</center>',
+                        iconCls : 'icon-search',
+                        striped : true,
+                        nowrap : true,
+                        rownumbers : true,
+                        //singleSelect : true,
+                        fitColumns : true,
+                        columns : [[
+                            {
+                                field : 'name',
+                                title : '乡 镇',
+                                width : 200,
+                            },
+                            {
+                                field : 'id',
+                                title : '查看详细信息',
+
+                                width : 200,
+                                formatter : function (value,row,index) {
+                                    return '<a href="#" onclick="obj_human_verify.check('+value+');">查看详情</a> ';
+
+                                }
+                            },
+
+                            {
+                                field : 'material_schedule',
+                                title : '审核通过',
+                                width : 150,
+                                formatter : function (value,row,index) {
+                                    return '<a href="#" onclick="obj_human_verify.click_yes('+row.id+');">审核通过</a> ';
+
+                                }
+
+                            },
+                            {
+                                field : 'material_period_id',
+                                title : '审核未通过',
+                                width : 150,
+                                formatter : function (value,row,index) {
+                                    return '<a href="#" onclick="obj_human_verify.click_no('+row.id+');">返回修改</a> ';
+
+                                }
+
+                            }
+                        ]],
+                        toolbar : '#tb_town_human_verify',
+                        pagination : true,
+                        pageSize : 10,
+                        pageList : [10, 20, 30],
+                        pageNumber : 1,
+                        sortName : 'name',
+                        sortOrder : 'DESC',
+
+                    }
+            );
+
+            obj_human_verify = {
+                check:function(data){
+
+
+                    $('#window_human_verify').window("refresh","./index.php/home/Town/human_verify_check?id="+data);
+                    $('#window_human_verify').window("open");
+                },
+                click_yes:function(data){
+                    $.ajax({
+                        type : 'POST',
+                        url : '{:U("set_human_status")}?id='+data,
+                        data : {
+                            status : 3,
+                        },
+                        beforeSend : function () {
+                            $('#town_village_human_box').datagrid('loading');
+                        },
+                        success : function (data) {
+                            if (data=="成功") {
+                                $('#town_village_human_box').datagrid('loaded');
+                                $('#town_village_human_box').datagrid('load');
+                                $('#town_village_human_box').datagrid('unselectAll');
+                                $.messager.show({
+                                    title : '提示',
+                                    msg : '审核结果提交成功！',
+                                });
+
+
+                            }
+                            else{
+                                $('#town_village_human_box').datagrid('loaded');
+
+                                $.messager.show({
+                                    title : '提示',
+                                    msg : '发生错误，提交失败！',
+                                });
+                            }
+                        },
+                    });
+
+                },
+                click_no:function(data){
+                    $.ajax({
+                        type : 'POST',
+                        url :  '{:U("set_human_status")}?id='+data,
+                        data : {
+                            status : 0,
+                        },
+                        beforeSend : function () {
+                            $('#villageop_human_box').datagrid('loading');
+                        },
+                        success : function (data) {
+                            if (data=="成功") {
+                                $('#town_village_human_box').datagrid('loaded');
+                                $('#town_village_human_box').datagrid('load');
+                                $('#town_village_human_box').datagrid('unselectAll');
+                                $.messager.show({
+                                    title : '提示',
+                                    msg : '审核结果提交成功！',
+                                });
+
+
+                            }
+                            else{
+                                $('#town_village_human_box').datagrid('loaded');
+                                $.messager.show({
+                                    title : '提示',
+                                    msg : '发生错误，提交失败！',
+                                });
+                            }
+                        },
+                    });
+
+                },
+                click_all_yes:function(){
+                    $.ajax({
+                        type : 'POST',
+                        url : '{:U("set_human_all_status")}',
+                        data : {
+                            status : 3,
+                        },
+                        beforeSend : function () {
+                            $('#town_village_human_box').datagrid('loading');
+                        },
+                        success : function (data) {
+                            if (data=="成功") {
+                                $('#town_village_human_box').datagrid('loaded');
+                                $('#town_village_human_box').datagrid('load');
+                                $('#town_village_human_box').datagrid('unselectAll');
+                                $.messager.show({
+                                    title : '提示',
+                                    msg : '审核结果提交成功！',
+                                });
+
+
+                            }
+                            else{
+                                $('#town_village_human_box').datagrid('loaded');
+
+                                $.messager.show({
+                                    title : '提示',
+                                    msg : '发生错误，提交失败！',
+                                });
+                            }
+                        },
+                    });
+
+                },
+                click_all_no:function(){
+                    $.ajax({
+                        type : 'POST',
+                        url :  '{:U("set_human_all_status")}',
+                        data : {
+                            status : 0,
+                        },
+                        beforeSend : function () {
+                            $('#villageop_human_box').datagrid('loading');
+                        },
+                        success : function (data) {
+                            if (data=="成功") {
+                                $('#town_village_human_box').datagrid('loaded');
+                                $('#town_village_human_box').datagrid('load');
+                                $('#town_village_human_box').datagrid('unselectAll');
+                                $.messager.show({
+                                    title : '提示',
+                                    msg : '审核结果提交成功！',
+                                });
+
+
+                            }
+                            else{
+                                $('#town_village_human_box').datagrid('loaded');
+                                $.messager.show({
+                                    title : '提示',
+                                    msg : '发生错误，提交失败！',
+                                });
+                            }
+                        },
+                    });
+
+                },
+
+
+            };
+        });
+
+
+    </script>
+
+ </div>
