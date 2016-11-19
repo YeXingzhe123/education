@@ -50,8 +50,8 @@ $('input[name="schedule_items_id"]:checked').each(
  
 });
 // 检测提交数据
-if ($("#schedule_time").val()=='') {
-    $.messager.alert('警告','时间不能为空');
+if ($("#schedule_time").val()=='' || str == '') {
+    $.messager.alert('警告','内容不能为空');
 }else{
     // 提交数据
 $.ajax({

@@ -61,8 +61,8 @@ $('input[name="hidden_id"]').each(
     hidden = hidden+$(this).val()+"@";
 });
 // 检测提交数据
-if ($("#schedule_time").val()=='') {
-    $.messager.alert('警告','时间不能为空');
+if ($("#schedule_time").val()=='' || str =='') {
+    $.messager.alert('警告','内容不能为空');
 }else{
     $.ajax({
                 type : 'POST',

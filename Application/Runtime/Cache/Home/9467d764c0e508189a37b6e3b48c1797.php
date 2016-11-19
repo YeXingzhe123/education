@@ -60,7 +60,11 @@ $('input[name="hidden_id"]').each(
     function(){
     hidden = hidden+$(this).val()+"@";
 });
-$.ajax({
+// 检测提交数据
+if ($("#schedule_time").val()=='' || str =='') {
+    $.messager.alert('警告','内容不能为空');
+}else{
+    $.ajax({
                 type : 'POST',
                 url : '<?php echo U("updateschedule_info");?>',
                 dataType:'text',
@@ -76,6 +80,9 @@ $.ajax({
                 $('#window_add_schedule').window("close");
                 },
             });
+
+};
+
     
 };
 // 读取时间
