@@ -1,9 +1,9 @@
-<div style="position: relative;left: 0px;top: 0px;">
+<?php if (!defined('THINK_PATH')) exit();?><div style="position: relative;left: 0px;top: 0px;">
     <div style="position: absolute;left:10px;top: 10px;">课程缴费 >>
         <font style="font-weight: bold"> 课程缴费</font> </div>
-    <div style="position: absolute;left: 50px;top: 30px;"><table id="admin_course_box" style="width: 900px;"></table>
+    <div style="position: absolute;left: 50px;top: 30px;"><table id="admin_pay_box" style="width: 900px;"></table>
 </div>
-<div id="admin_course_tb" style="">
+<div id="admin_pay_tb" style="">
     <div style="">
         <table style="width: 890px">
             <tr>
@@ -12,12 +12,12 @@
                 <td style="width: 450px;text-align: right;">
         查询姓名：<input type="text" class="textbox" name="student_name" style="width:110px">
 
-        <a href="#" class="easyui-linkbutton" iconCls="icon-search" onclick="obj_admin_student.search();">查询</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="#" class="easyui-linkbutton" iconCls="icon-search" onclick="obj_admin_pay.search();">查询</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 </td>  </tr> </table>
     </div>
 </div></div>
 
-    <div id="window_select_item" class="easyui-window" title="添加课程">
+    <div id="window_select_pay" class="easyui-window" title="添加课程">
         </div>
     </div>
 
@@ -27,8 +27,8 @@
 <script type="text/javascript">
 $(function () {
 
-     $('#window_select_item').window({
-            width : 1060,
+     $('#window_select_pay').window({
+            width : 994,
             height:480,
 
             modal : true,
@@ -36,30 +36,30 @@ $(function () {
 
             minimizable : false,
             maximizable : false,
-            title:'详细清单查看',
+            title:'详细信息查看',
             iconCls:'icon-man',
             collapsible:false
 
         });
-     obj_select_item = {
+     obj_select_pay = {
         check:function(data){
-                    $('#window_select_item').window("refresh","./index.php/home/admin/select_item?student_id="+data);
-                    $('#window_select_item').window("open");
+                    $('#window_select_pay').window("refresh","./index.php/home/admin/pay_info?student_id="+data);
+                    $('#window_select_pay').window("open");
                 },
 
      };
-     obj_admin_student = {
+     obj_admin_pay = {
          editRow : undefined,
          search : function () {
-             $('#admin_course_box').datagrid('load', {
+             $('#admin_pay_box').datagrid('load', {
                  student_name : $.trim($('input[name="student_name"]').val()),
              });
          },
     };
 
-    $('#admin_course_box').datagrid({
+    $('#admin_pay_box').datagrid({
         width : 900,
-        url : '{:U("readallstudent")}',
+        url : '<?php echo U("readallstudent");?>',
        // url : 'user.php',
         title : '<center>选课列表</center>',
         iconCls : 'icon-search',
@@ -130,13 +130,13 @@ $(function () {
                 title : '功能',
                 width : 0,
                 formatter : function (value,row,index) {
-                       return '<a href="#" onclick="obj_select_item.check('+value+');">添加课程</a> '
+                       return '<a href="#" onclick="obj_select_pay.check('+value+');">查看详情</a> '
                        ;
                    }
 
             },
         ]],
-        toolbar : '#admin_course_tb',
+        toolbar : '#admin_pay_tb',
         pagination : true,
         pageSize : 10,
         pageList : [10, 20, 30],
@@ -146,4 +146,6 @@ $(function () {
     });
 
 });
+
+
 </script>

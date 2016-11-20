@@ -22,13 +22,13 @@ class AdminController extends Controller
             exit();
         }
     }
-    
+
     public function teacher($value = '')
     {
-        
+
         $this->display("addteacher");
     }
-    
+
     public function readallteacher()
     {
         $page = I("post.page");
@@ -42,14 +42,14 @@ class AdminController extends Controller
         $teacher = M("teacher");
         $result = $teacher->where($condition)->order($sort . ' ' . $order)->page($page, $pagesize)->select();
         $json = json_encode($result);
-        
+
         $total = $teacher->where($condition)->count();
         echo '{"total":' . $total . ',"rows":' . $json . '}';
     }
-    
+
     public function addteacher_info()
     {
-        
+
         $row = I("post.row");
         $data["teacher_no"] = $row["teacher_no"];
         $data["teacher_birthday"] = $row["teacher_birthday"];
@@ -69,7 +69,7 @@ class AdminController extends Controller
             echo "成功";
         }
     }
-    
+
     public function updateteacher_info()
     {
         $row = I("post.row");
@@ -92,7 +92,7 @@ class AdminController extends Controller
             echo "成功";
         }
     }
-    
+
     public function deleteteacher_info()
     {
         $ids = I("post.ids");
@@ -101,14 +101,13 @@ class AdminController extends Controller
         $result = $teacher->where($condition)->delete();
         echo $result;
     }
-    
-    
+
     //显示学生管理视图
     public function student($value = '')
     {
         $this->display("addstudent");
     }
-    
+
     public function readallstudent()
     {
         $page = I("post.page");
@@ -121,14 +120,14 @@ class AdminController extends Controller
         $student = M("student");
         $result = $student->where($condition)->order($sort . ' ' . $order)->page($page, $pagesize)->select();
         $json = json_encode($result);
-        
+
         $total = $student->where($condition)->count();
         echo '{"total":' . $total . ',"rows":' . $json . '}';
     }
-    
+
     public function addstudent_info()
     {
-        
+
         $row = I("post.row");
         $data["student_birthday"] = $row["student_birthday"];
         $data["student_tel"] = $row["student_tel"];
@@ -143,10 +142,10 @@ class AdminController extends Controller
             echo "成功";
         }
     }
-    
+
     public function updatestudent_info()
     {
-        
+
         $row = I("post.row");
         $data["student_birthday"] = $row["student_birthday"];
         $data["student_tel"] = $row["student_tel"];
@@ -162,7 +161,7 @@ class AdminController extends Controller
             echo "成功";
         }
     }
-    
+
     public function deletestudent_info()
     {
         $ids = I("post.ids");
@@ -171,21 +170,20 @@ class AdminController extends Controller
         $result = $student->where($condition)->delete();
         echo $result;
     }
-    
-    
+
     //缴费管理
     public function pay_course()
     {
         $this->display("addcourse");
     }
-    
+
     public function select_item()
     {
         $student_id = I("get.student_id");
         $this->assign('student_id', $student_id);
         $this->display("select_item");
     }
-    
+
     public function select_item_submit()
     {
         $student_id = I("post.student_id");
@@ -219,13 +217,13 @@ class AdminController extends Controller
             echo "失败";
         }
     }
-    
-    
+
+
     public function pay_course_select($value = '')
     {
         $this->display("coursemanagment");
     }
-    
+
     public function readallcourse()
     {
         $page = I("post.page");
@@ -239,7 +237,7 @@ class AdminController extends Controller
         $items = M("items");
         $students = M("student");
         $result = $course->where($condition)->order($sort . ' ' . $order)->page($page, $pagesize)->select();
-        
+
         foreach ($result as $key => $value) {
             $item = $items->where("items_id=%d", $value['course_item_id'])->select();
             $result[$key]['items_name'] = $item[0]['items_name'];
@@ -250,7 +248,7 @@ class AdminController extends Controller
         $total = $course->where($condition)->count();
         echo '{"total":' . $total . ',"rows":' . $json . '}';
     }
-    
+
     public function deletecourse_info()
     {
         $ids = I("post.ids");
@@ -259,12 +257,12 @@ class AdminController extends Controller
         $result = $student->where($condition)->delete();
         echo $result;
     }
-    
+
     public function updatecourse_info()
     {
-        
+
         $row = I("post.row");
-        
+
         $data['course_item_id'] = $row['course_item_id'];
         $data['course_student_id'] = $row['course_student_id'];
         $data['remain_times'] = $row['remain_times'];
@@ -278,21 +276,21 @@ class AdminController extends Controller
             echo "成功";
         }
     }
-    
-    
+
+
     //历史缴费管理
     public function pay_managment($value = '')
     {
         $this->display("paymanagment");
     }
-    
+
     public function pay_info()
     {
         $student_id = I("get.student_id");
         $this->assign('student_id', $student_id);
         $this->display("pay_info");
     }
-    
+
     public function readallpay()
     {
         $page = I("post.page");
@@ -308,10 +306,10 @@ class AdminController extends Controller
         $total = $course->where($condition)->count();
         echo '{"total":' . $total . ',"rows":' . $json . '}';
     }
-    
+
     public function addpay_info()
     {
-        
+
         $row = I("post.row");
         $pay_data['pay_student_id'] = I("get.student_id");
         $pay_data['pay_course_name'] = '';
@@ -329,13 +327,30 @@ class AdminController extends Controller
             echo "成功";
         }
     }
-    
-    
-    public function item()
-    {
-        $this->display();
+
+    public function deleteitem_info(){
+        $ids =I("post.ids");
+        $items=M("Items");
+        $condition["items_id"]=Array("IN","$ids");
+        $result=$items->where($condition)->delete();
+        echo $result;
+
     }
-    
+
+    public function read_all_teacher()
+    {
+        $teacher=M("Teacher");
+        $result=$teacher->field('teacher_id,teacher_name,selected')->select();
+        $json = json_encode($result);
+        echo($json);
+
+    }
+    //历史缴费管理
+    public function item($value='')
+    {
+        $this->display("additem");
+    }
+
     public function readallitem()
     {
         $page = I("post.page");
@@ -346,15 +361,15 @@ class AdminController extends Controller
             $condition["items_name"] = array("like", "%" . I("post.items_name") . "%");//姓名搜索
         }
         $condition['extend'] = 0;
-        
+
         $items = M("Items");
         $result = $items->join('teacher on items.items_teacher_id=teacher.teacher_id')->where($condition)->order($sort . ' ' . $order)->page($page, $pagesize)->select();
         $json = json_encode($result);
-        
+
         $total = $items->where($condition)->count();
         echo '{"total":' . $total . ',"rows":' . $json . '}';
     }
-    
+
     public function additem_info()
     {
         $row = I("post.row");
@@ -369,9 +384,8 @@ class AdminController extends Controller
         } else {
             echo "成功";
         }
-        
     }
-    
+
     public function updateitem_info()
     {
         $row = I("post.row");
@@ -384,30 +398,152 @@ class AdminController extends Controller
         $result = $items->save($data);
         if (!$result) {
             echo "失败";
+        }else{
+            echo"成功";
+        }
+    }
+    //课程时间管理
+    public function schedule($value='')
+    {
+
+        $this->display("addschedule");
+
+    }
+
+    public function read_all_items()
+    {
+
+        $items=M("Items");
+        $result=$items->select();
+
+        $json = json_encode($result);
+        echo $json;
+
+    }
+
+   public function readallschedule()
+   {
+        $page=I("post.page");
+        $pagesize=I("post.rows");
+        $sort=I("post.sort");
+        $order=I('post.order');
+        $schedule=M("Schedule");
+        $result=$schedule->join('items on items.items_id=schedule.schedule_items_id')->order($sort.' '.$order)->page($page,$pagesize)->select();
+        $json = json_encode($result);
+        echo $json;
+
+   }
+
+
+    public function addschedule_info()
+    {
+        $data["schedule_weekend"]=$_POST["schedule_weekend"];
+        $data["schedule_time"]=$_POST["schedule_time"];
+
+        $items_ids = explode("/",$_POST["schedule_items_id"]);
+        $schedule=M("Schedule");
+        foreach ($items_ids as $key => $value) {
+            if ($value!='') {
+                $data["schedule_items_id"] = $value;
+                $result=$schedule->add($data);
+            }
+
+        }
+        if(!$result){
+            echo "失败";
         } else {
             echo "成功";
         }
-        
     }
-    
-    public function deleteitem_info()
-    {
-        $ids = I("post.ids");
-        $items = M("Items");
-        $condition["items_id"] = Array("IN", "$ids");
-        $result = $items->where($condition)->delete();
+
+    public function updateschedule_info(){
+
+        $data["schedule_weekend"]=$_POST["schedule_weekend"];
+        $data["schedule_time"]=$_POST["schedule_time"];
+        $str_id =$_POST["schedule_items_id"];
+        //先删除数据库已存在数据
+        $str_hidden=$_POST["select_updata_hidden"];
+        $arr_hidden=explode("@",$str_hidden);
+        $schedule=M("schedule");
+        foreach ($arr_hidden as $key => $value) {
+            if ($value !='') {
+                $id = $value;
+            $condition["schedule_id"]=Array("IN",$id);
+                 }
+                }
+        $result_del =$schedule->where($condition)->delete();
+                if(!$result_del){
+                    echo "删除失败";
+                }
+                else{
+                    echo"删除成功";
+                }
+        // 然后添加新数据
+        $arr_id=explode("/",$str_id);
+        foreach ($arr_id as $key => $value) {
+            if ($value !='') {
+                $data["schedule_items_id"] = $value;
+                $result_add = $schedule->add($data);
+                if(!$result_add){
+                    echo "添加失败";
+                }
+                else{
+                    echo"添加成功";
+                }
+            }
+        }
+
+    }
+
+    public function deleteschedule_info(){
+        $ids =I("post.ids");
+        $schedule=M("schedule");
+        $condition["schedule_id"]=Array("IN","$ids");
+        $result=$schedule->where($condition)->delete();
         echo $result;
-        
+
     }
-    
-    public function read_all_teacher()
+
+    public function edit_schedule()
     {
-        $teacher = M("Teacher");
-        $result = $teacher->field('teacher_id,teacher_name,selected')->select();
+        $this->display("edit_schedule");
+
+    }
+
+    public function add_schedule()
+    {
+        $this->display("add_schedule");
+
+    }
+    //读取所有
+
+   public function read_all_items_name()
+    {
+        $Items=M("Items");
+        $result=$Items->field('items_id,items_name')->select();
         $json = json_encode($result);
         echo($json);
-        
+
     }
-    
+
+    public function read_all_time()
+    {
+
+        $schedule=M("Schedule");
+        $result=$schedule->select();
+        $json = json_encode($result);
+        echo($json);
+    }
+
+    public function read_select_items_name()
+    {
+        $schedule=M("Schedule");
+        $condition["schedule_weekend"]=$_GET['schedule_weekend'];
+        $condition["schedule_time"]=$_GET['schedule_time'];
+        $result=$schedule->where($condition)->select();
+        $json = json_encode($result);
+        echo($json);
+    }
+
 }
 

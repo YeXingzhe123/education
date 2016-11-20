@@ -1,4 +1,4 @@
-<div style="position: relative;left: 0px;top: 0px;">
+<?php if (!defined('THINK_PATH')) exit();?><div style="position: relative;left: 0px;top: 0px;">
     <div style="position: absolute;left:10px;top: 10px;">课程缴费 >>
         <font style="font-weight: bold"> 课程缴费</font> </div>
     <div style="position: absolute;left: 50px;top: 30px;"><table id="admin_course_box" style="width: 900px;"></table>
@@ -59,7 +59,7 @@ $(function () {
 
     $('#admin_course_box').datagrid({
         width : 900,
-        url : '{:U("readallstudent")}',
+        url : '<?php echo U("readallstudent");?>',
        // url : 'user.php',
         title : '<center>选课列表</center>',
         iconCls : 'icon-search',

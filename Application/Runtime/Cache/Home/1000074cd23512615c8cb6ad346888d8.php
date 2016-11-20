@@ -1,6 +1,6 @@
-<div style="position: relative;left: 0px;top: 0px;">
-    <div style="position: absolute;left:10px;top: 10px;">学生/教师添加修改 >>
-        <font style="font-weight: bold"> 添加/修改学生</font> </div>
+<?php if (!defined('THINK_PATH')) exit();?><div style="position: relative;left: 0px;top: 0px;">
+    <div style="position: absolute;left:10px;top: 10px;">班级添加修改 >>
+        <font style="font-weight: bold"> 类目管理</font> </div>
     <div style="position: absolute;left: 50px;top: 30px;"><table id="admin_item_box" style="width: 900px;"></table>
 </div>
 <div id="admin_item_tb" style="">
@@ -95,7 +95,7 @@ $(function () {
                         }
                         $.ajax({
                             type : 'POST',
-                            url : '{:U("deleteitem_info")}',
+                            url : '<?php echo U("deleteitem_info");?>',
                             data : {
                                 ids : ids.join(','),
                             },
@@ -124,9 +124,9 @@ $(function () {
 
     $('#admin_item_box').datagrid({
         width : 900,
-       // url : '{:U("read_search_item")}',
-        url : '{:U("readallitem")}',
-        title : '<center>学生列表</center>',
+       // url : '<?php echo U("read_search_item");?>',
+        url : '<?php echo U("readallitem");?>',
+        title : '<center>类目列表</center>',
         iconCls : 'icon-search',
         striped : true,
         nowrap : true,
@@ -182,8 +182,9 @@ $(function () {
                 width : 150,
                   editor : {
                     type : 'combobox',
+                    editable:false,
                     options : {
-                    url:'{:U("read_all_teacher")}',
+                    url:'<?php echo U("read_all_teacher");?>',
                     required : true,
                     valueField:'teacher_id',
                      textField:'teacher_name',
@@ -246,13 +247,13 @@ $(function () {
 
             //新增用户
             if (inserted_item.length > 0) {
-                url = '{:U("additem_info")}';
+                url = '<?php echo U("additem_info");?>';
                 info = '新增';
             }
 
             //修改用户
             if (updated_item.length > 0) {
-                url = '{:U("updateitem_info")}';
+                url = '<?php echo U("updateitem_info");?>';
                 info = '修改';
             }
 
