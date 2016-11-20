@@ -1,6 +1,6 @@
 <?php if (!defined('THINK_PATH')) exit();?><div style="position: relative;left: 0px;top: 0px;">
-    <div style="position: absolute;left:10px;top: 10px;">学生/教师添加修改 >>
-        <font style="font-weight: bold"> 添加/修改学生</font> </div>
+    <div style="position: absolute;left:10px;top: 10px;">班级添加修改 >>
+        <font style="font-weight: bold"> 类目管理</font> </div>
     <div style="position: absolute;left: 50px;top: 30px;"><table id="admin_item_box" style="width: 900px;"></table>
 </div>
 <div id="admin_item_tb" style="">
@@ -126,7 +126,7 @@ $(function () {
         width : 900,
        // url : '<?php echo U("read_search_item");?>',
         url : '<?php echo U("readallitem");?>',
-        title : '<center>学生列表</center>',
+        title : '<center>类目列表</center>',
         iconCls : 'icon-search',
         striped : true,
         nowrap : true,
@@ -182,6 +182,7 @@ $(function () {
                 width : 150,
                   editor : {
                     type : 'combobox',
+                    editable:false,
                     options : {
                     url:'<?php echo U("read_all_teacher");?>',
                     required : true,
