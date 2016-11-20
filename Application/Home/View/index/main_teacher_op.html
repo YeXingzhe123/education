@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>智能培训考勤管理系统</title>
+    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+</head>
+<style>
+    .side {
+        position: relative;
+        height: 98%;
+        overflow: auto;
+        min-height: 600px;
+    }
+
+    .content {
+        width: 600px;
+        height: 98%;
+        min-height: 600px;
+    }
+
+</style>
+
+<body class="container" style="background-color: #e2e3e3;padding-top: 50px">
+<div class="row">
+    <div class="col-md-3 side" id="side">
+
+
+    </div>
+    <div class="col-md-9" >
+        <div class="panel panel-default">
+            <div class="panel-body content">
+
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    var app = app|| {};
+    app.date = {};
+    app.date.date = new Date();
+
+
+
+    app.sidehtml = function () {
+        var date =new Date();
+        var week=0;
+        var weekc=0;
+        var weeks = ['星期日','星期一','星期二','星期三','星期四','星期五','星期六'];
+        var year =0;
+        var month =0;
+        var day =0;
+        var dateString='';
+        for (var i =0;i <= 6;i++){
+            weekc = i-date.getDay();
+            date.setDate(date.getDate()+weekc);
+            week = weeks[date.getDay()];
+            year = date.getFullYear();
+            month= date.getMonth()+1;
+            day= date.getDate();
+            dateString =dateString+'<div class="panel panel-default"><div class="panel-body text-center">'+year+'--'+month+'--'+day+'<br>'+week+'</div></div>';
+        }
+        $('#side').html(dateString);
+        console.log(dateString);
+    };
+    app.sidehtml();
+
+
+
+
+    console.log(app);
+
+
+</script>
+
+
+</body>
+</html>
