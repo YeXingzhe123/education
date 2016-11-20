@@ -3,4 +3,6 @@ Thumbs.db
 ehthumbs.db
 Desktop.ini
 index.php
-.idea/
+.idea/*
+Runtime/Data/
+Runtime/Temp/
