@@ -22,13 +22,32 @@ class TeacherController extends Controller
             exit();
         }
     }
-    
+
     public function teacher($value = '')
     {
-        
+
         $this->display("addteacher");
     }
-    
-    
+
+    public function get_week($value='')
+    {
+
+
+       $this->toJson('200','',$data);
+    }
+
+    private function toJson($error='200',$message='',$data)
+    {
+
+
+        return json_encode($array);
+    }
+    //测试使用
+    // public function get_1week()
+    // {
+
+    //    echo "wwioidsjsdcsc";
+    // }
+
 }
 

@@ -437,8 +437,8 @@ class AdminController extends Controller
 
     public function addschedule_info()
     {
-        $data["schedule_weekend"]=$_POST["schedule_weekend"];
-        $data["schedule_time"]=$_POST["schedule_time"];
+        $data["schedule_weekend"]=I("post.schedule_weekend");
+        $data["schedule_time"]=I("post.schedule_time");
 
         $items_ids = explode("/",$_POST["schedule_items_id"]);
         $schedule=M("Schedule");
@@ -455,45 +455,62 @@ class AdminController extends Controller
             echo "成功";
         }
     }
+    //这个函数需修改很多
+     public function updateschedule_info(){
 
-    public function updateschedule_info(){
-
-        $data["schedule_weekend"]=$_POST["schedule_weekend"];
-        $data["schedule_time"]=$_POST["schedule_time"];
+        $data["schedule_weekend"]=I("post.schedule_weekend");
+        $data["schedule_time"]=I("post.schedule_time");
         $str_id =$_POST["schedule_items_id"];
-        //先删除数据库已存在数据
-        $str_hidden=$_POST["select_updata_hidden"];
+
+         //删除空字符串
+         $str_hidden=$_POST["select_updata_hidden"];
+         $str_hidden=str_replace(' ','',$str_hidden);
         $arr_hidden=explode("@",$str_hidden);
-        $schedule=M("schedule");
+         $arr1 = array();
         foreach ($arr_hidden as $key => $value) {
-            if ($value !='') {
-                $id = $value;
-            $condition["schedule_id"]=Array("IN",$id);
-                 }
-                }
-        $result_del =$schedule->where($condition)->delete();
-                if(!$result_del){
-                    echo "删除失败";
-                }
-                else{
-                    echo"删除成功";
-                }
-        // 然后添加新数据
-        $arr_id=explode("/",$str_id);
-        foreach ($arr_id as $key => $value) {
-            if ($value !='') {
-                $data["schedule_items_id"] = $value;
-                $result_add = $schedule->add($data);
-                if(!$result_add){
-                    echo "添加失败";
-                }
-                else{
-                    echo"添加成功";
-                }
+            if (!empty($value)) {
+                array_push( $arr1,$value);
             }
         }
+        //先删除数据库已存在数据
+        $schedule=M("schedule");
+        var_dump($arr1);
+        foreach ($arr1 as $key => $value) {
+            if (!empty($value)) {
+        $result_del =$schedule->delete($value);
+                         if(!$result_del){
+                                    echo "删除失败";
+                                }
+                                else{
+                                    echo"删除成功";
+                                }
+                 }
+                }
+                // 然后添加新数据
+                // 先删除空字符串
+            $str_id=str_replace(' ','',$str_id);
+            $arr_id=explode("/",$str_id);
+            $arr2 = array();
+        foreach ($arr_id as $key => $value) {
+            if (!empty($value)) {
+                array_push( $arr2,$value);
+            }
+        }
+        var_dump($arr2);
+            foreach ($arr2 as  $key => $value) {
+                if (!empty($value) ) {
+                    $data["schedule_items_id"] = $value;
+                    $result_add = $schedule->add($data);
+                    if(!$result_add){
+                        echo "添加失败";
+                    }
+                     else{
+                        echo"添加成功";
+                    }
+                }
+            }
 
-    }
+     }
 
     public function deleteschedule_info(){
         $ids =I("post.ids");
@@ -538,12 +555,22 @@ class AdminController extends Controller
     public function read_select_items_name()
     {
         $schedule=M("Schedule");
-        $condition["schedule_weekend"]=$_GET['schedule_weekend'];
-        $condition["schedule_time"]=$_GET['schedule_time'];
+        $condition["schedule_weekend"] =I("get.schedule_weekend");
+        $condition["schedule_time"] =I("get.schedule_time");
         $result=$schedule->where($condition)->select();
         $json = json_encode($result);
         echo($json);
     }
+
+    public function read_part_time()
+    {
+       $schedule=M("Schedule");
+       $condition["schedule_weekend"]=I("get.schedule_weekend");
+        $result=$schedule->where($condition)->select();
+        $json = json_encode($result);
+        echo($json);
+    }
+
 
 }
 
