@@ -61,6 +61,7 @@
                       <th>操作</th>
                     </tr>
                   </thead>
+                <tbody>
                 <tr>
                     <td>语文</td>
                     <td>22:20</td>
@@ -68,7 +69,7 @@
                     <td>
                     <div class="btn-group">
                       <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
-                        状态
+                        签到
                         <span class="caret"></span>
                       </a>
                       <ul class="dropdown-menu">
@@ -82,8 +83,9 @@
                     <td>语文</td>
                     <td>22:20</td>
                     <td>李四</td>
-                    <td>课程</td>
+                    <td>无缺课人员</td>
                 </tr>
+                </tbody>
             </table>
         </div>
     </div>
@@ -111,17 +113,19 @@
     app.getSchedule=function (week) {
         var url = "<?php echo SRC_PATH ?>/index.php/home/teacher/getSchedule";
         var success = function(data) {
-            var weeks= ['星期一','星期二','星期三','星期四','星期五','星期六','星期日'];
-            var html="";
-            var active="";
             if (data['code'] == '200') {
+                var html="";
+                var sign = '<div class="btn-group"> <a class="btn dropdown-toggle" data-toggle="dropdown" href="#"> 签到 <span class="caret"></span> </a> <ul class="dropdown-menu"> <li><a href="">录入缺课人员</a></li> <li><a href="">无缺课人员</a></li> <li><a href="">取消课程</a></li> </ul> </div>'
+                var data = data.data;
+                for (var i = 0; i < data.leght;i++) {
 
-                for (var i = 0; i < data.data.leght;i++) {
-                    var week= week[data.data[i].week];
-                    if (data.data[i].active) {
-                        active="active";
+
+                    html = html+'<tr><td>'+data[i].item'</td><td>'+data[i].time+'</td>';
+                    if (condition) {
+                        html=html+'<td>'+data[i].teacher_name+'</td><td>'++'</td></tr>';
+                    }else{
+                        html=html+'<td>'+未签到+'</td><td>'+sign+'</td></tr>';
                     }
-                    html=html+'<div class="panel '+active+' text-center" onclick="app.getSchedule('+data.data[i].week+')">'+data.data[i].date+'<br>'+week+'</div>'
                 }
                 $('#content').html(html);
             }
@@ -130,7 +134,7 @@
     }
 
 
-    $(function(){
+    (function(){
         var url = "<?php echo SRC_PATH ?>/index.php/home/teacher/getWeek";
         var success = function(data) {
             if (data['code'] == '200') {
@@ -148,7 +152,7 @@
             }
         };
         app.ajax(url,success,app.error);
-    });
+    })();
 
 
 
