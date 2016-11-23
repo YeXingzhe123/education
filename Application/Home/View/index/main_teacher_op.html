@@ -4,8 +4,10 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>智能培训考勤管理系统</title>
-    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
-    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/2.3.2/css/bootstrap-responsive.min.css">
+    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/2.3.2/css/bootstrap.min.css">
+    <script src="http://cdn.bootcss.com/jquery/1.8.3/jquery.min.js"></script>
+    <script src="http://cdn.bootcss.com/bootstrap/2.3.2/js/bootstrap.min.js"></script>
 </head>
 <style>
     .side {
@@ -15,62 +17,139 @@
         min-height: 600px;
     }
 
-    .content {
-        width: 600px;
+    #content {
+        width: 620px;
         height: 98%;
         min-height: 600px;
+    }
+    .panel{
+        background-color: #fff;
+        border-radius: 5px;
+        padding: 10px;
+        margin: 15px;
+    }
+    .active{
+        background-color: #eee;
+    }
+    div#side>div.panel:hover{
+        background-color: #eee;
     }
 
 </style>
 
 <body class="container" style="background-color: #e2e3e3;padding-top: 50px">
 <div class="row">
-    <div class="col-md-3 side" id="side">
-
-
+    <div class="span3" id="side">
+        <div class="panel text-center">
+            星期一
+        </div>
+        <div class="panel text-center">
+            星期一
+        </div>
+        <div class="panel text-center">
+            星期一
+        </div>
     </div>
-    <div class="col-md-9" >
-        <div class="panel panel-default">
-            <div class="panel-body content">
-
-            </div>
+    <div class="span9">
+        <div class="panel text-center" id="content">
+            <table class="table table-hover text-center">
+                <thead>
+                    <tr>
+                      <th>课程名字</th>
+                      <th>课程时间</th>
+                      <th>签到老师</th>
+                      <th>操作</th>
+                    </tr>
+                  </thead>
+                <tr>
+                    <td>语文</td>
+                    <td>22:20</td>
+                    <td>未签到</td>
+                    <td>
+                    <div class="btn-group">
+                      <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+                        状态
+                        <span class="caret"></span>
+                      </a>
+                      <ul class="dropdown-menu">
+                        <li><a href="">录入缺课人员</a></li>
+                        <li><a href="">无缺课人员</a></li>
+                        <li><a href="">取消课程</a></li>
+                      </ul>
+                    </div> </td>
+                </tr>
+                <tr>
+                    <td>语文</td>
+                    <td>22:20</td>
+                    <td>李四</td>
+                    <td>课程</td>
+                </tr>
+            </table>
         </div>
     </div>
 </div>
+
 <script type="text/javascript">
     var app = app|| {};
     app.date = {};
-    app.date.date = new Date();
-
-
-
-    app.sidehtml = function () {
-        var date =new Date();
-        var week=0;
-        var weekc=0;
-        var weeks = ['星期日','星期一','星期二','星期三','星期四','星期五','星期六'];
-        var year =0;
-        var month =0;
-        var day =0;
-        var dateString='';
-        for (var i =1;i <= 7;i++){
-            weekc = i-date.getDay();
-            date.setDate(date.getDate()+weekc);
-            week = weeks[date.getDay()];
-            year = date.getFullYear();
-            month= date.getMonth()+1;
-            day= date.getDate();
-            dateString =dateString+'<div class="panel panel-default"><div class="panel-body text-center">'+year+'--'+month+'--'+day+'<br>'+week+'</div></div>';
-        }
-        $('#side').html(dateString);
-        console.log(dateString);
+    app.ajax =function(url,success,error){
+        $.ajax({
+            url: url,
+            type: 'GEt',
+            dataType: 'json'
+        })
+        .done(function(data) {
+            success(data);
+        })
+        .fail(function() {
+            error();
+        });
     };
-    app.sidehtml();
+    app.error=function(){
+        console.log('error');
+    };
+    app.getSchedule=function (week) {
+        var url = "<?php echo SRC_PATH ?>/index.php/home/teacher/getSchedule";
+        var success = function(data) {
+            var weeks= ['星期一','星期二','星期三','星期四','星期五','星期六','星期日'];
+            var html="";
+            var active="";
+            if (data['code'] == '200') {
+
+                for (var i = 0; i < data.data.leght;i++) {
+                    var week= week[data.data[i].week];
+                    if (data.data[i].active) {
+                        active="active";
+                    }
+                    html=html+'<div class="panel '+active+' text-center" onclick="app.getSchedule('+data.data[i].week+')">'+data.data[i].date+'<br>'+week+'</div>'
+                }
+                $('#content').html(html);
+            }
+        };
+        app.ajax(url,success,app.error);
+    }
 
 
+    $(function(){
+        var url = "<?php echo SRC_PATH ?>/index.php/home/teacher/getWeek";
+        var success = function(data) {
+            if (data['code'] == '200') {
+                var weeks= ['星期一','星期二','星期三','星期四','星期五','星期六','星期日'];
+                var html="";
+                var active="";
+                for (var i = 0; i < data.data;i++) {
+                    var week= week[data.data[i].week];
+                    if (data.data[i].active) {
+                        active="active";
+                    }
+                    html=html+'<div class="panel '+active+' text-center" onclick="app.getSchedule('+data.data[i].week+')">'+data.data[i].date+'<br>'+week+'</div>'
+                }
+                $('#side').html(html);
+            }
+        };
+        app.ajax(url,success,app.error);
+    });
 
-
-    console.log(app);
 
 
 </script>

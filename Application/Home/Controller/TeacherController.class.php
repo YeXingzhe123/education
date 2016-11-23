@@ -22,13 +22,17 @@ class TeacherController extends Controller
             exit();
         }
     }
-    
+
     public function teacher($value = '')
     {
-        
+
         $this->display("addteacher");
     }
-    
-    
+
+    public function getWeek()
+    {
+    }
+
+
 }
 
