@@ -10,6 +10,7 @@
         <form>
             <div><span>星期：</span><span>
             <select  name="schedule_weekend" id="schedule_weekend">
+              <option>请选择---</option>
               <option value="1">星期一</option>
               <option value="2">星期二</option>
               <option value="3">星期三</option>
@@ -92,8 +93,14 @@ $.ajax({
     dataType:'json',
     success:function(data){
         if (data) {
-            for(var i=0;i<data.length;i++){       
-             $('#select_updata_time').append("<option value='"+data[i].schedule_time+"'>"+data[i].schedule_time+"</option>");
+         $('#select_updata_time').empty();
+        var results = [];
+        for (var i = 0; i < data.length; i++) {
+　　    if($.inArray(data[i].schedule_time,results)==-1) 
+            { results.push(data[i].schedule_time);}
+       }
+            for(var i=0;i<results.length;i++){       
+             $('#select_updata_time').append("<option value='"+results[i]+"'>"+results[i]+"</option>");
             }
         }else{
             alert("数据返回错误");
@@ -123,18 +130,26 @@ $('#schedule_weekend').change(function()
     {
         //清空节点
          $('#select_updata_time').empty();
-          $('#select_updata_time').append("<option>请选择---</option>");
+         $('#select_updata_time').append("<option>请选择---</option>");
          $.ajax({
-        url:'{:U("read_all_time")}',
+        url:'{:U("read_part_time")}',
         type:'GET',
         dataType:'json',
+        data:{  
+            "schedule_weekend":$('#schedule_weekend').val(),
+             },
         success:function(data){
         if (data) {
-            for(var i=0;i<data.length;i++){ 
-            if (data[i].schedule_weekend == $('#schedule_weekend').val()) {      
-             $('#select_updata_time').append("<option value='"+data[i].schedule_time+"'>"+data[i].schedule_time+"</option>");
-             }
+           var results_part = [];
+            for (var i = 0; i < data.length; i++) {
+　　    if($.inArray(data[i].schedule_time,results_part)==-1)
+            { results_part.push(data[i].schedule_time);}
+       }
+             for(var i=0;i<results_part.length;i++){       
+             $('#select_updata_time').append("<option value='"+results_part[i]+"'>"+results_part[i]+"</option>");
             }
+
+            
 
         }else{
             alert("数据返回错误");
