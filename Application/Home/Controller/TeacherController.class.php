@@ -134,6 +134,7 @@ class TeacherController extends Controller
                 $data[$key]['time'] = $schedule_time[$key];
                 $data[$key]['schedule_id'] = $schedule_id[$key];
                 $data[$key]['items'] = $items_name[$key];
+                $data[$key]['items_id']=$schedule_items_id[$key];
                 foreach ($sign_schedule_id as $add_key => $add_value) {//通过存储状态表对应的schedule_id添加状态
                     if($add_value==$data[$key]['schedule_id'])
                     {
