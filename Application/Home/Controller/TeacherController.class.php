@@ -30,10 +30,10 @@ class TeacherController extends Controller
     }
     //以下为修改区
 
-    private function toJson($error='200',$message='数据正确',$data)
+    private function toJson($code='200',$message='数据正确',$data)
     {
             $pushdata =array();//定义新数组
-            $pushdata['code'] =$error;
+            $pushdata['code'] =$code;
             $pushdata['message'] =$message;
             $pushdata['data']=$data;
             return json_encode($pushdata, JSON_UNESCAPED_UNICODE);//
@@ -51,14 +51,14 @@ class TeacherController extends Controller
                                  }
             }
             if(empty($data)){
-                $error ="400";
+                $code ="400";
                 $message='数据错误';
             }else{
-                $error = "200";
+                $code = "200";
                 $message='  ';
             }
         $getdate =array();//定义新数组
-        $result =$this->toJson($error,$message,$data);
+        $result =$this->toJson($code,$message,$data);
         echo "$result";
     }
 
@@ -144,13 +144,13 @@ class TeacherController extends Controller
 
             }
             if($judge = false){
-                $error ="400";
+                $code ="400";
                 $message='数据错误';
             }else{
-                $error = "200";
+                $code = "200";
                 $message='  ';
             }
-        $result =$this->toJson($error,$message,$data);
+        $result =$this->toJson($code,$message,$data);
         echo "$result";
     }
 
