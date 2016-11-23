@@ -120,22 +120,22 @@
                 for (var i = 0; i < data.leght;i++) {
 
 
-                    html = html+'<tr><td>'+data[i].item'</td><td>'+data[i].time+'</td>';
-                    if (condition) {
-                        html=html+'<td>'+data[i].teacher_name+'</td><td>'++'</td></tr>';
+                    html = html+'<tr><td>'+data[i].item+'</td><td>'+data[i].time+'</td>';
+                    if (data[i].teacher_name) {
+                        html=html+'<td>'+data[i].teacher_name+'</td><td>'+data[i].time+'</td></tr>';
                     }else{
-                        html=html+'<td>'+未签到+'</td><td>'+sign+'</td></tr>';
+                        html=html+'<td>'+'未签到'+'</td><td>'+sign+'</td></tr>';
                     }
                 }
                 $('#content').html(html);
             }
         };
         app.ajax(url,success,app.error);
-    }
+    };
 
 
     (function(){
-        var url = "<?php echo SRC_PATH ?>/index.php/home/teacher/getWeek";
+        var url = "<?php echo SRC_PATH ?>/index.php/home/teacher/getDate";
         var success = function(data) {
             if (data['code'] == '200') {
                 var weeks= ['星期一','星期二','星期三','星期四','星期五','星期六','星期日'];
