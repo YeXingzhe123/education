@@ -24,7 +24,7 @@ class IndexController extends Controller
                 echo('<script type="text/javascript">alert("验证码不正确");window.location.href="' . SRC_PATH . '";</script>');
                 exit();
             }
-            
+
             if ($role == 0) {
                 $Condition['name'] = $user_name;
                 $Condition['password'] = $password;
@@ -46,17 +46,18 @@ class IndexController extends Controller
                     echo('<script type="text/javascript">alert("用户名或密码不正确");window.location.href="' . SRC_PATH . '";</script>');
                     exit();
                 } else {
+                    session('teacher_id',$result['teacher_id']);
                     session("user_name", $user_name);
                     session("role", $role);
                 }
-                
+
             } else if ($role == 2) {
                 # code...
             } else if ($role == 3) {
                 # code...
             }
-            
-            
+
+
         }
         if (session("user_name")) {
             if (session("role") == 0) {
@@ -66,7 +67,7 @@ class IndexController extends Controller
             }
         }
     }
-    
+
     public function verify()
     {
         $arr = array(
@@ -79,19 +80,19 @@ class IndexController extends Controller
             'fontttf' => '5.ttf',
             'bg' => array(155, 202, 238)
         );
-        
+
         $Verify = new \Think\Verify($arr);
         $Verify->codeSet = '0123456789';
         $Verify->entry();
     }
-    
+
     public function logout()
     {
         session('[destroy]');
         $this->success("注销成功", SRC_PATH);
         //echo("<script type='text/javascript'  > alert('注销成功');</script>");
     }
-    
-    
+
+
 }
 
