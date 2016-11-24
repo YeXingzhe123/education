@@ -1,13 +1,14 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE>
+<html >
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>智能培训考勤管理系统</title>
     <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/2.3.2/css/bootstrap-responsive.min.css">
     <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/2.3.2/css/bootstrap.min.css">
+     <link rel="stylesheet" href="./skin/css/sco.message.css">
     <script src="http://cdn.bootcss.com/jquery/1.8.3/jquery.min.js"></script>
     <script src="http://cdn.bootcss.com/bootstrap/2.3.2/js/bootstrap.min.js"></script>
+    <script src="./skin/js/sco.message.js"></script>
 </head>
 <style>
     .side {
@@ -19,36 +20,46 @@
 
     #content {
         width: 620px;
-        height: 98%;
-        min-height: 600px;
+        min-height: 500px;
     }
     .panel{
+        cursor:default;
         background-color: #fff;
         border-radius: 5px;
         padding: 10px;
         margin: 15px;
     }
     .active{
-        background-color: #eee;
+        background-color: #37474f;
+        color: #fff;
     }
     div#side>div.panel:hover{
-        background-color: #eee;
+        background-color: #37474f;
+        color: #fff;
+    }
+    .nav-main{
+        margin: 0 auto;
+        width: 914px;
     }
 
 </style>
 
 <body class="container" style="background-color: #e2e3e3;padding-top: 50px">
+
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+    <div class="nav-main">
+        <a class="brand" href="#">课程签到管理</a>
+        <ul class="nav">
+            <li ><a href="#">当前用户:</a></li>
+            <li><a href="__URL__/index.php/home/index/logout">退出登录</a></li>
+        </ul>
+     </div>
+    </div>
+</div>
 <div class="row">
     <div class="span3" id="side">
-        <div class="panel text-center">
-            星期一
-        </div>
-        <div class="panel text-center">
-            星期一
-        </div>
-        <div class="panel text-center">
-            星期一
-        </div>
+
     </div>
     <div class="span9">
         <div class="panel text-center" id="content">
@@ -61,97 +72,178 @@
                       <th>操作</th>
                     </tr>
                   </thead>
-                <tbody>
-                <tr>
-                    <td>语文</td>
-                    <td>22:20</td>
-                    <td>未签到</td>
-                    <td>
-                    <div class="btn-group">
-                      <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
-                        签到
-                        <span class="caret"></span>
-                      </a>
-                      <ul class="dropdown-menu">
-                        <li><a href="">录入缺课人员</a></li>
-                        <li><a href="">无缺课人员</a></li>
-                        <li><a href="">取消课程</a></li>
-                      </ul>
-                    </div> </td>
-                </tr>
-                <tr>
-                    <td>语文</td>
-                    <td>22:20</td>
-                    <td>李四</td>
-                    <td>无缺课人员</td>
-                </tr>
+                <tbody id="content_content">
+
                 </tbody>
             </table>
         </div>
     </div>
 </div>
 
+<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3 id="myModalLabel">选择缺课学生</h3>
+  </div>
+  <div class="modal-body">
+    <div id="student_list"></div>
+    </div>
+    <div class="modal-footer">
+    <button class="btn" data-dismiss="modal" aria-hidden="true">关闭</button>
+    <button class="btn btn-primary" onclick="app.absentSign.sublime()">确认提交</button>
+  </div>
+</div>
+
 <script type="text/javascript">
     var app = app|| {};
     app.date = {};
-    app.ajax =function(url,success,error){
+    app.week="";
+
+    app.sign=function (schedule_id,status,student) {
+        var student=student||null;
         $.ajax({
-            url: url,
-            type: 'GEt',
-            dataType: 'json'
+            url: "<?php echo SRC_PATH ?>/index.php/home/teacher/sign",
+            type: 'POST',
+            dataType: 'json',
+            data: {"schedule_id":schedule_id,"status":status,"student":student},
         })
         .done(function(data) {
-            success(data);
+            if (data.code == '200') {
+                app.setSchedule();
+                $.scojs_message("签到成功", $.scojs_message.$.scojs_message.$.scojs_message.TYPE_OK);
+            }else{
+                $.scojs_message("签到失败，请重试", $.scojs_message.TYPE_ERROR);
+            }
+
         })
         .fail(function() {
-            error();
+            $.scojs_message("签到失败，请重试", $.scojs_message.TYPE_ERROR);
         });
+
     };
-    app.error=function(){
-        console.log('error');
+
+    app.absentSign = {
+        schedule_id : 0,
+        status: 0 ,
+        click:function (schedule_id,items_id,status) {
+            this.schedule_id=schedule_id;
+            this.status=status;
+            $.ajax({
+                url: "<?php echo SRC_PATH ?>/index.php/home/teacher/allstudent",
+                type: 'GET',
+                dataType: 'json',
+                data: {"items_id": items_id},
+            })
+            .done(function(data) {
+                if (data.code=='200') {
+                    var html="";
+                    var data=data.data;
+                    for (var i = 0; i < data.length; i++) {
+                        html ='<label class="checkbox inline"> <input type="checkbox" name="student_id" value="'+data[i].student_id+'"> '+student_name+'</label>'}
+                }else{
+                    $.scojs_message("获取学生信息失败，请重试!", $.scojs_message.TYPE_ERROR);
+                }
+                $('#student_list').html(html);
+                 $('#myModal').modal('show');
+
+            })
+            .fail(function() {
+               $.scojs_message("获取学生信息失败，请重试!", $.scojs_message.TYPE_ERROR);
+            })
+
+
+        },
+        sublime:function(){
+            var student_ids=new Array();
+            $('input[name="student_id"]:checked').each(function(){
+                student_ids.push($(this).val());//向数组中添加元素
+            });
+            app.sign(schedule_id,status,student_ids);
+            $('#myModal').modal('hide')
+        }
+
     };
-    app.getSchedule=function (week) {
-        var url = "<?php echo SRC_PATH ?>/index.php/home/teacher/getSchedule";
-        var success = function(data) {
-            if (data['code'] == '200') {
+
+    app.setSchedule=function (week) {
+        if (typeof(week) != 'undefined') {
+            app.week=week;
+        }
+        $.ajax({
+            url: "<?php echo SRC_PATH ?>/index.php/home/teacher/getSchedule",
+            type: 'GET',
+            dataType: 'json',
+            data: {"week": app.week},
+        })
+        .done(function(data) {
+            if (data.code == '200') {
                 var html="";
                 var sign = '<div class="btn-group"> <a class="btn dropdown-toggle" data-toggle="dropdown" href="#"> 签到 <span class="caret"></span> </a> <ul class="dropdown-menu"> <li><a href="">录入缺课人员</a></li> <li><a href="">无缺课人员</a></li> <li><a href="">取消课程</a></li> </ul> </div>'
                 var data = data.data;
-                for (var i = 0; i < data.leght;i++) {
+                var status=['取消课程','无缺课人员','已录入缺课人员']
+                for (var i = 0; i < data.length;i++) {
 
 
-                    html = html+'<tr><td>'+data[i].item+'</td><td>'+data[i].time+'</td>';
+                    html = html+'<tr><td>'+data[i].items+'</td><td>'+data[i].time+'</td>';
                     if (data[i].teacher_name) {
-                        html=html+'<td>'+data[i].teacher_name+'</td><td>'+data[i].time+'</td></tr>';
+                        html=html+'<td>'+data[i].teacher_name+'</td><td>'+status[data[i].time]+'</td></tr>';
                     }else{
-                        html=html+'<td>'+'未签到'+'</td><td>'+sign+'</td></tr>';
+                        html=html+'<td>'+'未签到'+'</td><td>';
+                        html=html+'<div class="btn-group"> <a class="btn dropdown-toggle" data-toggle="dropdown" href="#"> 签到 <span class="caret"></span> </a> <ul class="dropdown-menu"> <li onClick="app.absentSign.click('+data[i].schedule_id+','+data[i].items_id+',2)"><a href="#">录入缺课人员</a></li> <li onClick="app.sign('+data[i].schedule_id+',1)"><a href="#">无缺课人员</a></li> <li onClick="app.sign('+data[i].schedule_id+',0)"><a href="#">取消课程</a></li> </ul> </div>';
+                        html=html+'</td></tr>';
                     }
                 }
-                $('#content').html(html);
+                $('#content_content').html(html);
+            }else{
+                $.scojs_message("请求失败，请重试!", $.scojs_message.TYPE_ERROR);
             }
-        };
-        app.ajax(url,success,app.error);
+        })
+        .fail(function() {
+            $.scojs_message("请求失败，请重试!", $.scojs_message.TYPE_ERROR);
+        });
+    };
+    app.getSchedule=function (week,node) {
+        app.week=week;
+        node = node||null;
+        if (node) {
+            $('#side').children().each(function(index, el) {
+                        $(el).removeClass('active');
+                    });
+            $(node).addClass('active');
+        }
+        app.setSchedule();
     };
 
-
     (function(){
-        var url = "<?php echo SRC_PATH ?>/index.php/home/teacher/getDate";
-        var success = function(data) {
-            if (data['code'] == '200') {
+        $.ajax({
+            url: "<?php echo SRC_PATH ?>/index.php/home/teacher/getDate",
+            type: 'GET',
+            dataType: 'json',
+        })
+        .done(function(data) {
+            if (data.code == '200') {
                 var weeks= ['星期一','星期二','星期三','星期四','星期五','星期六','星期日'];
                 var html="";
                 var active="";
-                for (var i = 0; i < data.data;i++) {
-                    var week= week[data.data[i].week];
-                    if (data.data[i].active) {
+                var data =data.data;
+                var week="";
+                for (var i = 0; i < data.length;i++) {
+                    active="";
+                    week= weeks[data[i].week];
+                    if (data[i].active) {
+                        app.week = data[i].week;
+                        app.setSchedule();
                         active="active";
                     }
-                    html=html+'<div class="panel '+active+' text-center" onclick="app.getSchedule('+data.data[i].week+')">'+data.data[i].date+'<br>'+week+'</div>'
+                    html=html+'<div class="panel '+active+' text-center" onclick="app.getSchedule('+data[i].week+',this)">'+data[i].date+'<br>'+week+'</div>'
                 }
                 $('#side').html(html);
+            }else{
+                $.scojs_message("请求失败，请重试!", $.scojs_message.TYPE_ERROR);
             }
-        };
-        app.ajax(url,success,app.error);
+        })
+        .fail(function() {
+            $.scojs_message("请求失败，请重试!", $.scojs_message.TYPE_ERROR);
+        });
     })();
 
 

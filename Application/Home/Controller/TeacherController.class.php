@@ -66,7 +66,7 @@ class TeacherController extends Controller
     {
         $judge = true;//判断返回的正确性
          $data =array();
-        $week = date('w');//返回数据为星期
+        $week = I("get.week");//返回数据为星期
         $schedule = M("schedule");
         $require_schedule['schedule_weekend'] =$week;
         $result_schedule = $schedule->where($require_schedule)->select();
