@@ -155,6 +155,80 @@ class TeacherController extends Controller
         echo "$result";
     }
 
+    public function sign()
+    {
+            $schedule_id =I('post.schedule_id');
+            $status =I('post.status');
+            $student_id =I('post.student_ids');
+            if ($status == 2) {
+                $this->signAbsent($schedule_id,$status,$student_id);
+            }else{
+                $this->signNoAbsent($schedule_id,$status);
+            }
+    }
+    //当sign为0和1的情况下
+    private function signNoAbsent($schedule_id,$status)
+    {
+       //添加课表
+         $sign = M("Sign");
+        $data["schedule_id"] = $schedule_id;
+        $data["status"] = $status;
+        // 时间自动生成
+        // 签到老师用session值
+         $data["date"] =date("Y-m-d H:i:s", time()) ;
+         $data["teacher_id"] = session('teacher_id');
+        $result = $sign->add($data);
+        if (!$result) {
+            echo "失败";
+        } else {
+            echo "成功";
+        }
 
+    }
+    //当sign为2的情况下
+          private function signAbsent($schedule_id,$status, $student_id)
+        {
+                    $this->signNoAbsent($schedule_id,$status);
+                    //然后在添加absent表就行了
+                    $absent = M("absent");
+                    $data["schedule_id"] = $schedule_id;
+                     $data["student_id"] = $student_id;
+                    $result = $absent->add($data);
+                    if (!$result) {
+                        echo "失败";
+                    } else {
+                        echo "成功";
+                    }
+        }
+
+        public  function  allstudent()
+        {
+             $items_id =I('post.items_id');
+             $course = M("course");
+             $require["course_item_id"] = $items_id;
+             $student_id = array();//存储学生的id
+              $result = $course->where($require)->select();
+              if (!$result) {
+                  echo "失败";
+              } else {
+                  foreach ($result as $value) {
+                     $pop_student= $value;
+                     foreach ($pop_student as $key => $value) {
+                         if ($key=='course_student_id') {array_push($student_id, $value); }
+                     }
+                  }
+              }
+              //用学生的id来查找学生的姓名
+            $student = M("student");
+            $student_name= array();//存储学生的名字
+            foreach ($student_id as $key => $value) {
+                    $id =$value;//查找的id
+                    $result_student = $student->find($id);
+                    foreach ($result_student as $key => $value) {
+                         if ($key=='student_name') {array_push($student_name, $value); }
+                                 }
+                    }
+
+        }
 }
 
