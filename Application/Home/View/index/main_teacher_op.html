@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/2.3.2/css/bootstrap-responsive.min.css">
     <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/2.3.2/css/bootstrap.min.css">
      <link rel="stylesheet" href="./skin/css/sco.message.css">
-    <script src="http://cdn.bootcss.com/jquery/1.8.3/jquery.min.js"></script>
+    <script src="http://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
     <script src="http://cdn.bootcss.com/bootstrap/2.3.2/js/bootstrap.min.js"></script>
     <script src="./skin/js/sco.message.js"></script>
 </head>
@@ -51,7 +51,7 @@
     <div class="nav-main">
         <a class="brand" href="#">课程签到管理</a>
         <ul class="nav">
-            <li ><a href="#">当前用户:</a></li>
+            <li ><a href="#">当前用户:<?php echo session('user_name')?></a></li>
             <li><a href="__URL__/index.php/home/index/logout">退出登录</a></li>
         </ul>
      </div>
@@ -99,13 +99,13 @@
     app.date = {};
     app.week="";
 
-    app.sign=function (schedule_id,status,student) {
-        var student=student||null;
+    app.sign=function (schedule_id,items_id,status,student_ids) {
+        var student_ids=student_ids||null;
         $.ajax({
             url: "<?php echo SRC_PATH ?>/index.php/home/teacher/sign",
             type: 'POST',
             dataType: 'json',
-            data: {"schedule_id":schedule_id,"status":status,"student":student},
+            data: {"schedule_id":schedule_id,"status":status,"items_id":items_id,"student_ids":student_ids},
         })
         .done(function(data) {
             if (data.code == '200') {
@@ -125,9 +125,11 @@
     app.absentSign = {
         schedule_id : 0,
         status: 0 ,
+        items_id:0,
         click:function (schedule_id,items_id,status) {
             this.schedule_id=schedule_id;
             this.status=status;
+            this.items_id=items_id;
             $.ajax({
                 url: "<?php echo SRC_PATH ?>/index.php/home/teacher/allstudent",
                 type: 'GET',
@@ -139,12 +141,16 @@
                     var html="";
                     var data=data.data;
                     for (var i = 0; i < data.length; i++) {
-                        html ='<label class="checkbox inline"> <input type="checkbox" name="student_id" value="'+data[i].student_id+'"> '+student_name+'</label>'}
+                        html =html+'<label class="checkbox inline"> <input type="checkbox" name="student_id" value="'+data[i].student_id+'"> '+data[i].student_name+'</label>'
+                    }
+                     $('#myModal').modal('show');
+                     $('#student_list').html(html);
+
                 }else{
                     $.scojs_message("获取学生信息失败，请重试!", $.scojs_message.TYPE_ERROR);
                 }
-                $('#student_list').html(html);
-                 $('#myModal').modal('show');
+
+
 
             })
             .fail(function() {
@@ -158,7 +164,7 @@
             $('input[name="student_id"]:checked').each(function(){
                 student_ids.push($(this).val());//向数组中添加元素
             });
-            app.sign(schedule_id,status,student_ids);
+            app.sign(this.schedule_id,this.items_id,this.status,student_ids);
             $('#myModal').modal('hide')
         }
 
@@ -185,10 +191,10 @@
 
                     html = html+'<tr><td>'+data[i].items+'</td><td>'+data[i].time+'</td>';
                     if (data[i].teacher_name) {
-                        html=html+'<td>'+data[i].teacher_name+'</td><td>'+status[data[i].time]+'</td></tr>';
+                        html=html+'<td>'+data[i].teacher_name+'</td><td>'+status[data[i].status]+'</td></tr>';
                     }else{
                         html=html+'<td>'+'未签到'+'</td><td>';
-                        html=html+'<div class="btn-group"> <a class="btn dropdown-toggle" data-toggle="dropdown" href="#"> 签到 <span class="caret"></span> </a> <ul class="dropdown-menu"> <li onClick="app.absentSign.click('+data[i].schedule_id+','+data[i].items_id+',2)"><a href="#">录入缺课人员</a></li> <li onClick="app.sign('+data[i].schedule_id+',1)"><a href="#">无缺课人员</a></li> <li onClick="app.sign('+data[i].schedule_id+',0)"><a href="#">取消课程</a></li> </ul> </div>';
+                        html=html+'<div class="btn-group"> <a class="btn dropdown-toggle" data-toggle="dropdown" href="#"> 签到 <span class="caret"></span> </a> <ul class="dropdown-menu"> <li onClick="app.absentSign.click('+data[i].schedule_id+','+data[i].items_id+',2)"><a href="#">录入缺课人员</a></li> <li onClick="app.sign('+data[i].schedule_id+','+data[i].items_id+',1)"><a href="#">无缺课人员</a></li> <li onClick="app.sign('+data[i].schedule_id+','+data[i].items_id+',0)"><a href="#">取消课程</a></li> </ul> </div>';
                         html=html+'</td></tr>';
                     }
                 }
