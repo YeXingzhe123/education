@@ -205,7 +205,8 @@ class TeacherController extends Controller
         {
              $items_id =I('post.items_id');
              $course = M("course");
-             $require["course_item_id"] = $items_id;
+             $require["course_item_id"] =30;
+             //$items_id;
              $student_id = array();//存储学生的id
               $result = $course->where($require)->select();
               if (!$result) {
@@ -228,7 +229,8 @@ class TeacherController extends Controller
                          if ($key=='student_name') {array_push($student_name, $value); }
                                  }
                     }
-
+                    var_dump($student_id);
+                    var_dump($student_name);
         }
 }
 
