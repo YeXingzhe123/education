@@ -43,8 +43,7 @@ $(function () {
         });
      obj_select_item = {
         check:function(data){
-                    $('#window_select_item').window("refresh","./index.php/home/admin/select_item?student_id="+data);
-                    $('#window_select_item').window("open");
+                    $('#window_select_item').window("open").window("refresh","./index.php/home/admin/select_item?student_id="+data);
                 },
 
      };

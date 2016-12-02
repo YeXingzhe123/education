@@ -43,8 +43,7 @@ $(function () {
         });
      obj_select_pay = {
         check:function(data){
-                    $('#window_select_pay').window("refresh","./index.php/home/admin/pay_info?student_id="+data);
-                    $('#window_select_pay').window("open");
+                    $('#window_select_pay').window("open").window("refresh","./index.php/home/admin/pay_info?student_id="+data);
                 },
 
      };
