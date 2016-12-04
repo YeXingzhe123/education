@@ -194,10 +194,17 @@ class AdminController extends Controller
         foreach ($items_id as $key => $value) {
             $items_times = $items->field('items_times')->where('items_id=%d', intval($value))->select();
             $course_data['remain_times'] = intval($items_times[0]['items_times']);
-            $course_data['course_item_id'] = intval($value);
-            $course_data['course_student_id'] = $student_id;
-            $course_data['course_datetime'] = date('Y-m-d H:i:s');
-            $course_results = $course->data($course_data)->add();
+            $result = $course->where('course_item_id=%d and course_student_id=%d',array(intval($value),$student_id))->find();
+            if ($result) {
+                $course->remain_times = $course->remain_times+ $course_data['remain_times'];
+                 $course->course_datetime = date('Y-m-d H:i:s');
+                $course->save();
+            }else{
+                $course_data['course_item_id'] = intval($value);
+                $course_data['course_student_id'] = $student_id;
+                $course_data['course_datetime'] = date('Y-m-d H:i:s');
+                $course_results = $course->data($course_data)->add();
+            }
         }
         $pay = M('pay');
         $pay_data['pay_student_id'] = $student_id;
