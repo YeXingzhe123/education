@@ -40,34 +40,29 @@ class TeacherController extends Controller
     }
 
     public function getDate()
-    {
-        $data = array();
-        $week = date('w'); //返回数据为星期
-        if ($week==0) {
-           $week =7;
-        }
-        for ($i = 0; $i < 7; $i++) {
-
-            $data[$i]['date'] = date('Y年m月d日', strtotime('+' . $i + 1 - $week . ' days'));
-             if ($week==0) {
-                $week =7;
-            }
-            $data[$i]['week'] = date('w', strtotime('+' . $i - $week . ' days'));
-            if ($data[$i]['week'] + 1 == $week) {
-                $data[$i]['active'] = $data[$i]['week'];
-            }
-        }
-        if (empty($data)) {
-            $code = "400";
-            $message = '数据错误';
-        } else {
-            $code = "200";
-            $message = '  ';
-        }
-        $getdate = array(); //定义新数组
-        $result = $this->toJson($code, $message, $data);
-        echo "$result";
-    }
+      {
+          $data = array();
+              for ($i = 0; $i < 7; $i++) {
+                   $data[$i]['date'] = date("Y年m月d日",time()-24*60*60*$i);
+                   $week= date("w",time()-24*60*60*$i)-1;
+                   if ( $week ==-1) {
+                       $week =6;
+                   }
+                   $data[$i]['week'] = $week;
+                   if ($i ==0) {
+                       $data[$i]['active'] = $week;
+                   }
+              }
+               if (empty($data)) {
+                      $code = "400";
+                      $message = '数据错误';
+                  } else {
+                      $code = "200";
+                      $message = '  ';
+                  }
+                  $getdate = array(); //定义新数组
+                  $result = $this->toJson($code, $message, $data);
+      }
 
     public function getSchedule()
     {
