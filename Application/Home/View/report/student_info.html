@@ -1,100 +1,110 @@
 <div style="position: relative;left: 0px;top: 0px;">
     <div style="position: absolute;left:10px;top: 10px;">学生添加修改 >>
-        <font style="font-weight: bold"> 添加/修改学生</font> </div>
-    <div style="position: absolute;left: 50px;top: 30px;"><table id="admin_student_box" style="width: 900px;"></table>
-</div>
-<div id="admin_student_tb" style="">
-    <div style="">
-        <table style="width: 890px">
-            <tr><td style="width: 450px;text-align: left;">
-        <a href="#" class="easyui-linkbutton" iconCls="icon-add" plain="true" onclick="obj_admin_student.add();">添加</a>
-        <a href="#" class="easyui-linkbutton" iconCls="icon-edit" plain="true" onclick="obj_admin_student.edit();">修改</a>
-        <a href="#" class="easyui-linkbutton" iconCls="icon-remove" plain="true" onclick="obj_admin_student.remove();">删除</a>
-        <a href="#" class="easyui-linkbutton" iconCls="icon-save" plain="true" style="display:none;" id="save" onclick="obj_admin_student.save();">保存</a>
-        <a href="#" class="easyui-linkbutton" iconCls="icon-redo" plain="true" style="display:none;" id="redo" onclick="obj_admin_student.redo();">取消编辑</a>
-            </td>
-                <td style="width: 450px;text-align: right;">
-        查询姓名：<input type="text" class="textbox" name="student_name" style="width:110px">
-
-        <a href="#" class="easyui-linkbutton" iconCls="icon-search" onclick="obj_admin_student.search();">查询</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                </td>  </tr> </table>
+        <font style="font-weight: bold"> 添加/修改学生</font>
     </div>
-</div></div>
+    <div style="position: absolute;left: 50px;top: 30px;">
+        <table id="admin_student_box" style="width: 900px;"></table>
+    </div>
+    <div id="admin_student_tb" style="">
+        <div style="">
+            <table style="width: 890px">
+                <tr>
+                    <td style="width: 450px;text-align: left;">
+                    <input id="startTime" type="text" class="easyui-datebox" data-options="missingMessage:'请输入开始日期'" placeholder="请输入开始日期"> -</td>
+                    <td>
+                    <input id="endTime" type="text" class="easyui-datebox" data-options="missingMessage:'请输入结束日期'" placeholder="请输入结束日期">
+                    </td>
+
+                    <td>
+                    <input class="easyui-validatebox" type="text" name="name" data-options="missingMessage:'请输入查询学生姓名'" placeholder="请输入查询学生姓名"/>
+                    </td>
+                    <td>
+                        <select id="cc" class="easyui-combobox" name="dept" style="width:200px;">
+                            <option value="aa">请选择</option>
+                            <option>缺课</option>
+                            <option>请假</option>
+                        </select>
+                    </td>
+                    </td>
+                    <td style="width: 450px;text-align: right;">
+                        <a href="#" class="easyui-linkbutton" iconCls="icon-search" onclick="obj_admin_student.search();">查询</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    </td>
+
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
 <script type="text/javascript">
-$(function () {
+$(function() {
 
     obj_admin_student = {
-        editRow : undefined,
-        search : function () {
+        editRow: undefined,
+        search: function() {
             $('#admin_student_box').datagrid('load', {
-                student_name : $.trim($('input[name="student_name"]').val()),
+                student_name: $.trim($('input[name="student_name"]').val()),
             });
         }
     };
 
     $('#admin_student_box').datagrid({
-        width : 900,
-        url : '{:U("Report/getstudent")}',
-       // url : 'user.php',
-        title : '<center>学生列表</center>',
-        iconCls : 'icon-search',
-        striped : true,
-        nowrap : true,
-        rownumbers : true,
-        //singleSelect : true,
-        fitColumns : true,
-        columns : [[
-        {
-            field : 'student_name',
-            title : '学生姓名',
-            sortable : true,
-            width : 150,
-        },
-        {
-            field : 'student_sex',
-            title : '性别',
+            width: 900,
+            url: '{:U("Report/getstudent")}',
+            // url : 'user.php',
+            method: "post",
+            title: '<center>学生列表</center>',
+            iconCls: 'icon-search',
+            striped: true,
+            nowrap: true,
+            rownumbers: true,
+            //singleSelect : true,
+            fitColumns: true,
+            columns: [
+                [{
+                        field: 'student_name',
+                        title: '学生姓名',
+                        sortable: true,
+                        width: 150,
+                    }, {
+                        field: 'student_sex',
+                        title: '性别',
 
-            width : 50,
+                        width: 50,
 
 
-            },
-        },
-        {
-            field : 'student_birthday',
-            title : '出生日期',
+                    },
+                 {
+                    field: 'student_birthday',
+                    title: '出生日期',
 
-            width : 100,
-        },
-        {
-            field : 'student_tel',
-            title : '电话号码',
+                    width: 100,
+                }, {
+                    field: 'student_tel',
+                    title: '电话号码',
 
-            width : 100,
-        },
-        {
-            field : 'student_remark',
-            title : '备注',
+                    width: 100,
+                }, {
+                    field: 'student_remark',
+                    title: '备注',
 
-            width : 100,
+                    width: 100,
 
-        },
-            {
-                field : 'student_id',
-                title : 'aa',
-                hidden:'true',
-                width : 0
+                }, {
+                    field: 'student_id',
+                    title: 'aa',
+                    hidden: 'true',
+                    width: 0
 
-            },
-        ]],
-        toolbar : '#admin_student_tb',
-        pagination : true,
-        pageSize : 10,
-        pageList : [10, 20, 30],
-        pageNumber : 1,
-        sortName : 'student_name',
-        sortOrder : 'DESC',
+                },
+            ]],
+        toolbar: '#admin_student_tb',
+        pagination: true,
+        pageSize: 10,
+        pageList: [10, 20, 30],
+        pageNumber: 1,
+        sortName: 'student_name',
+        sortOrder: 'DESC',
     });
 
 });
-
 </script>
