@@ -98,6 +98,7 @@
     var app = app|| {};
     app.date = {};
     app.week="";
+    app.day="";
 
     app.sign=function (schedule_id,items_id,status,student_ids) {
         var student_ids=student_ids||null;
@@ -105,7 +106,7 @@
             url: "<?php echo SRC_PATH ?>/index.php/home/teacher/sign",
             type: 'POST',
             dataType: 'json',
-            data: {"schedule_id":schedule_id,"status":status,"items_id":items_id,"student_ids":student_ids},
+            data: {"schedule_id":schedule_id,"status":status,"items_id":items_id,"date":app.day,"student_ids":student_ids},
         })
         .done(function(data) {
             if (data.code == '200') {
@@ -165,7 +166,7 @@
                 student_ids.push($(this).val());//向数组中添加元素
             });
             app.sign(this.schedule_id,this.items_id,this.status,student_ids);
-            $('#myModal').modal('hide')
+            $('#myModal').modal('hide');
         }
 
     };
@@ -207,8 +208,9 @@
             $.scojs_message("请求失败，请重试!", $.scojs_message.TYPE_ERROR);
         });
     };
-    app.getSchedule=function (week,node) {
+    app.getSchedule=function (week,date,node) {
         app.week=week;
+        app.day= date;
         node = node||null;
         if (node) {
             $('#side').children().each(function(index, el) {
@@ -219,7 +221,7 @@
         app.setSchedule();
     };
 
-    (function(){
+    app.getWeek = function(){
         $.ajax({
             url: "<?php echo SRC_PATH ?>/index.php/home/teacher/getDate",
             type: 'GET',
@@ -236,11 +238,12 @@
                     active="";
                     week= weeks[data[i].week];
                     if (data[i].active) {
+                        app.day=   data[i].date;
                         app.week = data[i].week;
                         app.setSchedule();
                         active="active";
                     }
-                    html=html+'<div class="panel '+active+' text-center" onclick="app.getSchedule('+data[i].week+',this)">'+data[i].date+'<br>'+week+'</div>'
+                    html=html+'<div class="panel '+active+' text-center" onclick="app.getSchedule('+data[i].week+',\''+data[i].date+'\',this)">'+data[i].date+'<br>'+week+'</div>'
                 }
                 $('#side').html(html);
             }else{
@@ -250,7 +253,8 @@
         .fail(function() {
             $.scojs_message("请求失败，请重试!", $.scojs_message.TYPE_ERROR);
         });
-    })();
+    };
+    app.getWeek();
 
 
 

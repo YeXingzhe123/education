@@ -16,12 +16,12 @@
          </tr> </table>
     </div>
 </div>
- 
+
  <div id="window_add_schedule" class="easyui-window" title=" ">
 </div>
 
 
-   
+
     </div>
     </div>
 
@@ -44,16 +44,14 @@ $(function () {
         });
      obj_window_schedule = {
         add:function(){
-                    $('#window_add_schedule').window("refresh","./index.php/home/admin/add_schedule?123");
-                    $('#window_add_schedule').window("open");
+                    $('#window_add_schedule').window("open").window("refresh","./index.php/home/admin/add_schedule?123");
                 },
         edit:function(){
-                    $('#window_add_schedule').window("refresh","./index.php/home/admin/edit_schedule?456");
-                    $('#window_add_schedule').window("open");
+                    $('#window_add_schedule').window("open").window("refresh","./index.php/home/admin/edit_schedule?456");
                 },
 
      };
-     
+
 
 
 // 修改
@@ -67,7 +65,7 @@ $(function () {
             });
         },
         save : function () {
-  
+
             $('#admin_schedule_box').datagrid('endEdit', this.editRow);
         },
         redo : function () {
@@ -75,7 +73,7 @@ $(function () {
             this.editRow = undefined;
             $('#admin_schedule_box').datagrid('rejectChanges');
         },
-       
+
         remove : function () {
             var rows = $('#admin_schedule_box').datagrid('getSelections');
             if (rows.length > 0) {
@@ -129,23 +127,23 @@ $(function () {
                 title : '星期',
                 sortable : true,
                 width : 150,
-                formatter : function(value) {  
-                    if (value==1) {  
-                        return "星期一";  
-                    }else if(value==2){  
-                        return "星期二";  
-                    }else if(value==3){  
-                        return "星期三";  
-                    }else if(value==4){  
-                        return "星期四";  
-                    }else if(value==5){  
-                        return "星期五";  
-                    }else if(value==6){  
-                        return "星期六";  
-                    }else{  
-                        return "星期二";  
+                formatter : function(value) {
+                    if (value==1) {
+                        return "星期一";
+                    }else if(value==2){
+                        return "星期二";
+                    }else if(value==3){
+                        return "星期三";
+                    }else if(value==4){
+                        return "星期四";
+                    }else if(value==5){
+                        return "星期五";
+                    }else if(value==6){
+                        return "星期六";
+                    }else{
+                        return "星期二";
                     }
-                }            
+                }
             },
             {
                 field : 'schedule_time',
@@ -200,7 +198,7 @@ $(function () {
             }
 
         },
-      
+
     });
 
     });

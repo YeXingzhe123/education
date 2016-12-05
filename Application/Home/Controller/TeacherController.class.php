@@ -162,16 +162,17 @@ class TeacherController extends Controller
     {
         $schedule_id = I('post.schedule_id');
         $status = I('post.status');
+        $date = I('post.date');
         $student_id = I('post.student_ids');
         $items_id = I('post.items_id');
         if ($status == 2) {
-            $this->signAbsent($schedule_id, $items_id, $status, $student_id);
+            $this->signAbsent($schedule_id, $items_id, $date, $status, $student_id);
         } else {
-            $this->signNoAbsent($schedule_id, $items_id, $status);
+            $this->signNoAbsent($schedule_id, $items_id, $date, $status);
         }
     }
     //当sign为0和1的情况下
-    private function signNoAbsent($schedule_id, $items_id, $status, $student_id="")
+    private function signNoAbsent($schedule_id, $items_id, $date, $status, $student_id="")
     {
         //添加课表
         $code='200';
@@ -181,7 +182,7 @@ class TeacherController extends Controller
         $data["status"] = $status;
         // 时间自动生成
         // 签到老师用session值
-        $data["date"] = date("Y-m-d H:i:s", time());
+        $data["date"] = $date;
         $data["teacher_id"] = session('teacher_id');
         $datas = $this->getStudent($items_id);
         $course = M('course');
@@ -200,7 +201,7 @@ class TeacherController extends Controller
 
     }
     //当sign为2的情况下
-    private function signAbsent($schedule_id, $items_id, $status, $student_id)
+    private function signAbsent($schedule_id, $items_id, $date,$status, $student_id)
     {
         $code='200';
         $message="";
@@ -210,7 +211,7 @@ class TeacherController extends Controller
           $data["student_id"] = $value;
           $result = $absent->add($data);
         }
-        $this->signNoAbsent($schedule_id, $items_id, $status, $student_id);
+        $this->signNoAbsent($schedule_id, $items_id, $date, $status, $student_id);
         //然后在添加absent表就行了
     }
 
