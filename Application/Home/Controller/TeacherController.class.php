@@ -62,6 +62,7 @@ class TeacherController extends Controller
                   }
                   $getdate = array(); //定义新数组
                   $result = $this->toJson($code, $message, $data);
+                  echo   $result;
       }
 
     public function getSchedule()
@@ -253,4 +254,5 @@ class TeacherController extends Controller
       return $datas;
 
     }
+
 }
