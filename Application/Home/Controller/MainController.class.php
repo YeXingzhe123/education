@@ -9,8 +9,9 @@
 namespace Home\Controller;
 
 use Think\Controller;
+use Home\Service\ReportService;
 
-class IndexController extends Controller
+class MainController extends Controller
 {
     //显示教师管理视图
 
@@ -22,4 +23,26 @@ class IndexController extends Controller
             exit();
         }
     }
+
+    public function getCourse()
+    {
+       $user =D('Report','Service');
+        //$user =new ReportService();
+        if($user)
+        {
+            $user->getCourse();
+        }else{
+            echo "调用错误";
+        }
+
+    }
+    //
+    //测试
+    public function index()
+    {
+
+        echo "我是正确的";
+    }
+
+
 }

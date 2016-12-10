@@ -28,5 +28,19 @@ class ReportController extends Controller
     {
         $this->display('student_info');
     }
+    /**
+     * [getStudent description]
+     * @param   $name [description]
+     * @param  [type] $php  [description]
+     * @return        [description]
+     */
+    public function getStudent($name ,$php)
+    {
+        $name = I('post.name');
+        $reportService = new ReportService();
+        $reportService->getStudent( $name,);
+        return $aa;
+
+    }
 
 }
