@@ -162,11 +162,11 @@ class TeacherController extends Controller
     public function sign()
     {
       //测试数据
-         $schedule_id = 21;
-          $status =2;
-         $date ="2016年11月29日";
-         $items_id =70;
-          $student_id  =2;
+         // $schedule_id = 21;
+         //  $status =2;
+         // $date ="2016年11月29日";
+         // $items_id =70;
+
 
         $teacherService = new TeacherService();
 

@@ -51,9 +51,9 @@ class TeacherService
         $data['sign_id'] = $sign_id;
         $signInfo = M("sign_info");
         foreach ($student_id as $key => $value) {
-            $data['student_id'] = $value['student_id'];
-            $data['sign_info_status'] =  $value['sign_info_status'];
-            $result = $signInfo>add($data);
+            $data['student_id'] = $value['course_student_id'];
+            $data['sign_info_status'] =  $value['status'];
+            $result = $signInfo->add($data);
         }
         return $result;
     }
